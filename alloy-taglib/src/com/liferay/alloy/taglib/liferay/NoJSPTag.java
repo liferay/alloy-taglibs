@@ -12,14 +12,14 @@
  * details.
  */
 
-package ${packagePath}.${component.getPackage()};
+package com.liferay.alloy.taglib.liferay;
 
-import ${packagePath}.${component.getPackage()}.base.Base${component.getClassName()};
+import com.liferay.alloy.taglib.liferay.base.BaseNoJSPTag;
 
 /**
-<#list component.getAuthors() as author>
- * @author ${author}
-</#list>
+ * @author Eduardo Lundgren
+ * @author Bruno Basto
+ * @author Nathan Cavanaugh
  */
-public class ${component.getClassName()} extends Base${component.getClassName()} {
+public class NoJSPTag extends BaseNoJSPTag {
 }
