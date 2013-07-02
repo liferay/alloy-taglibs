@@ -12,7 +12,7 @@
 	</target>
 
 	<target name="deploy" depends="clean, war">
-		<var name="dest.dir" value="${app.server.portal.dir}" />
+		<var name="dest.dir" value="${app.server.tomcat.deploy.dir}" />
 
 		<if>
 			<equals arg1="${deploy.liferay.source}" arg2="true" />

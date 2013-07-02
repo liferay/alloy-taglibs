@@ -11,13 +11,14 @@
 		<antcall target="deploy" />
 	</target>
 
-	<target name="import-portal-libs">
-		<echo>${lp.source.dir}/portal-impl/</echo>
+	<target name="import-portal-dependencies">
+		<echo>Copying portal dependecies from ${lp.source.dir}</echo>
+
 		<copy todir="${project.dir}/lib/application" overwrite="true">
-			<fileset dir="${lp.source.dir}/portal-impl/" includes="portal-impl.jar" />
-			<fileset dir="${lp.source.dir}/portal-service/" includes="portal-service.jar" />
-			<fileset dir="${lp.source.dir}/util-java/" includes="util-java.jar" />
-			<fileset dir="${lp.source.dir}/util-taglib/" includes="util-taglib.jar" />
+			<fileset dir="${lp.source.dir}/portal-impl" includes="portal-impl.jar" />
+			<fileset dir="${lp.source.dir}/portal-service" includes="portal-service.jar" />
+			<fileset dir="${lp.source.dir}/util-java" includes="util-java.jar" />
+			<fileset dir="${lp.source.dir}/util-taglib" includes="util-taglib.jar" />
 		</copy>
 	</target>
 
@@ -48,6 +49,8 @@
 	</target>
 
 	<target name="start">
+		<antcall target="import-portal-dependencies" />
+
 		<antcall target="compile" />
 
 		<antcall target="jar" />
@@ -69,7 +72,7 @@
 		</java>
 	</target>
 
-	<target name="build-tags" depends="compile, clean-build-tags">
+	<target name="build-taglibs" depends="compile, clean-build-taglibs">
 		<java
 			classname="com.liferay.alloy.tools.tagbuilder.TagBuilder"
 			classpathref="project.classpath"
@@ -89,7 +92,7 @@
 		</java>
 	</target>
 
-	<target name="clean-build-tags">
+	<target name="clean-build-taglibs">
 		<delete>
 			<fileset dir="${project.dir}/alloy-taglib/src/META-INF/" includes="*.tld" />
 		</delete>
