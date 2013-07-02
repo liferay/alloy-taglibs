@@ -7,6 +7,7 @@ import javax.servlet.jsp.tagext.BodyTag;
 import com.liferay.alloy.taglib.alloy_util.base.BaseScriptTag;
 import com.liferay.portal.kernel.servlet.taglib.aui.ScriptData;
 import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.StringPool;
 
 /**
  * <a href="ScriptTag.java.html"><b><i>View Source</i></b></a>
@@ -73,6 +74,12 @@ public class ScriptTag extends BaseScriptTag implements BodyTag {
 		return EVAL_BODY_BUFFERED;
 	}
 
+	public Object getNamespacedAttribute(
+		HttpServletRequest request, String key) {
+
+		return request.getAttribute(getAttributeNamespace().concat(key));
+	}
+
 	private void _updateScriptData(
 		HttpServletRequest request, ScriptData scriptData, String position) {
 
@@ -81,7 +88,8 @@ public class ScriptTag extends BaseScriptTag implements BodyTag {
 		}
 
 		if (getBodyContent() != null) {
-			scriptData.append(getBodyContent().getString(), getUse());
+			scriptData.append(
+				StringPool.BLANK, getBodyContent().getString(), getUse());
 		}
 
 		String key = "script-data-inline";
