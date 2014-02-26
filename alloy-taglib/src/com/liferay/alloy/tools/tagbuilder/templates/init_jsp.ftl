@@ -78,6 +78,6 @@ private static void _updateOptions(Map<String, Object> options, String key, Obje
 
 private static final String _NAMESPACE = "${namespace}";
 %>
-</#if>
 
+</#if>
 <%@ include file="${jspRelativePath}/init-ext.jspf" %>
