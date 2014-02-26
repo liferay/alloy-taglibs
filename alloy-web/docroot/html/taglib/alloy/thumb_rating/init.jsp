@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:thumb-rating:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:thumb-rating:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean canReset = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:thumb-rating:canReset")), true);
 java.lang.String cssClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:thumb-rating:cssClass"));
 java.lang.Number defaultSelected = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:thumb-rating:defaultSelected")), 0);
@@ -137,7 +120,25 @@ java.lang.Object onVisibleChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy:thumb-rating:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:thumb-rating:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:thumb-rating:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:thumb-rating:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:thumb-rating:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "boundingBox", boundingBox);
 _updateOptions(_options, "canReset", canReset);
 _updateOptions(_options, "contentBox", contentBox);
@@ -244,8 +245,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/thumb_rating/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:thumb-rating:";
 %>
+
+<%@ include file="/html/taglib/alloy/thumb_rating/init-ext.jspf" %>

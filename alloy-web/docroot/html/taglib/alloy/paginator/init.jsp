@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean alwaysVisible = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:paginator:alwaysVisible")), true);
 java.lang.String containers = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:paginator:containers"));
 boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:paginator:destroyed")), false);
@@ -124,7 +107,25 @@ java.lang.Object onTotalChange = (java.lang.Object)request.getAttribute("alloy:p
 java.lang.Object onTotalElChange = (java.lang.Object)request.getAttribute("alloy:paginator:onTotalElChange");
 java.lang.Object onTotalLabelChange = (java.lang.Object)request.getAttribute("alloy:paginator:onTotalLabelChange");
 java.lang.Object onTotalPagesChange = (java.lang.Object)request.getAttribute("alloy:paginator:onTotalPagesChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "alwaysVisible", alwaysVisible);
 _updateOptions(_options, "containers", containers);
 _updateOptions(_options, "destroyed", destroyed);
@@ -215,8 +216,14 @@ _updateOptions(_options, "onTotalLabelChange", onTotalLabelChange);
 _updateOptions(_options, "onTotalPagesChange", onTotalPagesChange);
 %>
 
-<%@ include file="/html/taglib/alloy/paginator/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:paginator:";
 %>
+
+<%@ include file="/html/taglib/alloy/paginator/init-ext.jspf" %>

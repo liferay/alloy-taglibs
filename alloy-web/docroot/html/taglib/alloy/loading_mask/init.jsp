@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:destroyed")), false);
 java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:loading-mask:host");
 boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:initialized")), false);
@@ -58,7 +41,25 @@ java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onMessageElChange = (java.lang.Object)request.getAttribute("alloy:loading-mask:onMessageElChange");
 java.lang.Object onStringsChange = (java.lang.Object)request.getAttribute("alloy:loading-mask:onStringsChange");
 java.lang.Object onTargetChange = (java.lang.Object)request.getAttribute("alloy:loading-mask:onTargetChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "destroyed", destroyed);
 _updateOptions(_options, "host", host);
 _updateOptions(_options, "initialized", initialized);
@@ -83,8 +84,14 @@ _updateOptions(_options, "onStringsChange", onStringsChange);
 _updateOptions(_options, "onTargetChange", onTargetChange);
 %>
 
-<%@ include file="/html/taglib/alloy/loading_mask/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:loading-mask:";
 %>
+
+<%@ include file="/html/taglib/alloy/loading_mask/init-ext.jspf" %>

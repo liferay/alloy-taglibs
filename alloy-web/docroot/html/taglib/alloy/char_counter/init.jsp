@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.Object counter = (java.lang.Object)request.getAttribute("alloy:char-counter:counter");
 boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:destroyed")), false);
 boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:initialized")), false);
@@ -55,7 +38,25 @@ java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:char-cou
 java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:char-counter:onInitializedChange");
 java.lang.Object onInputChange = (java.lang.Object)request.getAttribute("alloy:char-counter:onInputChange");
 java.lang.Object onMaxLengthChange = (java.lang.Object)request.getAttribute("alloy:char-counter:onMaxLengthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "counter", counter);
 _updateOptions(_options, "destroyed", destroyed);
 _updateOptions(_options, "initialized", initialized);
@@ -77,8 +78,14 @@ _updateOptions(_options, "onInputChange", onInputChange);
 _updateOptions(_options, "onMaxLengthChange", onMaxLengthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/char_counter/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:char-counter:";
 %>
+
+<%@ include file="/html/taglib/alloy/char_counter/init-ext.jspf" %>

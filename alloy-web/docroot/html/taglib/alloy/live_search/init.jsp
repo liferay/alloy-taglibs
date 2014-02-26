@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.Object data = (java.lang.Object)request.getAttribute("alloy:live-search:data");
 java.lang.Number delay = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:live-search:delay")), 250);
 boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:live-search:destroyed")), false);
@@ -73,7 +56,25 @@ java.lang.Object onMatchRegexChange = (java.lang.Object)request.getAttribute("al
 java.lang.Object onNodesChange = (java.lang.Object)request.getAttribute("alloy:live-search:onNodesChange");
 java.lang.Object onSearchValueChange = (java.lang.Object)request.getAttribute("alloy:live-search:onSearchValueChange");
 java.lang.Object onShowChange = (java.lang.Object)request.getAttribute("alloy:live-search:onShowChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "data", data);
 _updateOptions(_options, "delay", delay);
 _updateOptions(_options, "destroyed", destroyed);
@@ -113,8 +114,14 @@ _updateOptions(_options, "onSearchValueChange", onSearchValueChange);
 _updateOptions(_options, "onShowChange", onShowChange);
 %>
 
-<%@ include file="/html/taglib/alloy/live_search/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:live-search:";
 %>
+
+<%@ include file="/html/taglib/alloy/live_search/init-ext.jspf" %>

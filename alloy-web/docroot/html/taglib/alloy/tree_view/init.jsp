@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.util.ArrayList children = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:tree-view:children"), "[]"));
 java.lang.String container = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:tree-view:container"));
 boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:tree-view:destroyed")), false);
@@ -64,7 +47,25 @@ java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onIoChange = (java.lang.Object)request.getAttribute("alloy:tree-view:onIoChange");
 java.lang.Object onLastSelectedChange = (java.lang.Object)request.getAttribute("alloy:tree-view:onLastSelectedChange");
 java.lang.Object onTypeChange = (java.lang.Object)request.getAttribute("alloy:tree-view:onTypeChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "children", children);
 _updateOptions(_options, "container", container);
 _updateOptions(_options, "destroyed", destroyed);
@@ -95,8 +96,14 @@ _updateOptions(_options, "onLastSelectedChange", onLastSelectedChange);
 _updateOptions(_options, "onTypeChange", onTypeChange);
 %>
 
-<%@ include file="/html/taglib/alloy/tree_view/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:tree-view:";
 %>
+
+<%@ include file="/html/taglib/alloy/tree_view/init-ext.jspf" %>

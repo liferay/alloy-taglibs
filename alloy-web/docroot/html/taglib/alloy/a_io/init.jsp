@@ -19,9 +19,12 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
+
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:a-io:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:a-io:scopedAttributes");
+%>
 
+<%
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
@@ -36,12 +39,16 @@ if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
 <%@ include file="/html/taglib/aui/init-alloy.jspf" %>
 
 <%
+%>
 
+<%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
 
+private static final String _NAMESPACE = "alloy:a-io:";
 %>
 
 <%@ include file="/html/taglib/alloy/a_io/init-ext.jspf" %>
-
-<%!
-private static final String _NAMESPACE = "alloy:a-io:";
-%>

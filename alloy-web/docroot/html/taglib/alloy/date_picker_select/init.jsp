@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.util.ArrayList appendOrder = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:date-picker-select:appendOrder"), "[ 'm', 'd', 'y' ]"));
 java.lang.String buttonNode = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:date-picker-select:buttonNode"));
 java.util.HashMap calendar = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:date-picker-select:calendar"), "{}"));
@@ -158,7 +141,25 @@ java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:d
 java.lang.Object onYearNodeChange = (java.lang.Object)request.getAttribute("alloy:date-picker-select:onYearNodeChange");
 java.lang.Object onYearNodeNameChange = (java.lang.Object)request.getAttribute("alloy:date-picker-select:onYearNodeNameChange");
 java.lang.Object onYearRangeChange = (java.lang.Object)request.getAttribute("alloy:date-picker-select:onYearRangeChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "appendOrder", appendOrder);
 _updateOptions(_options, "boundingBox", boundingBox);
 _updateOptions(_options, "buttonNode", buttonNode);
@@ -286,8 +287,14 @@ _updateOptions(_options, "onYearNodeNameChange", onYearNodeNameChange);
 _updateOptions(_options, "onYearRangeChange", onYearRangeChange);
 %>
 
-<%@ include file="/html/taglib/alloy/date_picker_select/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:date-picker-select:";
 %>
+
+<%@ include file="/html/taglib/alloy/date_picker_select/init-ext.jspf" %>

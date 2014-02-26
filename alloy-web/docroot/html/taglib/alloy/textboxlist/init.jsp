@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:textboxlist:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:textboxlist:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean alwaysShowContainer = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:textboxlist:alwaysShowContainer")), false);
 boolean applyLocalFilter = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:textboxlist:applyLocalFilter")), true);
 boolean autoHighlight = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:textboxlist:autoHighlight")), true);
@@ -200,7 +183,25 @@ java.lang.Object onVisibleChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy:textboxlist:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:textboxlist:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:textboxlist:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:textboxlist:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:textboxlist:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "alwaysShowContainer", alwaysShowContainer);
 _updateOptions(_options, "applyLocalFilter", applyLocalFilter);
 _updateOptions(_options, "autoHighlight", autoHighlight);
@@ -370,8 +371,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/textboxlist/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:textboxlist:";
 %>
+
+<%@ include file="/html/taglib/alloy/textboxlist/init-ext.jspf" %>

@@ -19,34 +19,14 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:test:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:test:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-
 java.lang.String test = GetterUtil.getString((java.lang.String)request.getAttribute("liferay:test:test"));
 boolean attrBooleanPrimitive = GetterUtil.getBoolean(String.valueOf(request.getAttribute("liferay:test:attrBooleanPrimitive")));
 java.lang.Boolean attrBoolean = GetterUtil.getBoolean((java.lang.Boolean)request.getAttribute("liferay:test:attrBoolean"));
 int attrIntPrimitive = GetterUtil.getInteger(String.valueOf(request.getAttribute("liferay:test:attrIntPrimitive")));
 java.lang.Integer attrInteger = GetterUtil.getInteger(String.valueOf(request.getAttribute("liferay:test:attrInteger")));
-
-_updateOptions(_options, "test", test);
-_updateOptions(_options, "attrBooleanPrimitive", attrBooleanPrimitive);
-_updateOptions(_options, "attrBoolean", attrBoolean);
-_updateOptions(_options, "attrIntPrimitive", attrIntPrimitive);
-_updateOptions(_options, "attrInteger", attrInteger);
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:test:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:test:scopedAttributes");
 %>
+
 
 <%@ include file="/html/taglib/liferay/test/init-ext.jspf" %>
-
-<%!
-private static final String _NAMESPACE = "liferay:test:";
-%>

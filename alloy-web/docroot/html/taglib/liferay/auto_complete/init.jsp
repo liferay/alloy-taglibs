@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.String alwaysShowContainer = GetterUtil.getString((java.lang.String)request.getAttribute("liferay:auto-complete:alwaysShowContainer"));
 java.lang.String test = GetterUtil.getString((java.lang.String)request.getAttribute("liferay:auto-complete:test"));
 boolean applyLocalFilter = GetterUtil.getBoolean(String.valueOf(request.getAttribute("liferay:auto-complete:applyLocalFilter")), true);
@@ -201,7 +184,25 @@ java.lang.Object onVisibleChange = (java.lang.Object)request.getAttribute("lifer
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("liferay:auto-complete:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("liferay:auto-complete:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("liferay:auto-complete:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "alwaysShowContainer", alwaysShowContainer);
 _updateOptions(_options, "test", test);
 _updateOptions(_options, "applyLocalFilter", applyLocalFilter);
@@ -372,8 +373,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/liferay/auto_complete/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "liferay:auto-complete:";
 %>
+
+<%@ include file="/html/taglib/liferay/auto_complete/init-ext.jspf" %>

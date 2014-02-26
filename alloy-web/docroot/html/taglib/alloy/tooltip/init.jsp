@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.util.HashMap align = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:tooltip:align"), "{ node: null, points: [ BL, TR ] }"));
 java.util.ArrayList alignOn = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:tooltip:alignOn")));
 java.util.HashMap anim = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:tooltip:anim"), "{ show: false }"));
@@ -176,7 +159,25 @@ java.lang.Object onXChange = (java.lang.Object)request.getAttribute("alloy:toolt
 java.lang.Object onXyChange = (java.lang.Object)request.getAttribute("alloy:tooltip:onXyChange");
 java.lang.Object onYChange = (java.lang.Object)request.getAttribute("alloy:tooltip:onYChange");
 java.lang.Object onZIndexChange = (java.lang.Object)request.getAttribute("alloy:tooltip:onZIndexChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "align", align);
 _updateOptions(_options, "alignOn", alignOn);
 _updateOptions(_options, "anim", anim);
@@ -322,8 +323,14 @@ _updateOptions(_options, "onYChange", onYChange);
 _updateOptions(_options, "onZIndexChange", onZIndexChange);
 %>
 
-<%@ include file="/html/taglib/alloy/tooltip/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:tooltip:";
 %>
+
+<%@ include file="/html/taglib/alloy/tooltip/init-ext.jspf" %>

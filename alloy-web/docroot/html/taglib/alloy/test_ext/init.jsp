@@ -19,26 +19,10 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
+java.lang.String test = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:test-ext:test"));
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:test-ext:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:test-ext:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-
-java.lang.String test = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:test-ext:test"));
-
-_updateOptions(_options, "test", test);
 %>
+
 
 <%@ include file="/html/taglib/alloy/test_ext/init-ext.jspf" %>
-
-<%!
-private static final String _NAMESPACE = "alloy:test-ext:";
-%>

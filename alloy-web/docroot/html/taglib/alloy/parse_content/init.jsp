@@ -19,9 +19,24 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:destroyed")), false);
+java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:parse-content:host");
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:initialized")), false);
+java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroy");
+java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroyedChange");
+java.lang.Object afterHostChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterHostChange");
+java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:parse-content:afterInit");
+java.lang.Object afterInitializedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterInitializedChange");
+java.lang.Object onDestroy = (java.lang.Object)request.getAttribute("alloy:parse-content:onDestroy");
+java.lang.Object onDestroyedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onDestroyedChange");
+java.lang.Object onHostChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onHostChange");
+java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:parse-content:onInit");
+java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onInitializedChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:parse-content:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:parse-content:scopedAttributes");
+%>
 
+<%
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
@@ -36,20 +51,6 @@ if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
 <%@ include file="/html/taglib/aui/init-alloy.jspf" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:destroyed")), false);
-java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:parse-content:host");
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:initialized")), false);
-java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroy");
-java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroyedChange");
-java.lang.Object afterHostChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterHostChange");
-java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:parse-content:afterInit");
-java.lang.Object afterInitializedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterInitializedChange");
-java.lang.Object onDestroy = (java.lang.Object)request.getAttribute("alloy:parse-content:onDestroy");
-java.lang.Object onDestroyedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onDestroyedChange");
-java.lang.Object onHostChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onHostChange");
-java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:parse-content:onInit");
-java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onInitializedChange");
-
 _updateOptions(_options, "destroyed", destroyed);
 _updateOptions(_options, "host", host);
 _updateOptions(_options, "initialized", initialized);
@@ -65,8 +66,14 @@ _updateOptions(_options, "onInit", onInit);
 _updateOptions(_options, "onInitializedChange", onInitializedChange);
 %>
 
-<%@ include file="/html/taglib/alloy/parse_content/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:parse-content:";
 %>
+
+<%@ include file="/html/taglib/alloy/parse_content/init-ext.jspf" %>

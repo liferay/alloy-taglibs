@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean alwaysShowHitArea = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:tree-node-task:alwaysShowHitArea")), true);
 boolean cache = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:tree-node-task:cache")), true);
 java.lang.String checkContainerEl = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:tree-node-task:checkContainerEl"));
@@ -118,7 +101,25 @@ java.lang.Object onNextSiblingChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onOwnerTreeChange = (java.lang.Object)request.getAttribute("alloy:tree-node-task:onOwnerTreeChange");
 java.lang.Object onParentNodeChange = (java.lang.Object)request.getAttribute("alloy:tree-node-task:onParentNodeChange");
 java.lang.Object onPrevSiblingChange = (java.lang.Object)request.getAttribute("alloy:tree-node-task:onPrevSiblingChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "alwaysShowHitArea", alwaysShowHitArea);
 _updateOptions(_options, "cache", cache);
 _updateOptions(_options, "checkContainerEl", checkContainerEl);
@@ -203,8 +204,14 @@ _updateOptions(_options, "onParentNodeChange", onParentNodeChange);
 _updateOptions(_options, "onPrevSiblingChange", onPrevSiblingChange);
 %>
 
-<%@ include file="/html/taglib/alloy/tree_node_task/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:tree-node-task:";
 %>
+
+<%@ include file="/html/taglib/alloy/tree_node_task/init-ext.jspf" %>

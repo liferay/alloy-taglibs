@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.String activeHandle = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:resize:activeHandle"));
 java.lang.Object activeHandleEl = (java.lang.Object)request.getAttribute("alloy:resize:activeHandleEl");
 java.lang.Object activeHandleNode = (java.lang.Object)request.getAttribute("alloy:resize:activeHandleNode");
@@ -125,7 +108,25 @@ java.lang.Object onTickYChange = (java.lang.Object)request.getAttribute("alloy:r
 java.lang.Object onWrapChange = (java.lang.Object)request.getAttribute("alloy:resize:onWrapChange");
 java.lang.Object onWrapTypesChange = (java.lang.Object)request.getAttribute("alloy:resize:onWrapTypesChange");
 java.lang.Object onWrapperChange = (java.lang.Object)request.getAttribute("alloy:resize:onWrapperChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "activeHandle", activeHandle);
 _updateOptions(_options, "activeHandleEl", activeHandleEl);
 _updateOptions(_options, "activeHandleNode", activeHandleNode);
@@ -217,8 +218,14 @@ _updateOptions(_options, "onWrapTypesChange", onWrapTypesChange);
 _updateOptions(_options, "onWrapperChange", onWrapperChange);
 %>
 
-<%@ include file="/html/taglib/alloy/resize/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:resize:";
 %>
+
+<%@ include file="/html/taglib/alloy/resize/init-ext.jspf" %>

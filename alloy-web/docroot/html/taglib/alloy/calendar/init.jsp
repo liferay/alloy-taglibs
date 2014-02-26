@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean allowNone = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:calendar:allowNone")), true);
 java.lang.String blankDays = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:calendar:blankDays"));
 java.lang.Number currentDay = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:calendar:currentDay")), 0);
@@ -197,7 +180,25 @@ java.lang.Object onWeekDaysNodeChange = (java.lang.Object)request.getAttribute("
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy:calendar:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:calendar:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:calendar:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "allowNone", allowNone);
 _updateOptions(_options, "blankDays", blankDays);
 _updateOptions(_options, "boundingBox", boundingBox);
@@ -364,8 +365,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/calendar/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:calendar:";
 %>
+
+<%@ include file="/html/taglib/alloy/calendar/init-ext.jspf" %>

@@ -19,30 +19,12 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-
 java.lang.String position = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:script:position"));
 java.lang.Boolean printBuffer = GetterUtil.getBoolean((java.lang.Boolean)request.getAttribute("alloy_util:script:printBuffer"));
 java.lang.String use = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:script:use"));
-
-_updateOptions(_options, "position", position);
-_updateOptions(_options, "printBuffer", printBuffer);
-_updateOptions(_options, "use", use);
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:scopedAttributes");
 %>
+
 
 <%@ include file="/html/taglib/alloy_util/script/init-ext.jspf" %>
-
-<%!
-private static final String _NAMESPACE = "alloy_util:script:";
-%>

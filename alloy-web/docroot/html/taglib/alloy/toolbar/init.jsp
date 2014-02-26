@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:toolbar:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:toolbar:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.Object activeDescendant = (java.lang.Object)request.getAttribute("alloy:toolbar:activeDescendant");
 boolean activeState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:activeState")), false);
 java.util.ArrayList children = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:toolbar:children")));
@@ -126,7 +109,25 @@ java.lang.Object onVisibleChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy:toolbar:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:toolbar:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:toolbar:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:toolbar:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:toolbar:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "activeDescendant", activeDescendant);
 _updateOptions(_options, "activeState", activeState);
 _updateOptions(_options, "boundingBox", boundingBox);
@@ -222,8 +223,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/toolbar/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:toolbar:";
 %>
+
+<%@ include file="/html/taglib/alloy/toolbar/init-ext.jspf" %>

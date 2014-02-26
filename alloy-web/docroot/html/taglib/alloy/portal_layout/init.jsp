@@ -19,9 +19,21 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:destroyed")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:initialized")), false);
+java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroy");
+java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroyedChange");
+java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterInit");
+java.lang.Object afterInitializedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterInitializedChange");
+java.lang.Object onDestroy = (java.lang.Object)request.getAttribute("alloy:portal-layout:onDestroy");
+java.lang.Object onDestroyedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:onDestroyedChange");
+java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:portal-layout:onInit");
+java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:onInitializedChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:portal-layout:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:portal-layout:scopedAttributes");
+%>
 
+<%
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
@@ -36,17 +48,6 @@ if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
 <%@ include file="/html/taglib/aui/init-alloy.jspf" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:destroyed")), false);
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:initialized")), false);
-java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroy");
-java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroyedChange");
-java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterInit");
-java.lang.Object afterInitializedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterInitializedChange");
-java.lang.Object onDestroy = (java.lang.Object)request.getAttribute("alloy:portal-layout:onDestroy");
-java.lang.Object onDestroyedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:onDestroyedChange");
-java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:portal-layout:onInit");
-java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:onInitializedChange");
-
 _updateOptions(_options, "destroyed", destroyed);
 _updateOptions(_options, "initialized", initialized);
 _updateOptions(_options, "afterDestroy", afterDestroy);
@@ -59,8 +60,14 @@ _updateOptions(_options, "onInit", onInit);
 _updateOptions(_options, "onInitializedChange", onInitializedChange);
 %>
 
-<%@ include file="/html/taglib/alloy/portal_layout/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:portal-layout:";
 %>
+
+<%@ include file="/html/taglib/alloy/portal_layout/init-ext.jspf" %>

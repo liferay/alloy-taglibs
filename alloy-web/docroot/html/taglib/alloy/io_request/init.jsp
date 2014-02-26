@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 boolean active = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:active")), false);
 java.util.HashMap arguments = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:arguments")));
 boolean autoLoad = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:autoLoad")), true);
@@ -103,7 +86,25 @@ java.lang.Object onTimeoutChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onTransactionChange = (java.lang.Object)request.getAttribute("alloy:io-request:onTransactionChange");
 java.lang.Object onUriChange = (java.lang.Object)request.getAttribute("alloy:io-request:onUriChange");
 java.lang.Object onXdrChange = (java.lang.Object)request.getAttribute("alloy:io-request:onXdrChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "active", active);
 _updateOptions(_options, "arguments", arguments);
 _updateOptions(_options, "autoLoad", autoLoad);
@@ -173,8 +174,14 @@ _updateOptions(_options, "onUriChange", onUriChange);
 _updateOptions(_options, "onXdrChange", onXdrChange);
 %>
 
-<%@ include file="/html/taglib/alloy/io_request/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:io-request:";
 %>
+
+<%@ include file="/html/taglib/alloy/io_request/init-ext.jspf" %>

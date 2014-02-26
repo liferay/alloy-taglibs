@@ -19,19 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-
 boolean defineVar = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy_util:component:defineVar")), true);
 java.lang.String excludeAttributes = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:component:excludeAttributes"));
 java.lang.String javaScriptAttributes = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:component:javaScriptAttributes"));
@@ -40,19 +27,9 @@ java.lang.String var = GetterUtil.getString((java.lang.String)request.getAttribu
 java.lang.String module = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:component:module"));
 java.lang.String name = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:component:name"));
 java.util.Map options = (java.util.Map)request.getAttribute("alloy_util:component:options");
-
-_updateOptions(_options, "defineVar", defineVar);
-_updateOptions(_options, "excludeAttributes", excludeAttributes);
-_updateOptions(_options, "javaScriptAttributes", javaScriptAttributes);
-_updateOptions(_options, "tagPageContext", tagPageContext);
-_updateOptions(_options, "var", var);
-_updateOptions(_options, "module", module);
-_updateOptions(_options, "name", name);
-_updateOptions(_options, "options", options);
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:scopedAttributes");
 %>
+
 
 <%@ include file="/html/taglib/alloy_util/component/init-ext.jspf" %>
-
-<%!
-private static final String _NAMESPACE = "alloy_util:component:";
-%>

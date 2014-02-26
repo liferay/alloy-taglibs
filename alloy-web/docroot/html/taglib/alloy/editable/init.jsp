@@ -19,23 +19,6 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
 java.lang.String cancelButton = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:editable:cancelButton"));
 java.lang.String contentText = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:editable:contentText"));
 java.lang.String cssClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:editable:cssClass"));
@@ -133,7 +116,25 @@ java.lang.Object onVisibleChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy:editable:onContentUpdate");
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:editable:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:editable:onWidthChange");
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:scopedAttributes");
+%>
 
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 _updateOptions(_options, "boundingBox", boundingBox);
 _updateOptions(_options, "cancelButton", cancelButton);
 _updateOptions(_options, "contentBox", contentBox);
@@ -236,8 +237,14 @@ _updateOptions(_options, "onRender", onRender);
 _updateOptions(_options, "onWidthChange", onWidthChange);
 %>
 
-<%@ include file="/html/taglib/alloy/editable/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "alloy:editable:";
 %>
+
+<%@ include file="/html/taglib/alloy/editable/init-ext.jspf" %>
