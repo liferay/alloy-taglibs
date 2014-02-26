@@ -13,27 +13,6 @@
 <%@ include file="${jspCommonInitPath}" %>
 
 <%
-Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("${namespace}dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("${namespace}scopedAttributes");
-
-Map<String, Object> _options = new HashMap<String, Object>();
-
-if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
-	_options.putAll(scopedAttributes);
-}
-
-if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
-	_options.putAll(dynamicAttributes);
-}
-<#if component.isAlloyComponent()>
-%>
-
-<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
-
-<%
-<#else>
-
-</#if>
 <#compress>
 <#list component.getAttributesAndEvents() as attribute>
 	<#assign defaultValueSuffix = BLANK>
@@ -65,14 +44,40 @@ if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
 </#list>
 </#compress>
 
+Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("${namespace}dynamicAttributes");
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("${namespace}scopedAttributes");
+%>
 
+<#if component.isAlloyComponent()>
+<%
+Map<String, Object> _options = new HashMap<String, Object>();
+
+if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
+	_options.putAll(scopedAttributes);
+}
+
+if ((dynamicAttributes != null) && !dynamicAttributes.isEmpty()) {
+	_options.putAll(dynamicAttributes);
+}
+%>
+
+<%@ include file="/html/taglib/aui/init-alloy.jspf" %>
+
+<%
 <#list component.getAttributesAndEvents() as attribute>
 _updateOptions(_options, "${attribute.getSafeName()}", ${attribute.getSafeName()});
 </#list>
 %>
 
-<%@ include file="${jspRelativePath}/init-ext.jspf" %>
-
 <%!
+private static void _updateOptions(Map<String, Object> options, String key, Object value) {
+	if ((options != null) && options.containsKey(key)) {
+		options.put(key, value);
+	}
+}
+
 private static final String _NAMESPACE = "${namespace}";
 %>
+</#if>
+
+<%@ include file="${jspRelativePath}/init-ext.jspf" %>
