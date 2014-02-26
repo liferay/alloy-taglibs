@@ -31,5 +31,4 @@ Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribut
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:scopedAttributes");
 %>
 
-
 <%@ include file="/html/taglib/alloy_util/component/init-ext.jspf" %>
