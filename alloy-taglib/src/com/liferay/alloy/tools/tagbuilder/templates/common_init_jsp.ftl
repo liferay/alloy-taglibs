@@ -52,12 +52,6 @@ private static Object _deserialize(Object obj) {
 
 	return null;
 }
-
-private static void _updateOptions(Map<String, Object> options, String key, Object value) {
-	if ((options != null) && options.containsKey(key)) {
-		options.put(key, value);
-	}
-}
 %>
 
 <%
