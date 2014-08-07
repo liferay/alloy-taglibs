@@ -1,5 +1,3 @@
-<%@page import="javax.servlet.jsp.tagext.BodyContent"%>
-
 <%
 final String CSS_COMPONENT = MarkupUtil.getClassName("component");
 final String CSS_TOOLBAR = MarkupUtil.getClassName("toolbar");
@@ -9,11 +7,11 @@ final String CSS_WIDGET = MarkupUtil.getClassName("widget");
 
 final String BOUNDING_BOX_CLASS = StringUtil.merge(new String[] { CSS_WIDGET, CSS_COMPONENT, CSS_TOOLBAR, CSS_TOOLBAR_ORIENTATION }, StringPool.SPACE);
 
-BodyContent _bodyContent = (BodyContent)request.getAttribute("alloy:toolbar:bodyContent");
+Serializable _bodyContent = (Serializable)request.getAttribute("alloy:toolbar:bodyContent");
 
 String bodyContentString = StringPool.BLANK;
 
 if (_bodyContent != null) {
-	bodyContentString = _bodyContent.getString();
+	bodyContentString = String.valueOf(_bodyContent);
 }
 %>
