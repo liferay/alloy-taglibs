@@ -80,6 +80,10 @@ public class Attribute extends BaseModel {
 		return StringPool.BLANK;
 	}
 
+	public boolean getWriteInJSP() {
+		return _writeInJSP;
+	}
+
 	public boolean isEvent() {
 		List<Attribute> events = _component.getEvents();
 
@@ -130,6 +134,10 @@ public class Attribute extends BaseModel {
 		_settable = settable;
 	}
 
+	public void setWriteInJSP(boolean writeInJSP) {
+		_writeInJSP = writeInJSP;
+	}
+
 	private Component _component;
 	private String _defaultValue;
 	private String _description;
@@ -138,5 +146,6 @@ public class Attribute extends BaseModel {
 	private String _outputType;
 	private boolean _required;
 	private boolean _settable = true;
+	private boolean _writeInJSP = true;
 
 }

@@ -186,6 +186,8 @@ public class TagBuilder {
 				attributeNode.elementText("required"));
 			boolean settable = GetterUtil.getBoolean(
 				attributeNode.elementText("settable"), true);
+			boolean writeInJSP = GetterUtil.getBoolean(
+				attributeNode.elementText("writeInJSP"), true);
 
 			Attribute attribute = new Attribute();
 
@@ -197,6 +199,7 @@ public class TagBuilder {
 			attribute.setOutputType(outputType);
 			attribute.setRequired(required);
 			attribute.setSettable(settable);
+			attribute.setWriteInJSP(writeInJSP);
 
 			attributes.add(attribute);
 		}

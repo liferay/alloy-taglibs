@@ -6,8 +6,10 @@
 
 <#include "init.ftl">
 <#compress>
-<#function isValidAttribute attributeName>
-	<#return ((attributeName != "boundingBox") && (attributeName != "contentBox") && (attributeName != "srcNode")) />
+<#function isValidAttribute attribute>
+	<#assign attributeName = attribute.getName()>
+
+	<#return (attribute.getWriteInJSP() && (attributeName != "boundingBox") && (attributeName != "contentBox") && (attributeName != "srcNode")) />
 </#function>
 </#compress>
 <%@ include file="${jspCommonInitPath}" %>
@@ -22,7 +24,7 @@
 		<#assign defaultValueSuffix = getDefaultValueSuffix(outputSimpleClassName, attribute.getDefaultValue())>
 	</#if>
 
-	<#if isValidAttribute(attribute.getName())>
+	<#if isValidAttribute(attribute)>
 		<#assign namespacedName = QUOTE + namespace + attribute.getSafeName() + QUOTE>
 
 		<#if (isPrimitiveType(outputSimpleClassName) || isNumericAttribute(outputSimpleClassName))>
