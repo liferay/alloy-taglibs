@@ -2,6 +2,7 @@
 
 <project name="alloy-taglib" basedir="." default="compile">
 	<import file="../build-common-java.xml" />
+	<import file="../build-test.xml" />
 
 	<property name="jar.file" value="${ant.project.name}" />
 </project>

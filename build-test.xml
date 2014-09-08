@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<project name="build-test" xmlns:antelope="antlib:ise.antelope.tasks">
+
+	<target name="clean-test">
+		<delete dir="test-classes" />
+	</target>
+
+	<target name="compile-test">
+		<mkdir dir="test-classes/unit" />
+
+		<javac
+			classpathref="project.classpath"
+			compiler="${javac.compiler}"
+			debug="${javac.debug}"
+			deprecation="${javac.deprecation}"
+			destdir="test-classes/unit"
+			includeAntRuntime="false"
+			nowarn="${javac.nowarn}"
+			srcdir="test/unit"
+		/>
+	</target>
+
+	<target name="test" depends="compile,compile-test">
+		<echo message="${project.classpath}" />
+
+		<junit fork="false" printsummary="yes" haltonfailure="yes">
+			<classpath>
+				<path refid="project.classpath" />
+				<pathelement location="test-classes/unit" />
+			</classpath>
+
+			<batchtest>
+				<formatter type="plain" usefile="false"/>
+
+				<fileset dir="test-classes/unit">
+					<include name="**/*Test.class"/>
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<antcall target="print-current-time" />
+	</target>
+
+</project>

@@ -47,5 +47,8 @@
 	<classpathentry kind="lib" path="lib/application/util-java.jar"/>
 	<classpathentry kind="lib" path="lib/application/util-taglib.jar" sourcepath="/portal-master/util-taglib"/>
 	<classpathentry kind="lib" path="lib/liferay/jodd-3.6.jar"/>
+	<classpathentry kind="lib" path="lib/development/junit.jar"/>
+	<classpathentry kind="lib" path="lib/development/hamcrest-core.jar"/>
+	<classpathentry kind="lib" path="lib/development/hamcrest-library.jar"/>
 	<classpathentry kind="output" path="alloy-taglib/classes"/>
 </classpath>

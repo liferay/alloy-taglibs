@@ -48,6 +48,21 @@
 		</if>
 	</target>
 
+	<target name="compile-test">
+		<mkdir dir="test-classes/unit" />
+
+		<javac
+			classpathref="project.classpath"
+			compiler="${javac.compiler}"
+			debug="${javac.debug}"
+			deprecation="${javac.deprecation}"
+			destdir="test-classes/unit"
+			includeAntRuntime="false"
+			nowarn="${javac.nowarn}"
+			srcdir="test/unit"
+		/>
+	</target>
+
 	<target name="deploy" depends="jar">
 		<copy todir="${project.dir}/alloy-web/docroot/WEB-INF/lib">
 			<fileset

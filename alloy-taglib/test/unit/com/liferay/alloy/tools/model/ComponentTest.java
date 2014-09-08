@@ -1,7 +1,6 @@
 package com.liferay.alloy.tools.model;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Test;
 public class ComponentTest {
 
@@ -10,7 +9,7 @@ public class ComponentTest {
 		Component component = new Component();
 		component.setName("IORequest");
 
-		assertEquals("io-request", component.getUncamelizedName());
+		Assert.assertEquals("io-request", component.getUncamelizedName());
 	}
 
 }

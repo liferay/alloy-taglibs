@@ -24,6 +24,7 @@
 
 	<target name="clean">
 		<ant dir="alloy-taglib" target="clean" inheritAll="false" />
+		<ant dir="alloy-taglib" target="clean-test" inheritAll="false" />
 
 		<ant dir="alloy-web" target="clean" inheritAll="false" />
 
@@ -44,22 +45,6 @@
 		<antcall target="print-current-time" />
 	</target>
 
-	<target name="test" depends="compile">
-		<junit printsummary="yes" haltonfailure="yes">
-			<classpath>
-				<path refid="project.classpath"/>
-			</classpath>
-
-			<batchtest>
-				<fileset dir="${project.dir}/alloy-taglib/test">
-					<include name="**/*Test*.java"/>
-				</fileset>
-			</batchtest>
-		</junit>
-
-		<antcall target="print-current-time" />
-	</target>
-
 	<target name="jar">
 		<ant dir="alloy-taglib" target="jar" inheritAll="false" />
 	</target>
@@ -72,6 +57,10 @@
 		<antcall target="jar" />
 
 		<antcall target="print-current-time" />
+	</target>
+
+	<target name="test">
+		<ant dir="alloy-taglib" target="test" inheritAll="false" />
 	</target>
 
 	<target name="build-taglibs-xml" depends="compile">
