@@ -17,18 +17,20 @@ package com.liferay.alloy.util.json;
 import java.util.Collections;
 import java.util.List;
 
+import com.liferay.portal.json.JoddJSONContext;
+import com.liferay.portal.kernel.json.JSONContext;
 import com.liferay.portal.kernel.json.JSONTransformer;
 
-import flexjson.Path;
-import flexjson.TypeContext;
-import flexjson.transformer.AbstractTransformer;
+import jodd.json.JsonContext;
+import jodd.json.JsonValueContext;
+import jodd.json.Path;
 
 /**
  * <a href="StringTransformer.java.html"><b><i>View Source</i></b></a>
  *
  * @author Eduardo Lundgren
  */
-public class StringTransformer extends AbstractTransformer implements JSONTransformer {
+public class StringTransformer implements JSONTransformer {
 
 	public List<String> getJavaScriptAttributes() {
 		return _javaScriptAttributes;
@@ -38,7 +40,7 @@ public class StringTransformer extends AbstractTransformer implements JSONTransf
 		String parentPath = path.toString();
 
 		if (path.length() > 1) {
-			parentPath = path.getPath().get(path.length() - 2);
+			parentPath = path.get(path.length() - 2);
 		}
 
 		if (parentPath.equals(_ON) || parentPath.equals(_AFTER)) {
@@ -56,25 +58,26 @@ public class StringTransformer extends AbstractTransformer implements JSONTransf
 		_javaScriptAttributes = javaScriptAttributes;
 	}
 
-	public void transform(Object object) {
-		Path path = getContext().getPath();
-		TypeContext typeContext = getContext().peekTypeContext();
+	@Override
+	public void transform(JSONContext jsonContext, Object object) {
+		JsonContext joddJsonContext = ((JoddJSONContext)jsonContext).getImplementation();
+
+		Path path = joddJsonContext.getPath();
+
+		JsonValueContext typeContext = joddJsonContext.peekValueContext();
 
 		if (typeContext != null) {
 			String propertyName = typeContext.getPropertyName();
 
-			if (isEventPath(path) ||
-					isJavaScriptAttribute(propertyName)) {
+			if (isEventPath(path) || isJavaScriptAttribute(propertyName)) {
 
-				getContext().write((String) object);
-			}
-			else {
-				getContext().writeQuoted((String) object);
+				joddJsonContext.write((String) object);
+
+				return;
 			}
 		}
-		else {
-			getContext().write((String) object);
-		}
+
+		joddJsonContext.writeString((String) object);
 	}
 
 	private static final String _AFTER = "after";

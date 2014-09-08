@@ -1,2 +1,4 @@
 alloy-taglib/classes/
 build.*.properties
+*.iml
+.idea
