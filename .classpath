@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="alloy-taglib/src"/>
+	<classpathentry kind="src" path="alloy-taglib/test/unit"/>
 	<classpathentry kind="lib" path="lib/application/ant.jar"/>
 	<classpathentry kind="lib" path="lib/application/chardet.jar"/>
 	<classpathentry kind="lib" path="lib/application/commons-beanutils.jar"/>
