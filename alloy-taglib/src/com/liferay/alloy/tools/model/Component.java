@@ -77,7 +77,7 @@ public class Component extends BaseModel {
 	public String getUncamelizedName() {
 		String name = getName().replaceAll("\\.", StringPool.DASH);
 
-		return TextFormatter.format(name, TextFormatter.P);
+		return TextFormatter.format(name, TextFormatter.Q);
 	}
 
 	public String getUncamelizedName(String delimiter) {
