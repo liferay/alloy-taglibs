@@ -14,12 +14,12 @@
 
 package com.liferay.alloy.util.json;
 
-import java.util.Collections;
-import java.util.List;
-
 import com.liferay.portal.json.JoddJSONContext;
 import com.liferay.portal.kernel.json.JSONContext;
 import com.liferay.portal.kernel.json.JSONTransformer;
+
+import java.util.Collections;
+import java.util.List;
 
 import jodd.json.JsonContext;
 import jodd.json.JsonValueContext;
@@ -60,7 +60,8 @@ public class StringTransformer implements JSONTransformer {
 
 	@Override
 	public void transform(JSONContext jsonContext, Object object) {
-		JsonContext joddJsonContext = ((JoddJSONContext)jsonContext).getImplementation();
+		JsonContext joddJsonContext =
+			((JoddJSONContext)jsonContext).getImplementation();
 
 		Path path = joddJsonContext.getPath();
 
@@ -70,20 +71,19 @@ public class StringTransformer implements JSONTransformer {
 			String propertyName = typeContext.getPropertyName();
 
 			if (isEventPath(path) || isJavaScriptAttribute(propertyName)) {
-
-				joddJsonContext.write((String) object);
+				joddJsonContext.write((String)object);
 
 				return;
 			}
 		}
 
-		joddJsonContext.writeString((String) object);
+		joddJsonContext.writeString((String)object);
 	}
 
 	private static final String _AFTER = "after";
 
 	private static final String _ON = "on";
 
-	private List<String> _javaScriptAttributes = Collections.EMPTY_LIST;
+	private List<String> _javaScriptAttributes = Collections.emptyList();
 
 }
