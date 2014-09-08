@@ -22,8 +22,6 @@
 	</target>
 
 	<target name="test" depends="compile,compile-test">
-		<echo message="${project.classpath}" />
-
 		<junit fork="false" printsummary="yes" haltonfailure="yes">
 			<classpath>
 				<path refid="project.classpath" />
