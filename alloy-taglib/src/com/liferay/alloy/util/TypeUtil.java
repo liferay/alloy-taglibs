@@ -14,13 +14,16 @@
 
 package com.liferay.alloy.util;
 
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.commons.lang.ClassUtils;
+
 import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * <a href="TypeUtil.java.html"><b><i>View Source</i></b></a>
@@ -86,6 +89,58 @@ public class TypeUtil {
 				TypeUtil.LONG.equals(type) || TypeUtil.SHORT.equals(type));
 	}
 
+	public static boolean hasMethod(
+		String className, String methodName, String[] paramTypes) {
+
+		return _instance._hasMethod(className, methodName, paramTypes);
+	}
+
+	private boolean _hasMethod(
+		String className, String methodName, String[] paramTypes) {
+
+		Class<?> javaClass = _getClass(className);
+
+		if (javaClass == null) {
+			return false;
+		}
+		
+		Class<?> superClass = javaClass.getSuperclass();
+		
+		while (superClass != null) {
+			boolean superClassHasMethod = _hasMethod(
+				superClass.getName(), methodName, paramTypes);
+			
+			if (superClassHasMethod) {
+				return true;
+			}
+			
+			superClass = superClass.getSuperclass();
+		}
+
+		Class<?>[] parameterTypes = new Class<?>[paramTypes.length];
+
+		for (int i = 0; i < paramTypes.length; i++) {
+			Class<?> paramType = _getClass(paramTypes[i]);
+
+			if (paramType == null) {
+				return false;
+			}
+
+			parameterTypes[i] = paramType;
+		}
+
+		Method method = null;
+
+		try {
+			method = javaClass.getDeclaredMethod(methodName, parameterTypes);
+		}
+		catch (NoSuchMethodException e) {
+			//System.out.println(e.getMessage());
+		}
+
+		return method != null;
+	}
+
 	private String _getGenericsType(String type) {
 		int begin = type.indexOf(CharPool.LESS_THAN);
 		int end = type.indexOf(CharPool.GREATER_THAN);
@@ -134,13 +189,41 @@ public class TypeUtil {
 		return javaType;
 	}
 
-	private boolean _isJavaClass(String type) {
-		if (isPrimitiveType(type)) {
+	private Class<?> _getClass(String className) {
+		Class<?> clazz = null;
+
+		try {
+			clazz = ClassUtils.getClass(className);
+		}
+		catch (ClassNotFoundException e) {
+			if (_isJavaClass(className)) {
+				String genericsType = _getGenericsType(className);
+				
+				if (Validator.isNotNull(genericsType)) {
+					className = _removeGenericsType(className);
+
+					return _getClass(className);
+				}
+			}
+			else {
+				e.printStackTrace();
+			}
+		}
+
+		return clazz;
+	}
+
+	public static boolean isJavaClass(String className) {
+		return _instance._isJavaClass(className);
+	}
+	
+	private boolean _isJavaClass(String className) {
+		if (isPrimitiveType(className)) {
 			return true;
 		}
 		else {
 			try {
-				String genericsType = _getGenericsType(type);
+				String genericsType = _getGenericsType(className);
 
 				if (Validator.isNotNull(genericsType)) {
 					String[] genericsTypes = StringUtil.split(genericsType);
@@ -153,10 +236,10 @@ public class TypeUtil {
 						}
 					}
 
-					type = _removeGenericsType(type);
+					className = _removeGenericsType(className);
 				}
 
-				Class.forName(_removeArrayNotation(type));
+				Class.forName(_removeArrayNotation(className));
 
 				return true;
 			}
@@ -188,6 +271,10 @@ public class TypeUtil {
 		}
 
 		return type;
+	}
+	
+	public static TypeUtil getInstance() {
+		return _instance;
 	}
 
 	public static final String ARRAY_NOTATION = "[]";
