@@ -14,35 +14,109 @@
 
 package com.liferay.alloy.util;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.apache.commons.lang.ClassUtils;
-
 import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 
+import java.lang.reflect.Method;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.commons.lang.ClassUtils;
+
 /**
- * <a href="TypeUtil.java.html"><b><i>View Source</i></b></a>
- *
  * @author Eduardo Lundgren
+ * @author Bruno Basto
  */
 public class TypeUtil {
 
+	public static final String ARRAY_NOTATION = "[]";
+
+	public static final String[] ARRAYS = {
+		"array", "[]"
+	};
+
 	public static final String BOOLEAN = "boolean";
+
+	public static final String[] BOOLEANS = {
+		"boolean", "bool"
+	};
 
 	public static final String DOUBLE = "double";
 
+	public static final String[] DOUBLES = {
+		"double"
+	};
+
 	public static final String FLOAT = "float";
+
+	public static final String[] FLOATS = {
+		"float"
+	};
 
 	public static final String INT = "int";
 
+	public static final String[] INTEGERS = {
+		"integer", "int", "int | string"
+	};
+
 	public static final String LONG = "long";
 
+	public static final String[] LONGS = {
+		"long"
+	};
+
+	public static final String[] NUMBERS = {
+		"num", "number"
+	};
+
+	public static final String[] OBJECTS = {
+		"object", "{}"
+	};
+
 	public static final String SHORT = "short";
+
+	public static final String[] SHORTS = {
+		"short"
+	};
+
+	public static final String[] STRINGS = {
+		"node | string", "string", "string | node", "string | int"
+	};
+
+	public static String getInputJavaType(
+		String type, boolean removeGenericsType) {
+
+		return _instance._getInputJavaType(type, removeGenericsType);
+	}
+
+	public static TypeUtil getInstance() {
+		return _instance;
+	}
+
+	public static String getOutputJavaType(
+		String type, boolean removeGenericsType) {
+
+		return _instance._getOutputJavaType(type, removeGenericsType);
+	}
+
+	public static boolean hasMethod(
+		String className, String methodName, String[] paramTypes) {
+
+		return _instance._hasMethod(className, methodName, paramTypes);
+	}
+
+	public static boolean isJavaClass(String className) {
+		return _instance._isJavaClass(className);
+	}
+
+	public static boolean isPrimitiveType(String type) {
+		return (TypeUtil.BOOLEAN.equals(type) || TypeUtil.DOUBLE.equals(type) ||
+				TypeUtil.FLOAT.equals(type) || TypeUtil.INT.equals(type) ||
+				TypeUtil.LONG.equals(type) || TypeUtil.SHORT.equals(type));
+	}
 
 	private TypeUtil() {
 		_INPUT_TYPES = new HashMap<String, String>();
@@ -71,28 +145,76 @@ public class TypeUtil {
 		_registerTypes(_OUTPUT_TYPES, STRINGS, String.class.getName());
 	}
 
-	public static String getInputJavaType(
-			String type, boolean removeGenericsType) {
+	private Class<?> _getClass(String className) {
+		Class<?> clazz = null;
 
-		return _instance._getInputJavaType(type, removeGenericsType);
+		try {
+			clazz = ClassUtils.getClass(className);
+		}
+		catch (ClassNotFoundException e) {
+			if (_isJavaClass(className)) {
+				String genericsType = _getGenericsType(className);
+
+				if (Validator.isNotNull(genericsType)) {
+					className = _removeGenericsType(className);
+
+					return _getClass(className);
+				}
+			}
+			else {
+				e.printStackTrace();
+			}
+		}
+
+		return clazz;
 	}
 
-	public static String getOutputJavaType(
-		String type, boolean removeGenericsType) {
+	private String _getGenericsType(String type) {
+		int begin = type.indexOf(CharPool.LESS_THAN);
+		int end = type.indexOf(CharPool.GREATER_THAN);
+		String genericsType = null;
 
-		return _instance._getOutputJavaType(type, removeGenericsType);
+		if ((begin > -1) && (end > -1)) {
+			genericsType = type.substring(begin + 1, end);
+		}
+
+		return genericsType;
 	}
 
-	public static boolean isPrimitiveType(String type) {
-		return (TypeUtil.BOOLEAN.equals(type) || TypeUtil.DOUBLE.equals(type) ||
-				TypeUtil.FLOAT.equals(type) || TypeUtil.INT.equals(type) ||
-				TypeUtil.LONG.equals(type) || TypeUtil.SHORT.equals(type));
+	private String _getInputJavaType(String type, boolean removeGenericsType) {
+		if (removeGenericsType) {
+			type = _removeGenericsType(type);
+		}
+
+		if (_isJavaClass(type)) {
+			return type;
+		}
+
+		String javaType = _INPUT_TYPES.get(StringUtil.toLowerCase(type));
+
+		if (Validator.isNull(javaType)) {
+			javaType = Object.class.getName();
+		}
+
+		return javaType;
 	}
 
-	public static boolean hasMethod(
-		String className, String methodName, String[] paramTypes) {
+	private String _getOutputJavaType(String type, boolean removeGenericsType) {
+		if (removeGenericsType) {
+			type = _removeGenericsType(type);
+		}
 
-		return _instance._hasMethod(className, methodName, paramTypes);
+		if (_isJavaClass(type)) {
+			return type;
+		}
+
+		String javaType = _OUTPUT_TYPES.get(StringUtil.toLowerCase(type));
+
+		if (Validator.isNull(javaType)) {
+			javaType = Object.class.getName();
+		}
+
+		return javaType;
 	}
 
 	private boolean _hasMethod(
@@ -103,17 +225,17 @@ public class TypeUtil {
 		if (javaClass == null) {
 			return false;
 		}
-		
+
 		Class<?> superClass = javaClass.getSuperclass();
-		
+
 		while (superClass != null) {
 			boolean superClassHasMethod = _hasMethod(
 				superClass.getName(), methodName, paramTypes);
-			
+
 			if (superClassHasMethod) {
 				return true;
 			}
-			
+
 			superClass = superClass.getSuperclass();
 		}
 
@@ -141,82 +263,6 @@ public class TypeUtil {
 		return method != null;
 	}
 
-	private String _getGenericsType(String type) {
-		int begin = type.indexOf(CharPool.LESS_THAN);
-		int end = type.indexOf(CharPool.GREATER_THAN);
-		String genericsType = null;
-
-		if ((begin > -1) && (end > -1)) {
-			genericsType = type.substring(begin + 1, end);
-		}
-
-		return genericsType;
-	}
-
-	private String _getInputJavaType(String type, boolean removeGenericsType) {
-		if (removeGenericsType) {
-			type = _removeGenericsType(type);
-		}
-
-		if (_isJavaClass(type)) {
-			return type;
-		}
-
-		String javaType = _INPUT_TYPES.get(type.toLowerCase());
-
-		if (Validator.isNull(javaType)) {
-			javaType = Object.class.getName();
-		}
-
-		return javaType;
-	}
-
-	private String _getOutputJavaType(String type, boolean removeGenericsType) {
-		if (removeGenericsType) {
-			type = _removeGenericsType(type);
-		}
-
-		if (_isJavaClass(type)) {
-			return type;
-		}
-
-		String javaType = _OUTPUT_TYPES.get(type.toLowerCase());
-
-		if (Validator.isNull(javaType)) {
-			javaType = Object.class.getName();
-		}
-
-		return javaType;
-	}
-
-	private Class<?> _getClass(String className) {
-		Class<?> clazz = null;
-
-		try {
-			clazz = ClassUtils.getClass(className);
-		}
-		catch (ClassNotFoundException e) {
-			if (_isJavaClass(className)) {
-				String genericsType = _getGenericsType(className);
-				
-				if (Validator.isNotNull(genericsType)) {
-					className = _removeGenericsType(className);
-
-					return _getClass(className);
-				}
-			}
-			else {
-				e.printStackTrace();
-			}
-		}
-
-		return clazz;
-	}
-
-	public static boolean isJavaClass(String className) {
-		return _instance._isJavaClass(className);
-	}
-	
 	private boolean _isJavaClass(String className) {
 		if (isPrimitiveType(className)) {
 			return true;
@@ -253,7 +299,7 @@ public class TypeUtil {
 		HashMap<String, String> map, String[] types, String javaType) {
 
 		for (String type : types) {
-			map.put(type.toLowerCase(), javaType);
+			map.put(StringUtil.toLowerCase(type), javaType);
 		}
 	}
 
@@ -266,58 +312,13 @@ public class TypeUtil {
 
 		if (Validator.isNotNull(genericsType)) {
 			type = type.replace(
-				StringPool.LESS_THAN.concat(genericsType).concat(
-					StringPool.GREATER_THAN), StringPool.BLANK);
+				StringPool.LESS_THAN.concat(
+					genericsType).concat(StringPool.GREATER_THAN),
+					StringPool.BLANK);
 		}
 
 		return type;
 	}
-	
-	public static TypeUtil getInstance() {
-		return _instance;
-	}
-
-	public static final String ARRAY_NOTATION = "[]";
-
-	public static final String[] ARRAYS = {
-		"array", "[]"
-	};
-
-	public static final String[] BOOLEANS = {
-		"boolean", "bool"
-	};
-
-	public static final String[] DOUBLES = {
-		"double"
-	};
-
-	public static final String[] FLOATS = {
-		"float"
-	};
-
-	public static final String[] INTEGERS = {
-		"integer", "int", "int | string"
-	};
-
-	public static final String[] LONGS = {
-		"long"
-	};
-
-	public static final String[] NUMBERS = {
-		"num", "number"
-	};
-
-	public static final String[] OBJECTS = {
-		"object", "{}"
-	};
-
-	public static final String[] SHORTS = {
-		"short"
-	};
-
-	public static final String[] STRINGS = {
-		"node | string", "string", "string | node", "string | int"
-	};
 
 	private static HashMap<String, String> _INPUT_TYPES = null;
 
