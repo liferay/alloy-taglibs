@@ -54,6 +54,10 @@ public class Component extends BaseModel {
 		return className;
 	}
 
+	public String getDescription() {
+		return _description;
+	}
+
 	public List<Attribute> getEvents() {
 		return _events;
 	}
@@ -150,6 +154,10 @@ public class Component extends BaseModel {
 		_className = className;
 	}
 
+	public void setDescription(String description) {
+		_description = description;
+	}
+
 	public void setDynamicAttributes(boolean dynamicAttributes) {
 		_dynamicAttributes = dynamicAttributes;
 	}
@@ -185,6 +193,7 @@ public class Component extends BaseModel {
 	private String[] _authors;
 	private boolean _bodyContent;
 	private String _className;
+	private String _description;
 	private boolean _dynamicAttributes;
 	private List<Attribute> _events;
 	private String _module;
