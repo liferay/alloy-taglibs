@@ -5,6 +5,33 @@ import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 public class TypeUtilTest {
+	
+	abstract class ParentClass {
+		public void parentMethod(String param) {
+			//
+		}
+	}
+	
+	class ChildClass extends ParentClass {
+		public void childMethod(String param) {
+			//
+		}
+	}
+
+	@Test
+	public void testHasInhertitedMethod() {
+		boolean actual = TypeUtil.hasMethod(
+			ChildClass.class.getName(), "parentMethod",
+			new String[] { "java.lang.String" });
+
+		Assert.assertTrue(actual);
+
+		actual = TypeUtil.hasMethod(
+			ChildClass.class.getName(), "childMethod",
+			new String[] { "java.lang.String" });
+
+		Assert.assertTrue(actual);
+	}
 
 	@Test
 	public void testHasMethod() {
