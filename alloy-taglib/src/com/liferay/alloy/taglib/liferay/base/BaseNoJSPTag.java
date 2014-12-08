@@ -22,7 +22,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public class BaseNoJSPTag extends com.liferay.taglib.TagSupport {
+public abstract class BaseNoJSPTag extends com.liferay.taglib.TagSupport {
 
 	@Override
 	public int doStartTag() throws JspException {
