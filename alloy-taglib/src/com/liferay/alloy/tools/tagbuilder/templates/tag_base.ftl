@@ -14,7 +14,7 @@ import javax.servlet.jsp.JspException;
 </#list>
  * @generated
  */
-public class Base${component.getClassName()} extends ${component.getParentClass()} {
+public abstract class Base${component.getClassName()} extends ${component.getParentClass()} {
 
 	<#if typeUtil.hasMethod(component.getParentClass(), "doStartTag", []) == true>
 	@Override
