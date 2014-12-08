@@ -14,13 +14,14 @@
 
 package com.liferay.alloy.util;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 
 import java.lang.reflect.Method;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -151,7 +152,7 @@ public class TypeUtil {
 		try {
 			clazz = ClassUtils.getClass(className);
 		}
-		catch (ClassNotFoundException e) {
+		catch (ClassNotFoundException cnfe) {
 			if (_isJavaClass(className)) {
 				String genericsType = _getGenericsType(className);
 
@@ -162,7 +163,7 @@ public class TypeUtil {
 				}
 			}
 			else {
-				e.printStackTrace();
+				_log.debug(cnfe);
 			}
 		}
 
@@ -319,6 +320,8 @@ public class TypeUtil {
 
 		return type;
 	}
+	
+	private static final Log _log = LogFactoryUtil.getLog(TypeUtil.class);
 
 	private static HashMap<String, String> _INPUT_TYPES = null;
 
