@@ -14,7 +14,6 @@
 
 package com.liferay.alloy.util;
 
-import com.liferay.portal.kernel.util.ArrayUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
