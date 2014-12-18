@@ -1034,6 +1034,8 @@ public abstract class BaseEditableTag extends com.liferay.taglib.util.IncludeTag
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_boundingBox = null;
 		_cancelButton = null;
 		_contentBox = null;

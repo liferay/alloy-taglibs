@@ -134,6 +134,8 @@ public abstract class BaseNestedListTag extends com.liferay.taglib.util.IncludeT
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_destroyed = false;
 		_initialized = false;
 		_afterDestroy = null;

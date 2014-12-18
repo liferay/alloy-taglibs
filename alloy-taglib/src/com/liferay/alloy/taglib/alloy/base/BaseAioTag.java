@@ -34,6 +34,8 @@ public abstract class BaseAioTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 	}
 
 	@Override

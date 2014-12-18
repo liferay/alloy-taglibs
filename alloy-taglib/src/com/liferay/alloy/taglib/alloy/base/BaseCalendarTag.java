@@ -1674,6 +1674,8 @@ public abstract class BaseCalendarTag extends com.liferay.taglib.util.IncludeTag
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_allowNone = true;
 		_blankDays = null;
 		_boundingBox = null;

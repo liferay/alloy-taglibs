@@ -1074,6 +1074,8 @@ public abstract class BaseRatingTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_boundingBox = null;
 		_canReset = true;
 		_contentBox = null;
