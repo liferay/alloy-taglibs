@@ -84,6 +84,8 @@ public abstract class BaseTestTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_test = null;
 		_attrBooleanPrimitive = false;
 		_attrBoolean = null;

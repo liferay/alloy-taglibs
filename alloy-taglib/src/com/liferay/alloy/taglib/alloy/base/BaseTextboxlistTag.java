@@ -1704,6 +1704,8 @@ public abstract class BaseTextboxlistTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_alwaysShowContainer = false;
 		_applyLocalFilter = true;
 		_autoHighlight = true;

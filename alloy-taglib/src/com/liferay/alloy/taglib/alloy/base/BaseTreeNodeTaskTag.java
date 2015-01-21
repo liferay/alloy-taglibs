@@ -854,6 +854,8 @@ public abstract class BaseTreeNodeTaskTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_alwaysShowHitArea = true;
 		_cache = true;
 		_checkContainerEl = null;

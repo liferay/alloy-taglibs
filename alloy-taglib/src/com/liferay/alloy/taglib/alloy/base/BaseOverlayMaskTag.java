@@ -1194,6 +1194,8 @@ public abstract class BaseOverlayMaskTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_align = null;
 		_alignOn = null;
 		_alignPoints = null;

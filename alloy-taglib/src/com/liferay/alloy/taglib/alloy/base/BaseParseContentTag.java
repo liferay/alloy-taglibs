@@ -164,6 +164,8 @@ public abstract class BaseParseContentTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_destroyed = false;
 		_host = null;
 		_initialized = false;

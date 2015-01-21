@@ -2214,6 +2214,8 @@ public abstract class BaseImageGalleryTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_align = null;
 		_alignOn = null;
 		_anim = true;

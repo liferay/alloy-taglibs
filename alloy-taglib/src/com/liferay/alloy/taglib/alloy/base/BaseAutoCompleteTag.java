@@ -44,6 +44,8 @@ public abstract class BaseAutoCompleteTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_test = null;
 	}
 

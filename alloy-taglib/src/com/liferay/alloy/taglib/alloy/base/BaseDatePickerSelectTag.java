@@ -1284,6 +1284,8 @@ public abstract class BaseDatePickerSelectTag extends com.liferay.taglib.util.In
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_appendOrder = null;
 		_boundingBox = null;
 		_buttonNode = null;

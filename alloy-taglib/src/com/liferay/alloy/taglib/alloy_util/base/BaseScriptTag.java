@@ -64,6 +64,8 @@ public abstract class BaseScriptTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_position = null;
 		_printBuffer = null;
 		_use = null;

@@ -314,6 +314,8 @@ public abstract class BaseTreeViewTag extends com.liferay.taglib.util.IncludeTag
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_children = null;
 		_container = null;
 		_destroyed = false;

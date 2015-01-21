@@ -1464,6 +1464,8 @@ public abstract class BaseTooltipTag extends com.liferay.taglib.util.IncludeTag 
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_align = null;
 		_alignOn = null;
 		_anim = null;

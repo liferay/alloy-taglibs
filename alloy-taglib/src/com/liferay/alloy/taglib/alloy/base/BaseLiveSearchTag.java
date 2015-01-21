@@ -404,6 +404,8 @@ public abstract class BaseLiveSearchTag extends com.liferay.taglib.util.IncludeT
 
 	@Override
 	protected void cleanUp() {
+		super.cleanUp();
+
 		_data = null;
 		_delay = 250;
 		_destroyed = false;
