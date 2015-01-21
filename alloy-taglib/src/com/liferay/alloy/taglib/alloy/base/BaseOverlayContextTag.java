@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public class BaseOverlayContextTag extends com.liferay.taglib.util.IncludeTag {
+public abstract class BaseOverlayContextTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
