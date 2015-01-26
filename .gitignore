@@ -1,0 +1,6 @@
+alloy-taglib/classes/
+alloy-taglib/test-classes/
+build.*.properties
+*.iml
+.idea
+.ant_targets
