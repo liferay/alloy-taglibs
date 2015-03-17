@@ -73,12 +73,12 @@ public class TagBuilder {
 			String jspCommonInitPath, String tldDir)
 		throws Exception {
 
-		if (SAXReaderUtil.getSAXReader() == null) {
-			(new SAXReaderUtil()).setSAXReader(new SAXReaderImpl());
-		}
-
 		if (PropsUtil.getProps() == null) {
 			PropsUtil.setProps(new PropsImpl());
+		}
+
+		if (SAXReaderUtil.getSecureSAXReader() == null) {
+			(new SAXReaderUtil()).setSecureSAXReader(new SAXReaderImpl());
 		}
 
 		_componentsXML = Arrays.asList(StringUtil.split(componentsXML));
