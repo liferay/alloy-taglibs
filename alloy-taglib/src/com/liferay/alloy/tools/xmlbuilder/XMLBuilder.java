@@ -31,6 +31,7 @@ import com.liferay.portal.xml.SAXReaderImpl;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,6 +45,7 @@ import org.dom4j.DocumentFactory;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -70,8 +72,8 @@ public class XMLBuilder {
 			(new FileUtil()).setFile(new FileImpl());
 		}
 
-		if (SAXReaderUtil.getSAXReader() == null) {
-			(new SAXReaderUtil()).setSAXReader(new SAXReaderImpl());
+		if (SAXReaderUtil.getSecureSAXReader() == null) {
+			(new SAXReaderUtil()).setSecureSAXReader(new SAXReaderImpl());
 		}
 
 		_componentJSON = componentsJSON;
