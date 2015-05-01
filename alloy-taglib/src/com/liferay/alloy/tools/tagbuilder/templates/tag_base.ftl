@@ -57,10 +57,6 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 	@Override
 	</#if>
 	protected void cleanUp() {
-	<#if typeUtil.hasMethod(component.getParentClass(), "cleanUp", []) == true>
-		super.cleanUp();
-
-	</#if>
 	<#list component.getAttributesAndEvents() as attribute>
 		<#compress>
 		<#assign outputSimpleClassName = attribute.getOutputTypeSimpleClassName()>
