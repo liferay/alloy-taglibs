@@ -964,8 +964,6 @@ public abstract class BaseToolbarTag extends com.liferay.taglib.util.IncludeTag 
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_activeDescendant = null;
 		_activeState = false;
 		_boundingBox = null;

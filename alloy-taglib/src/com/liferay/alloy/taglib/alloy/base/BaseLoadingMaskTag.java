@@ -254,8 +254,6 @@ public abstract class BaseLoadingMaskTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_destroyed = false;
 		_host = null;
 		_initialized = false;

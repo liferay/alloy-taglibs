@@ -1074,8 +1074,6 @@ public abstract class BaseOverlayBaseTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_align = null;
 		_alignOn = null;
 		_overlaybaseBodyContent = null;

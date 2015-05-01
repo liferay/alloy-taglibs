@@ -1314,8 +1314,6 @@ public abstract class BaseOverlayContextTag extends com.liferay.taglib.util.Incl
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_align = null;
 		_alignOn = null;
 		_overlaycontextBodyContent = null;

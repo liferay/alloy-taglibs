@@ -584,8 +584,6 @@ public abstract class BaseTreeViewDDTag extends com.liferay.taglib.util.IncludeT
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_checkContainerEl = null;
 		_checkEl = null;
 		_checkName = "tree-node-check";

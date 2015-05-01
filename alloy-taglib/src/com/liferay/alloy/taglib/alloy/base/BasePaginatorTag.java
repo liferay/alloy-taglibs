@@ -914,8 +914,6 @@ public abstract class BasePaginatorTag extends com.liferay.taglib.util.IncludeTa
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_alwaysVisible = true;
 		_containers = null;
 		_destroyed = false;

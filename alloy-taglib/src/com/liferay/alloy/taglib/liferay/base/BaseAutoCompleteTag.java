@@ -1714,8 +1714,6 @@ public abstract class BaseAutoCompleteTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_alwaysShowContainer = null;
 		_test = null;
 		_applyLocalFilter = true;

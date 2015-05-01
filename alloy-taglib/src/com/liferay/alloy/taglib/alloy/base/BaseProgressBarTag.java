@@ -924,8 +924,6 @@ public abstract class BaseProgressBarTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_boundingBox = null;
 		_contentBox = null;
 		_cssClass = null;

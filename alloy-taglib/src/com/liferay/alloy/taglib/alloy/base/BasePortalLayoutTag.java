@@ -134,8 +134,6 @@ public abstract class BasePortalLayoutTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_destroyed = false;
 		_initialized = false;
 		_afterDestroy = null;

@@ -834,8 +834,6 @@ public abstract class BasePanelTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_panelBodyContent = null;
 		_boundingBox = null;
 		_collapsed = false;

@@ -224,8 +224,6 @@ public abstract class BaseCharCounterTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_counter = null;
 		_destroyed = false;
 		_initialized = false;

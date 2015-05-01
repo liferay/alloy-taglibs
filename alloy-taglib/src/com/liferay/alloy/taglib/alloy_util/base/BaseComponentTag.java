@@ -114,8 +114,6 @@ public abstract class BaseComponentTag extends com.liferay.taglib.util.IncludeTa
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_defineVar = true;
 		_excludeAttributes = null;
 		_javaScriptAttributes = null;

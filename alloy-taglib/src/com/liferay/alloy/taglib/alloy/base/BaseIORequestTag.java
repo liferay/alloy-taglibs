@@ -704,8 +704,6 @@ public abstract class BaseIORequestTag extends com.liferay.taglib.util.IncludeTa
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_active = false;
 		_arguments = null;
 		_autoLoad = true;
