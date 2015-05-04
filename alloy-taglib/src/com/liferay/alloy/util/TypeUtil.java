@@ -190,7 +190,7 @@ public class TypeUtil {
 			return type;
 		}
 
-		String javaType = _INPUT_TYPES.get(type.toLowerCase());
+		String javaType = _INPUT_TYPES.get(StringUtil.toLowerCase(type));
 
 		if (Validator.isNull(javaType)) {
 			javaType = Object.class.getName();
@@ -208,7 +208,7 @@ public class TypeUtil {
 			return type;
 		}
 
-		String javaType = _OUTPUT_TYPES.get(type.toLowerCase());
+		String javaType = _OUTPUT_TYPES.get(StringUtil.toLowerCase(type));
 
 		if (Validator.isNull(javaType)) {
 			javaType = Object.class.getName();
@@ -299,7 +299,7 @@ public class TypeUtil {
 		HashMap<String, String> map, String[] types, String javaType) {
 
 		for (String type : types) {
-			map.put(type.toLowerCase(), javaType);
+			map.put(StringUtil.toLowerCase(type), javaType);
 		}
 	}
 

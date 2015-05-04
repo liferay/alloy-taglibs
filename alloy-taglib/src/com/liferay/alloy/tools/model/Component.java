@@ -17,7 +17,7 @@ public class Component extends BaseModel {
 		sb.append(getUncamelizedName());
 		sb.append(StringPool.COLON);
 
-		return sb.toString().toLowerCase();
+		return StringUtil.toLowerCase(sb.toString());
 	}
 
 	public List<Attribute> getAttributes() {
