@@ -1,5 +1,11 @@
 <#include "init.ftl">
 <#include "copyright.ftl">
+<#compress>
+
+<#assign isChildClassOfAttributeTagSupport = component.isChildClassOf("com.liferay.taglib.util.AttributesTagSupport")>
+<#assign isChildClassOfIncludeTag = component.isChildClassOf("com.liferay.taglib.util.IncludeTag")>
+
+</#compress>
 
 package ${packagePath}.${component.getPackage()}.base;
 
@@ -16,11 +22,9 @@ import javax.servlet.jsp.JspException;
  */
 public class Base${component.getClassName()} extends ${component.getParentClass()} {
 
-	<#if typeUtil.hasMethod(component.getParentClass(), "doStartTag", []) == true>
 	@Override
-	</#if>
 	public int doStartTag() throws JspException {
-		<#if typeUtil.hasMethod(component.getParentClass(), "setAttributeNamespace", ["java.lang.String"]) == true>
+		<#if isChildClassOfAttributeTagSupport == true>
 		setAttributeNamespace(_ATTRIBUTE_NAMESPACE);
 
 		</#if>
@@ -29,9 +33,6 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 
 	<#list component.getAttributesAndEvents() as attribute>
 	<#if attribute.isGettable()>
-	<#if typeUtil.hasMethod(component.getParentClass(), "get" + attribute.getCapitalizedName(), []) == true>
-	@Override
-	</#if>
 	public ${attribute.getRawInputType()} get${attribute.getCapitalizedName()}() {
 		return _${attribute.getSafeName()};
 	}
@@ -40,12 +41,9 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 	</#list>
 	<#list component.getAttributesAndEvents() as attribute>
 	<#if attribute.isSettable()>
-	<#if typeUtil.hasMethod(component.getParentClass(), "set" + attribute.getCapitalizedName(), [attribute.getRawInputType()]) == true>
-	@Override
-	</#if>
 	public void set${attribute.getCapitalizedName()}(${attribute.getRawInputType()} ${attribute.getSafeName()}) {
 		_${attribute.getSafeName()} = ${attribute.getSafeName()};
-		<#if typeUtil.hasMethod(component.getParentClass(), "setScopedAttribute", ["java.lang.String", "java.lang.Object"]) == true>
+		<#if isChildClassOfAttributeTagSupport == true>
 
 		setScopedAttribute("${attribute.getSafeName()}", ${attribute.getSafeName()});
 		</#if>
@@ -53,7 +51,7 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 
 	</#if>
 	</#list>
-	<#if typeUtil.hasMethod(component.getParentClass(), "cleanUp", []) == true>
+	<#if isChildClassOfIncludeTag == true>
 	@Override
 	</#if>
 	protected void cleanUp() {
@@ -77,21 +75,21 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 	}
 
 	<#if component.isBodyContent() == true>
-	<#if typeUtil.hasMethod(component.getParentClass(), "getEndPage", []) == true>
+	<#if isChildClassOfIncludeTag == true>
 	@Override
 	</#if>
 	protected String getEndPage() {
 		return _END_PAGE;
 	}
 
-	<#if typeUtil.hasMethod(component.getParentClass(), "getStartPage", []) == true>
+	<#if isChildClassOfIncludeTag == true>
 	@Override
 	</#if>
 	protected String getStartPage() {
 		return _START_PAGE;
 	}
 	<#else>
-	<#if typeUtil.hasMethod(component.getParentClass(), "getPage", []) == true>
+	<#if isChildClassOfIncludeTag == true>
 	@Override
 	</#if>
 	protected String getPage() {
@@ -100,12 +98,12 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 	</#if>
 
 	<#if component.getWriteJSP() == true>
-	<#if typeUtil.hasMethod(component.getParentClass(), "setAttributes", ["javax.servlet.http.HttpServletRequest"]) == true>
+	<#if isChildClassOfIncludeTag == true>
 	@Override
 	</#if>
 	protected void setAttributes(HttpServletRequest request) {
 		<#list component.getAttributesAndEvents() as attribute>
-		<#if typeUtil.hasMethod(component.getParentClass(), "setNamespacedAttribute", ["javax.servlet.http.HttpServletRequest", "java.lang.String", "java.lang.Object"]) == true>
+		<#if isChildClassOfAttributeTagSupport == true>
 		setNamespacedAttribute(request, "${attribute.getSafeName()}", _${attribute.getSafeName()});
 		<#else>
 		request.setAttribute("${attribute.getName()}", _${attribute.getSafeName()});
@@ -114,7 +112,7 @@ public class Base${component.getClassName()} extends ${component.getParentClass(
 	}
 
 	</#if>
-	<#if typeUtil.hasMethod(component.getParentClass(), "setNamespacedAttribute", ["javax.servlet.http.HttpServletRequest", "java.lang.String", "java.lang.Object"]) == true>
+	<#if isChildClassOfAttributeTagSupport == true>
 	protected static final String _ATTRIBUTE_NAMESPACE = "${namespace}";
 
 	</#if>

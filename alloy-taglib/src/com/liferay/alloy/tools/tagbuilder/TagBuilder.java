@@ -2,7 +2,6 @@ package com.liferay.alloy.tools.tagbuilder;
 
 import com.liferay.alloy.tools.model.Attribute;
 import com.liferay.alloy.tools.model.Component;
-import com.liferay.alloy.util.TypeUtil;
 import com.liferay.portal.freemarker.FreeMarkerUtil;
 import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
@@ -327,7 +326,6 @@ public class TagBuilder {
 		context.put("jspCommonInitPath", _jspCommonInitPath);
 		context.put("jspDir", _jspDir);
 		context.put("packagePath", _javaPackage);
-		context.put("typeUtil", TypeUtil.getInstance());
 
 		return context;
 	}
