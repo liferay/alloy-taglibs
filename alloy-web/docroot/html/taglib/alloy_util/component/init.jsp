@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:component:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("alloy_util:component:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 

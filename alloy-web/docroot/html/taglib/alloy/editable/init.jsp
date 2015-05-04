@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:editable:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("alloy:editable:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 

@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:test:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:test:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("liferay:test:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 

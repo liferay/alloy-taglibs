@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("alloy:paginator:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 

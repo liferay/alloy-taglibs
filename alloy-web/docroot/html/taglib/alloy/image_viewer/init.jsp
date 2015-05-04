@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:image-viewer:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:image-viewer:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("alloy:image-viewer:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 

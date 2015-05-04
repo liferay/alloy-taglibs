@@ -21,6 +21,7 @@
 <%
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:overlay-base:dynamicAttributes");
 Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:overlay-base:scopedAttributes");
+CustomAttributes customAttributes = (CustomAttributes)request.getAttribute("alloy:overlay-base:customAttributes");
 
 Map<String, Object> _options = new HashMap<String, Object>();
 
