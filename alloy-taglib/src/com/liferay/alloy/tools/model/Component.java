@@ -1,12 +1,15 @@
 package com.liferay.alloy.tools.model;
 
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
+import com.liferay.portal.kernel.util.PropsUtil;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.TextFormatter;
 import com.liferay.portal.kernel.util.Validator;
 
-import java.util.ArrayList;
-import java.util.List;
 public class Component extends BaseModel {
 
 	public String getAttributeNamespace() {
@@ -17,7 +20,7 @@ public class Component extends BaseModel {
 		sb.append(getUncamelizedName());
 		sb.append(StringPool.COLON);
 
-		return StringUtil.toLowerCase(sb.toString());
+		return sb.toString().toLowerCase();
 	}
 
 	public List<Attribute> getAttributes() {
