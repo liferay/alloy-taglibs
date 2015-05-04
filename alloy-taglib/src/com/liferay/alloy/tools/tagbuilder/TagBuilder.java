@@ -693,8 +693,6 @@ public class TagBuilder {
 		for (Document doc : _componentsExtDoc) {
 			Element root = doc.getRootElement();
 
-			String description = GetterUtil.getString(
-				root.elementText("description"), StringPool.BLANK);
 			String shortName = GetterUtil.getString(
 				root.attributeValue("short-name"), _DEFAULT_TAGLIB_SHORT_NAME);
 			String uri = GetterUtil.getString(
@@ -703,7 +701,6 @@ public class TagBuilder {
 				root.attributeValue("tlib-version"), _DEFAULT_TAGLIB_VERSION);
 
 			context.put("alloyComponent", shortName.equals(_DEFAULT_NAMESPACE));
-			context.put("description", description);
 			context.put("shortName", shortName);
 			context.put("uri", uri);
 			context.put("version", version);

@@ -6,9 +6,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
 >
-	<#if description?? && description?has_content>
-	<description><![CDATA[${description}]]></description>
-	</#if>
 	<tlib-version>${version}</tlib-version>
 	<short-name>${shortName}</short-name>
 	<uri>${uri}</uri>
