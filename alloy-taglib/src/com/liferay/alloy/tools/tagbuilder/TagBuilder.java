@@ -20,7 +20,6 @@ import com.liferay.portal.xml.SAXReaderImpl;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -37,18 +36,13 @@ import java.util.Map;
  */
 public class TagBuilder {
 
-	public static final String[] DEFAULT_AUTHORS = new String[] {
-		"Eduardo Lundgren", "Bruno Basto", "Nathan Cavanaugh"
-	};
-
 	public static void main(String[] args) throws Exception {
 		String componentsXML = System.getProperty("tagbuilder.components.xml");
 		String copyrightYear = System.getProperty("tagbuilder.copyright.year");
 		String docrootDir = System.getProperty("tagbuilder.docroot.dir");
 		String javaDir = System.getProperty("tagbuilder.java.dir");
 		String javaPackage = System.getProperty("tagbuilder.java.package");
-		String jspCommonInitPath = System.getProperty(
-			"tagbuilder.jsp.common.init.path");
+		String jspCommonInitPath = System.getProperty("tagbuilder.jsp.common.init.path");
 		String jspDir = System.getProperty("tagbuilder.jsp.dir");
 		String templatesDir = System.getProperty("tagbuilder.templates.dir");
 		String tldDir = System.getProperty("tagbuilder.tld.dir");
@@ -62,8 +56,8 @@ public class TagBuilder {
 		}
 
 		new TagBuilder(
-			componentsXML, templatesDir, javaDir, docrootDir, javaPackage,
-			jspDir, jspCommonInitPath, tldDir);
+			componentsXML, templatesDir, javaDir, docrootDir,
+			javaPackage, jspDir, jspCommonInitPath, tldDir);
 	}
 
 	public TagBuilder(
@@ -273,7 +267,8 @@ public class TagBuilder {
 			boolean dynamicAttributes = GetterUtil.getBoolean(
 				node.attributeValue("dynamicAttributes"), true);
 
-			String module = GetterUtil.getString(node.attributeValue("module"));
+			String module = GetterUtil.getString(
+				node.attributeValue("module"));
 
 			String parentClass = GetterUtil.getString(
 				node.attributeValue("parentClass"), _DEFAULT_PARENT_CLASS);
@@ -460,18 +455,18 @@ public class TagBuilder {
 				for (Node sourceAttribute : sourceAttributes) {
 					Element sourceAttributeElement = (Element)sourceAttribute;
 
-					String attributeName = sourceAttributeElement.elementText(
-						"name");
+					String attributeName =
+						sourceAttributeElement.elementText("name");
 
 					String xpathAttributeValue = "//tld:attribute[tld:name='" +
-						attributeName + "']";
+							attributeName + "']";
 
 					XPath xpathAttribute = SAXReaderUtil.createXPath(
 						xpathTagValue + xpathAttributeValue, _TLD_XPATH_PREFIX,
 						_TLD_XPATH_URI);
 
-					Node targetAttribute = xpathAttribute.selectSingleNode(
-						targetElement);
+					Node targetAttribute =
+						xpathAttribute.selectSingleNode(targetElement);
 
 					if (targetAttribute != null) {
 						targetAttribute.detach();
@@ -480,8 +475,8 @@ public class TagBuilder {
 					targetElement.add(sourceAttributeElement.createCopy());
 				}
 
-				Element dynamicAttrElement = targetElement.element(
-					"dynamic-attributes");
+				Element dynamicAttrElement =
+					targetElement.element("dynamic-attributes");
 
 				if (dynamicAttrElement != null) {
 					targetElement.add(dynamicAttrElement.detach());
@@ -515,11 +510,11 @@ public class TagBuilder {
 				Element doc2AttributesNode = doc2Component.element(_ATTRIBUTES);
 
 				if (doc2AttributesNode != null) {
-					List<Element> doc2Attributes = doc2AttributesNode.elements(
-						_ATTRIBUTE);
+					List<Element> doc2Attributes =
+						doc2AttributesNode.elements(_ATTRIBUTE);
 
-					Element doc1AttributesNode = doc1Component.element(
-						_ATTRIBUTES);
+					Element doc1AttributesNode =
+						doc1Component.element(_ATTRIBUTES);
 
 					for (Element doc2Attribute : doc2Attributes) {
 						Element doc1Attribute = getElementByName(
@@ -632,8 +627,7 @@ public class TagBuilder {
 	private void _createCommonInitJSP() throws Exception {
 		Map<String, Object> context = getDefaultTemplateContext();
 
-		String contentCommonInitJsp = processTemplate(
-			_tplCommonInitJsp, context);
+		String contentCommonInitJsp = processTemplate(_tplCommonInitJsp, context);
 
 		StringBuilder sb = new StringBuilder();
 
@@ -676,7 +670,8 @@ public class TagBuilder {
 		}
 	}
 
-	private void _createTag(Component component, Map<String, Object> context)
+	private void _createTag(
+			Component component, Map<String, Object> context)
 		throws Exception {
 
 		StringBuilder sb = new StringBuilder();
@@ -733,63 +728,39 @@ public class TagBuilder {
 		}
 	}
 
+	public static final String[] DEFAULT_AUTHORS = new String[] {
+		"Eduardo Lundgren", "Bruno Basto", "Nathan Cavanaugh"
+	};
+
 	private static final String _AFTER = "after";
-
 	private static final String _ATTRIBUTE = "attribute";
-
 	private static final String _ATTRIBUTES = "attributes";
-
 	private static final String _AUTHOR = "author";
-
 	private static final String _AUTHORS = "authors";
-
 	private static final String _BASE = "base";
-
 	private static final String _BASE_CLASS_PREFIX = "Base";
-
 	private static final String _CLASS_SUFFIX = ".java";
-
 	private static final String _COMPONENT = "component";
-
 	private static final String _DEFAULT_NAMESPACE = "alloy";
-
-	private static final String _DEFAULT_PARENT_CLASS =
-		"com.liferay.taglib.util.IncludeTag";
-
+	private static final String _DEFAULT_PARENT_CLASS = "com.liferay.taglib.util.IncludeTag";
 	private static final String _DEFAULT_TAGLIB_SHORT_NAME = "alloy";
-
-	private static final String _DEFAULT_TAGLIB_URI =
-		"http://alloy.liferay.com/tld/alloy";
-
+	private static final String _DEFAULT_TAGLIB_URI = "http://alloy.liferay.com/tld/alloy";
 	private static final String _DEFAULT_TAGLIB_VERSION = "1.0";
-
 	private static final String _DEFAULT_TYPE = "java.lang.Object";
-
 	private static final String _EVENT = "event";
-
 	private static final String _EVENTS = "events";
-
 	private static final String _INIT_EXT_PAGE = "/init-ext.jspf";
-
 	private static final String _INIT_PAGE = "/init.jsp";
-
 	private static final String _ON = "on";
-
 	private static final String _PAGE = "/page.jsp";
-
 	private static final String _START_PAGE = "/start.jsp";
-
 	private static final String _TLD_EXTENSION = ".tld";
-
 	private static final String _TLD_XPATH_PREFIX = "tld";
-
-	private static final String _TLD_XPATH_URI =
-		"http://java.sun.com/xml/ns/j2ee";
-
-	private static String _copyrightYear;
+	private static final String _TLD_XPATH_URI = "http://java.sun.com/xml/ns/j2ee";
 
 	private List<Document> _componentsExtDoc;
 	private List<String> _componentsXML;
+	private static String _copyrightYear;
 	private String _docrootDir;
 	private String _javaDir;
 	private String _javaPackage;

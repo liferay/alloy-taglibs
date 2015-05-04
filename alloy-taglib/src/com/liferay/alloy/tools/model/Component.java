@@ -186,7 +186,7 @@ public class Component extends BaseModel {
 		_writeJSP = writeJSP;
 	}
 
-	private static final String _CLASS_NAME_SUFFIX = "Tag";
+	private final static String _CLASS_NAME_SUFFIX = "Tag";
 
 	private boolean _alloyComponent;
 	private List<Attribute> _attributes;
