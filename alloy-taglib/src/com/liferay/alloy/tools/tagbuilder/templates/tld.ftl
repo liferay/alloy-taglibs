@@ -11,9 +11,6 @@
 	<uri>${uri}</uri>
 <#list components as component>
 	<tag>
-		<#if component.getDescription()??>
-		<description><![CDATA[${component.getDescription()}]]></description>
-		</#if>
 		<name>${component.getUncamelizedName()}</name>
 		<tag-class>${packagePath}.${component.getPackage()}.${component.getClassName()}</tag-class>
 		<body-content>JSP</body-content>

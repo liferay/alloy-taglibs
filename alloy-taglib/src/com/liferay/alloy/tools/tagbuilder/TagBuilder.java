@@ -262,8 +262,6 @@ public class TagBuilder {
 			String className = GetterUtil.getString(
 				node.attributeValue("className"));
 
-			String description = node.elementText("description");
-
 			boolean dynamicAttributes = GetterUtil.getBoolean(
 				node.attributeValue("dynamicAttributes"), true);
 
@@ -287,7 +285,6 @@ public class TagBuilder {
 			component.setAuthors(authors);
 			component.setBodyContent(bodyContent);
 			component.setClassName(className);
-			component.setDescription(description);
 			component.setDynamicAttributes(dynamicAttributes);
 			component.setEvents(events);
 			component.setModule(module);
