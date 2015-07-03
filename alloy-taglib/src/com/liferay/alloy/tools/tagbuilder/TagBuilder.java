@@ -77,8 +77,8 @@ public class TagBuilder {
 			PropsUtil.setProps(new PropsImpl());
 		}
 
-		if (SAXReaderUtil.getSecureSAXReader() == null) {
-			(new SAXReaderUtil()).setSecureSAXReader(new SAXReaderImpl());
+		if (SAXReaderUtil.getSAXReader() == null) {
+			(new SAXReaderUtil()).setSAXReader(new SAXReaderImpl());
 		}
 
 		_componentsXML = Arrays.asList(StringUtil.split(componentsXML));
