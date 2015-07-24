@@ -6,6 +6,7 @@ import javax.servlet.jsp.tagext.BodyTag;
 
 import com.liferay.alloy.taglib.alloy_util.base.BaseScriptTag;
 import com.liferay.portal.kernel.servlet.taglib.aui.ScriptData;
+import com.liferay.portal.kernel.servlet.taglib.aui.ScriptData.ModulesType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.StringPool;
 
@@ -89,7 +90,8 @@ public class ScriptTag extends BaseScriptTag implements BodyTag {
 
 		if (getBodyContent() != null) {
 			scriptData.append(
-				StringPool.BLANK, getBodyContent().getString(), getUse());
+				StringPool.BLANK, getBodyContent().getString(), getUse(),
+				ModulesType.AUI);
 		}
 
 		String key = "script-data-inline";
