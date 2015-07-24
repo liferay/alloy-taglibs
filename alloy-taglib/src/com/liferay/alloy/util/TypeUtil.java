@@ -113,10 +113,22 @@ public class TypeUtil {
 		return _instance._isJavaClass(className);
 	}
 
-	public static boolean isPrimitiveType(String type) {
+	public static boolean isJavaType(String type) {
+		return _instance._isJavaType(type);
+	}
+
+	public static boolean isPrimitiveJavaType(String type) {
 		return (TypeUtil.BOOLEAN.equals(type) || TypeUtil.DOUBLE.equals(type) ||
 				TypeUtil.FLOAT.equals(type) || TypeUtil.INT.equals(type) ||
 				TypeUtil.LONG.equals(type) || TypeUtil.SHORT.equals(type));
+	}
+
+	public static String removeArrayNotation(String type) {
+		return _instance._removeArrayNotation(type);
+	}
+
+	public static String removeGenericsType(String type) {
+		return _instance._removeGenericsType(type);
 	}
 
 	private TypeUtil() {
@@ -265,34 +277,38 @@ public class TypeUtil {
 	}
 
 	private boolean _isJavaClass(String className) {
-		if (isPrimitiveType(className)) {
+		if (isPrimitiveJavaType(className) || _isJavaType(className)) {
 			return true;
 		}
 		else {
-			try {
-				String genericsType = _getGenericsType(className);
+			return false;
+		}
+	}
 
-				if (Validator.isNotNull(genericsType)) {
-					String[] genericsTypes = StringUtil.split(genericsType);
+	private boolean _isJavaType(String type) {
+		try {
+			String genericsType = _getGenericsType(type);
 
-					for (int i = 0; i < genericsTypes.length; i++) {
-						String curType = genericsTypes[i].trim();
+			if (Validator.isNotNull(genericsType)) {
+				String[] genericsTypes = StringUtil.split(genericsType);
 
-						if (!curType.equals(StringPool.QUESTION)) {
-							Class.forName(_removeArrayNotation(curType));
-						}
+				for (int i = 0; i < genericsTypes.length; i++) {
+					String curType = genericsTypes[i].trim();
+
+					if (!curType.equals(StringPool.QUESTION)) {
+						Class.forName(_removeArrayNotation(curType));
 					}
-
-					className = _removeGenericsType(className);
 				}
 
-				Class.forName(_removeArrayNotation(className));
+				type = _removeGenericsType(type);
+			}
 
-				return true;
-			}
-			catch (ClassNotFoundException e) {
-				return false;
-			}
+			Class.forName(_removeArrayNotation(type));
+
+			return true;
+		}
+		catch (ClassNotFoundException e) {
+			return false;
 		}
 	}
 

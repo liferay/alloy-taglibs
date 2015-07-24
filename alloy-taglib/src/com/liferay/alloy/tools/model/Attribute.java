@@ -66,11 +66,14 @@ public class Attribute extends BaseModel {
 	}
 
 	public String getTypeSimpleClassName(String type) {
-		if (TypeUtil.isPrimitiveType(type)) {
+		if (TypeUtil.isPrimitiveJavaType(type)) {
 			return type;
 		}
-		else {
+		else if (TypeUtil.isJavaType(type)) {
 			try {
+				type = TypeUtil.removeGenericsType(type);
+				type = TypeUtil.removeArrayNotation(type);
+
 				return Class.forName(type).getSimpleName();
 			}
 			catch (ClassNotFoundException e) {
