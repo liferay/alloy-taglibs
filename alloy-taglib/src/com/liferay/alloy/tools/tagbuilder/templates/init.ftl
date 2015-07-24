@@ -70,5 +70,5 @@
 </#function>
 
 <#function useDefaultValue simpleClassName>
-	<#return (isPrimitiveType(simpleClassName) || (simpleClassName == "String") || (simpleClassName == "Integer") || (simpleClassName == "Boolean") || (simpleClassName == "Double") || (simpleClassName == "Float") || (simpleClassName == "Long") || (simpleClassName == "Short") || (simpleClassName == "Number")) />
+	<#return (isPrimitiveType(simpleClassName) || (simpleClassName == "String") || (simpleClassName == "Integer") || (simpleClassName == "Boolean") || (simpleClassName == "Double") || (simpleClassName == "Float") || (simpleClassName == "Long") || (simpleClassName == "Short") || (simpleClassName == "Number") || (simpleClassName == "List") || (simpleClassName == "Map")) />
 </#function>
