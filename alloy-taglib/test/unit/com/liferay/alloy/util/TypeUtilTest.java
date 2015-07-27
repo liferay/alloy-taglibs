@@ -81,4 +81,34 @@ public class TypeUtilTest {
 		Assert.assertFalse(TypeUtil.isJavaClass("foobar"));
 	}
 
+	@Test
+	public void testRemoveArrayNotation() {
+		String actualTypeWithoutArrayNotation = "java.lang.String";
+
+		String expectedTypeWithoutArrayNotation = TypeUtil.removeArrayNotation(
+			"java.lang.String[]");
+
+		Assert.assertEquals(
+			actualTypeWithoutArrayNotation, expectedTypeWithoutArrayNotation);
+	}
+
+	@Test
+	public void testRemoveGenericsType() {
+		String actualTypeWithoutGenerics = "java.util.List";
+
+		String expectedTypeWithoutGenerics = TypeUtil.removeGenericsType(
+			"java.util.List<String>");
+
+		Assert.assertEquals(
+			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
+
+		actualTypeWithoutGenerics = "java.util.Map";
+
+		expectedTypeWithoutGenerics = TypeUtil.removeGenericsType(
+			"java.util.Map<String, Integer>");
+
+		Assert.assertEquals(
+			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
+	}
+
 }
