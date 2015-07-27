@@ -19,7 +19,7 @@ public class TypeUtilTest {
 	}
 
 	@Test
-	public void testHasInhertitedMethod() {
+	public void testHasInheritedMethod() {
 		boolean actual = TypeUtil.hasMethod(
 			ChildClass.class.getName(), "parentMethod",
 			new String[] { "java.lang.String" });
