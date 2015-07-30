@@ -3,6 +3,7 @@ package com.liferay.alloy.tools.model;
 import com.liferay.alloy.util.ReservedAttributeUtil;
 import com.liferay.alloy.util.TypeUtil;
 import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.kernel.util.Validator;
 
 import java.util.List;
 
@@ -90,6 +91,16 @@ public class Attribute extends BaseModel {
 		List<Attribute> events = _component.getEvents();
 
 		return events.contains(this);
+	}
+
+	public boolean isGenericsType(String type) {
+		if (Validator.isNotNull(type)) {
+			if (Validator.isNotNull(TypeUtil.getGenericsType(type))) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	public boolean isGettable() {

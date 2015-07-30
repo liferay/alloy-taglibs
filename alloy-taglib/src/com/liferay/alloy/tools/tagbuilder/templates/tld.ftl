@@ -28,7 +28,11 @@
 			<name>${attribute.getSafeName()}</name>
 			<required>${attribute.isRequired()?string("true", "false")}</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>${attribute.getInputType()}</type>
+			<#if attribute.isGenericsType(attribute.getRawInputType())>
+			<type><![CDATA[${attribute.getRawInputType()}]]></type>
+			<#else>
+			<type>${attribute.getRawInputType()}</type>
+			</#if>
 		</attribute>
 		</#list>
 		<#if component.isDynamicAttributes()>

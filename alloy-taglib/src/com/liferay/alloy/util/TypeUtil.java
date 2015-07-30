@@ -70,6 +70,10 @@ public class TypeUtil {
 		"node | string", "string", "string | node", "string | int"
 	};
 
+	public static String getGenericsType(String type) {
+		return _instance._getGenericsType(type);
+	}
+
 	public static String getInputJavaType(
 		String type, boolean removeGenericsType) {
 
