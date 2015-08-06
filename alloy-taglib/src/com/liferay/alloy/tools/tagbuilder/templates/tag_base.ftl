@@ -1,12 +1,22 @@
 <#include "init.ftl">
 <#include "copyright.ftl">
 
+<#if component.isComponentTaglibOSGIModule() == true>
+package ${packagePath}.taglib.base;
+
+import ${packagePath}.ServletContextUtil;
+
+<#else>
 package ${packagePath}.${component.getPackage()}.base;
 
+</#if>
 <#if component.getWriteJSP() == true>
 import javax.servlet.http.HttpServletRequest;
 </#if>
 import javax.servlet.jsp.JspException;
+<#if component.isComponentTaglibOSGIModule() == true>
+import javax.servlet.jsp.PageContext;
+</#if>
 
 /**
 <#list component.getAuthors() as author>
@@ -53,6 +63,19 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 
 	</#if>
 	</#list>
+	<#if component.isComponentTaglibOSGIModule() == true>
+	<#if typeUtil.hasMethod(component.getParentClass(), "setPageContext", ["javax.servlet.jsp.PageContext"]) == true>
+	@Override
+	</#if>
+	public void setPageContext(PageContext pageContext) {
+	<#if typeUtil.hasMethod(component.getParentClass(), "setPageContext", ["javax.servlet.jsp.PageContext"]) == true>
+		super.setPageContext(pageContext);
+
+	</#if>
+		setServletContext(ServletContextUtil.getServletContext());
+	}
+
+	</#if>
 	<#if typeUtil.hasMethod(component.getParentClass(), "cleanUp", []) == true>
 	@Override
 	</#if>

@@ -18,7 +18,11 @@
 		<description><![CDATA[${component.getDescription()}]]></description>
 		</#if>
 		<name>${component.getUncamelizedName()}</name>
+		<#if component.isComponentTaglibOSGIModule() == true>
+		<tag-class>${packagePath}.taglib.${component.getClassName()}</tag-class>
+		<#else>
 		<tag-class>${packagePath}.${component.getPackage()}.${component.getClassName()}</tag-class>
+		</#if>
 		<body-content>JSP</body-content>
 		<#list component.getAttributesAndEvents() as attribute>
 		<attribute>
