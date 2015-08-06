@@ -400,11 +400,12 @@ public class TagBuilder {
 	protected String getJspOutputDir(Component component) {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(_docrootDir);
-		sb.append(StringPool.SLASH);
-		sb.append(_jspDir);
-		sb.append(component.getPackage());
-		sb.append(StringPool.SLASH);
+		if (Validator.isNotNull(_docrootDir)) {
+			sb.append(_docrootDir);
+			sb.append(StringPool.SLASH);
+		}
+
+		sb.append(getJspDir(component));
 
 		return sb.toString();
 	}
@@ -664,8 +665,11 @@ public class TagBuilder {
 
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(_docrootDir);
-		sb.append(StringPool.SLASH);
+		if (Validator.isNotNull(_docrootDir)) {
+			sb.append(_docrootDir);
+			sb.append(StringPool.SLASH);
+		}
+
 		sb.append(_jspCommonInitPath);
 
 		File commonInitFile = new File(sb.toString());
