@@ -51,6 +51,8 @@ public class TagBuilder {
 		String jspCommonInitPath = System.getProperty(
 			"tagbuilder.jsp.common.init.path");
 		String jspDir = System.getProperty("tagbuilder.jsp.dir");
+		String OSGIModuleSymbolicName = System.getProperty(
+			"tagbuilder.osgi.module.symbolic.name");
 		String templatesDir = System.getProperty("tagbuilder.templates.dir");
 		String tldDir = System.getProperty("tagbuilder.tld.dir");
 
@@ -64,13 +66,14 @@ public class TagBuilder {
 
 		new TagBuilder(
 			componentsXML, templatesDir, javaDir, docrootDir, javaPackage,
-			jspDir, jspCommonInitPath, tldDir);
+			jspDir, jspCommonInitPath, OSGIModuleSymbolicName, tldDir);
 	}
 
 	public TagBuilder(
 			String componentsXML, String templatesDir, String javaDir,
 			String docrootDir, String javaPackage, String jspDir,
-			String jspCommonInitPath, String tldDir)
+			String jspCommonInitPath, String OSGIModuleSymbolicName,
+			String tldDir)
 		throws Exception {
 
 		if (PropsUtil.getProps() == null) {
@@ -88,11 +91,13 @@ public class TagBuilder {
 		_javaPackage = javaPackage;
 		_jspDir = jspDir;
 		_jspCommonInitPath = jspCommonInitPath;
+		_OSGIModuleSymbolicName = OSGIModuleSymbolicName;
 		_tldDir = tldDir;
 
 		_tplTld = _templatesDir + "tld.ftl";
 		_tplTag = _templatesDir + "tag.ftl";
 		_tplTagBase = _templatesDir + "tag_base.ftl";
+		_tplServletContextUtil = _templatesDir + "servlet_context_util.ftl";
 		_tplCommonInitJsp = _templatesDir + "common_init_jsp.ftl";
 		_tplJsp = _templatesDir + "jsp.ftl";
 		_tplInitJsp = _templatesDir + "init_jsp.ftl";
@@ -637,6 +642,7 @@ public class TagBuilder {
 
 		_createCommonInitJSP();
 		_createTld();
+		_createServletContextUtil();
 	}
 
 	private void _createBaseTag(
@@ -704,6 +710,42 @@ public class TagBuilder {
 			File pageFile = new File(path.concat(_PAGE));
 
 			writeFile(pageFile, contentJsp, false);
+		}
+	}
+
+	private void _createServletContextUtil() throws Exception {
+		for (Document doc : _componentsExtDoc) {
+			Element root = doc.getRootElement();
+
+			boolean OSGIModule = GetterUtil.getBoolean(
+				root.attributeValue("osgi-module"));
+
+			if (OSGIModule) {
+				Map<String, Object> context = getDefaultTemplateContext();
+
+				String OSGIModuleSymbolicName = GetterUtil.get(
+					_OSGIModuleSymbolicName, StringPool.BLANK);
+
+				context.put("OSGIModuleSymbolicName", OSGIModuleSymbolicName);
+				context.put("taglibAuthors", getAuthorList(root));
+
+				StringBuilder sb = new StringBuilder();
+
+				sb.append(_javaDir);
+				sb.append(_SERVLET_CONTEXT_UTIL);
+				sb.append(_CLASS_SUFFIX);
+
+				String content = processTemplate(
+					_tplServletContextUtil, context);
+
+				File servletContextUtilFile = new File(sb.toString());
+
+				writeFile(servletContextUtilFile, content, false);
+
+				if (servletContextUtilFile.exists()) {
+					break;
+				}
+			}
 		}
 	}
 
@@ -808,6 +850,8 @@ public class TagBuilder {
 
 	private static final String _PAGE = "/page.jsp";
 
+	private static final String _SERVLET_CONTEXT_UTIL = "ServletContextUtil";
+
 	private static final String _START_PAGE = "/start.jsp";
 
 	private static final String _TAGLIB = "taglib";
@@ -828,11 +872,13 @@ public class TagBuilder {
 	private String _javaPackage;
 	private String _jspCommonInitPath;
 	private String _jspDir;
+	private String _OSGIModuleSymbolicName;
 	private String _templatesDir;
 	private String _tldDir;
 	private String _tplCommonInitJsp;
 	private String _tplInitJsp;
 	private String _tplJsp;
+	private String _tplServletContextUtil;
 	private String _tplStartJsp;
 	private String _tplTag;
 	private String _tplTagBase;
