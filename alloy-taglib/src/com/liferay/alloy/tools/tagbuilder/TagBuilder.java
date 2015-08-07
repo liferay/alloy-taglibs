@@ -121,10 +121,18 @@ public class TagBuilder {
 		for (Document extDoc : _componentsExtDoc) {
 			Element extRoot = extDoc.getRootElement();
 
+			boolean OSGIModule = GetterUtil.getBoolean(
+				extRoot.attributeValue("osgi-module"));
+
+			String extComponentTaglibOSGIModule = String.valueOf(OSGIModule);
+
 			String defaultPackage = extRoot.attributeValue("short-name");
 			List<Element> extComponentNodes = extRoot.elements("component");
 
 			for (Element extComponent : extComponentNodes) {
+				extComponent.addAttribute(
+					"componentTaglibOSGIModule", extComponentTaglibOSGIModule);
+
 				String extComponentPackage = GetterUtil.getString(
 					extComponent.attributeValue("package"), defaultPackage);
 
@@ -258,6 +266,9 @@ public class TagBuilder {
 		List<Element> allComponentNodes = root.elements("component");
 
 		for (Element node : allComponentNodes) {
+			boolean componentTaglibOSGIModule = GetterUtil.getBoolean(
+				node.attributeValue("componentTaglibOSGIModule"));
+
 			String componentPackage = GetterUtil.getString(
 				node.attributeValue("package"), defaultPackage);
 
@@ -296,6 +307,7 @@ public class TagBuilder {
 			component.setAuthors(authors);
 			component.setBodyContent(bodyContent);
 			component.setClassName(className);
+			component.setComponentTaglibOSGIModule(componentTaglibOSGIModule);
 			component.setDescription(description);
 			component.setDynamicAttributes(dynamicAttributes);
 			component.setEvents(events);
@@ -359,8 +371,15 @@ public class TagBuilder {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(_javaDir);
-		sb.append(component.getPackage());
-		sb.append(StringPool.SLASH);
+
+		if (component.isComponentTaglibOSGIModule()) {
+			sb.append(_TAGLIB);
+			sb.append(StringPool.SLASH);
+		}
+		else {
+			sb.append(component.getPackage());
+			sb.append(StringPool.SLASH);
+		}
 
 		return sb.toString();
 	}
@@ -369,8 +388,11 @@ public class TagBuilder {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(_jspDir);
-		sb.append(component.getPackage());
-		sb.append(StringPool.SLASH);
+
+		if (!component.isComponentTaglibOSGIModule()) {
+			sb.append(component.getPackage());
+			sb.append(StringPool.SLASH);
+		}
 
 		return sb.toString();
 	}
@@ -783,6 +805,8 @@ public class TagBuilder {
 	private static final String _PAGE = "/page.jsp";
 
 	private static final String _START_PAGE = "/start.jsp";
+
+	private static final String _TAGLIB = "taglib";
 
 	private static final String _TLD_EXTENSION = ".tld";
 
