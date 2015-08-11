@@ -18,6 +18,25 @@ public class TypeUtilTest {
 		}
 	}
 
+	public void testGetGenericsType() {
+		String actualGenericsType = "?";
+		String expectedGenericsType = TypeUtil.getGenericsType(
+			"java.util.List<?>");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+
+		actualGenericsType = "java.lang.String, java.lang.Object";
+		expectedGenericsType = TypeUtil.getGenericsType(
+			"java.util.Map<java.lang.String, java.lang.Object>");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+
+		actualGenericsType = null;
+		expectedGenericsType = TypeUtil.getGenericsType("long");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+	}
+
 	@Test
 	public void testHasInheritedMethod() {
 		boolean actual = TypeUtil.hasMethod(
@@ -109,24 +128,6 @@ public class TypeUtilTest {
 
 		Assert.assertEquals(
 			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
-	}
-
-	public void testGetGenericsType() {
-		String actualGenericsType = "?";
-		String expectedGenericsType = TypeUtil.getGenericsType("java.util.List<?>");
-
-		Assert.assertEquals(actualGenericsType, expectedGenericsType);
-
-		actualGenericsType = "java.lang.String, java.lang.Object";
-		expectedGenericsType = TypeUtil.getGenericsType(
-			"java.util.Map<java.lang.String, java.lang.Object>");
-
-		Assert.assertEquals(actualGenericsType, expectedGenericsType);
-
-		actualGenericsType = null;
-		expectedGenericsType = TypeUtil.getGenericsType("long");
-
-		Assert.assertEquals(actualGenericsType, expectedGenericsType);
 	}
 
 }
