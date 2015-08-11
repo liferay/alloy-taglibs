@@ -21,7 +21,6 @@ import com.liferay.portal.xml.SAXReaderImpl;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -788,7 +787,7 @@ public class TagBuilder {
 			context.put("components", getComponents(doc));
 
 			String tldFilePath = _tldDir.concat(
-				shortName).concat(_TLD_EXTENSION);
+				getTldFileName(shortName)).concat(_TLD_EXTENSION);
 
 			File tldFile = new File(tldFilePath);
 
@@ -806,11 +805,22 @@ public class TagBuilder {
 		}
 	}
 
+	private String getTldFileName(String tldFileName) {
+		if (tldFileName.equals(_AUI)) {
+			return tldFileName = _LIFERAY + StringPool.DASH + tldFileName;
+		}
+		else {
+			return tldFileName;
+		}
+	}
+
 	private static final String _AFTER = "after";
 
 	private static final String _ATTRIBUTE = "attribute";
 
 	private static final String _ATTRIBUTES = "attributes";
+
+	private static final String _AUI = "aui";
 
 	private static final String _AUTHOR = "author";
 
@@ -845,6 +855,8 @@ public class TagBuilder {
 	private static final String _INIT_EXT_PAGE = "/init-ext.jspf";
 
 	private static final String _INIT_PAGE = "/init.jsp";
+
+	private static final String _LIFERAY = "liferay";
 
 	private static final String _ON = "on";
 
