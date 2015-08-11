@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 public class TypeUtilTest {
-	
+
 	abstract class ParentClass {
 		public void parentMethod(String param) {
 			//
 		}
 	}
-	
+
 	class ChildClass extends ParentClass {
 		public void childMethod(String param) {
 			//

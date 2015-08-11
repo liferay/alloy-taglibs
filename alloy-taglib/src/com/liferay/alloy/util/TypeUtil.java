@@ -22,6 +22,7 @@ import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 
 import java.lang.reflect.Method;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,53 +36,35 @@ public class TypeUtil {
 
 	public static final String ARRAY_NOTATION = "[]";
 
-	public static final String[] ARRAYS = {
-		"array", "[]"
-	};
+	public static final String[] ARRAYS = {"array", "[]"};
 
 	public static final String BOOLEAN = "boolean";
 
-	public static final String[] BOOLEANS = {
-		"boolean", "bool"
-	};
+	public static final String[] BOOLEANS = {"boolean", "bool"};
 
 	public static final String DOUBLE = "double";
 
-	public static final String[] DOUBLES = {
-		"double"
-	};
+	public static final String[] DOUBLES = {"double"};
 
 	public static final String FLOAT = "float";
 
-	public static final String[] FLOATS = {
-		"float"
-	};
+	public static final String[] FLOATS = {"float"};
 
 	public static final String INT = "int";
 
-	public static final String[] INTEGERS = {
-		"integer", "int", "int | string"
-	};
+	public static final String[] INTEGERS = {"integer", "int", "int | string"};
 
 	public static final String LONG = "long";
 
-	public static final String[] LONGS = {
-		"long"
-	};
+	public static final String[] LONGS = {"long"};
 
-	public static final String[] NUMBERS = {
-		"num", "number"
-	};
+	public static final String[] NUMBERS = {"num", "number"};
 
-	public static final String[] OBJECTS = {
-		"object", "{}"
-	};
+	public static final String[] OBJECTS = {"object", "{}"};
 
 	public static final String SHORT = "short";
 
-	public static final String[] SHORTS = {
-		"short"
-	};
+	public static final String[] SHORTS = {"short"};
 
 	public static final String[] STRINGS = {
 		"node | string", "string", "string | node", "string | int"
@@ -336,12 +319,12 @@ public class TypeUtil {
 
 		return type;
 	}
-	
-	private static final Log _log = LogFactoryUtil.getLog(TypeUtil.class);
 
 	private static HashMap<String, String> _INPUT_TYPES = null;
 
 	private static HashMap<String, String> _OUTPUT_TYPES = null;
+
+	private static final Log _log = LogFactoryUtil.getLog(TypeUtil.class);
 
 	private static TypeUtil _instance = new TypeUtil();
 

@@ -57,9 +57,11 @@ import org.json.JSONObject;
 public class XMLBuilder {
 
 	public static void main(String[] args) throws Exception {
-		String componentsJSON = System.getProperty("xmlbuilder.components.json");
+		String componentsJSON = System.getProperty(
+			"xmlbuilder.components.json");
 		String componentsXML = System.getProperty("tagbuilder.components.xml");
-		String componentExcluded = System.getProperty("xmlbuilder.components.excluded");
+		String componentExcluded = System.getProperty(
+			"xmlbuilder.components.excluded");
 
 		new XMLBuilder(componentsJSON, componentsXML, componentExcluded);
 	}
@@ -108,8 +110,8 @@ public class XMLBuilder {
 		while (it.hasNext()) {
 			String className = it.next();
 
-			JSONObject componentJSON =
-				JSONUtil.getJSONObject(_classMapJSON, className);
+			JSONObject componentJSON = JSONUtil.getJSONObject(
+				_classMapJSON, className);
 
 			String namespace = GetterUtil.getString(_DEFAULT_NAMESPACE);
 			String name = JSONUtil.getString(componentJSON, "name");
@@ -141,8 +143,8 @@ public class XMLBuilder {
 			}
 		}
 
-		ArrayList<Component> sortedComponents =
-			new ArrayList<Component>(components);
+		ArrayList<Component> sortedComponents = new ArrayList<Component>(
+			components);
 
 		Collections.sort(sortedComponents);
 
@@ -153,7 +155,7 @@ public class XMLBuilder {
 		String module = component.getModule();
 
 		return (!module.startsWith(AUI_PREFIX) ||
-				_componentExcluded.contains(component.getName()));
+			_componentExcluded.contains(component.getName()));
 	}
 
 	private void _create() throws Exception {
@@ -190,11 +192,11 @@ public class XMLBuilder {
 				Element nameNode = attributeNode.addElement("name");
 				Element inputTypeNode = attributeNode.addElement("inputType");
 				Element outputTypeNode = attributeNode.addElement("outputType");
-				Element defaultValueNode =
-					attributeNode.addElement("defaultValue");
+				Element defaultValueNode = attributeNode.addElement(
+					"defaultValue");
 
-				Element descriptionNode =
-					attributeNode.addElement("description");
+				Element descriptionNode = attributeNode.addElement(
+					"description");
 
 				nameNode.setText(attribute.getName());
 				inputTypeNode.setText(attribute.getInputType());
@@ -215,7 +217,7 @@ public class XMLBuilder {
 			}
 		}
 
-		try{
+		try {
 			FileOutputStream fos = new FileOutputStream(_componentXML);
 
 			OutputFormat format = OutputFormat.createPrettyPrint();
@@ -227,16 +229,15 @@ public class XMLBuilder {
 
 			System.out.println("Writing " + _componentXML);
 		}
-		catch(IOException e) {
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	private String _getAttributeDescription(Attribute attribute) {
-
 		JSONObject descriptionJSON = new JSONObject();
 
-		try{
+		try {
 			String defaultValue = attribute.getDefaultValue();
 
 			if (Validator.isNotNull(defaultValue)) {
@@ -258,7 +259,6 @@ public class XMLBuilder {
 		sb.append(descriptionJSON.toString());
 		sb.append(_HTML_COMMENT_END);
 
-
 		return sb.toString();
 	}
 
@@ -269,7 +269,7 @@ public class XMLBuilder {
 
 		ArrayList<String> hierarchy = getComponentHierarchy(className);
 
-		try{
+		try {
 			for (String parentClass : hierarchy) {
 				JSONObject componentJSON = JSONUtil.getJSONObject(
 					_classMapJSON, parentClass);
@@ -301,8 +301,8 @@ public class XMLBuilder {
 						JSONUtil.getString(attributeJSON, "type"),
 							_DEFAULT_TYPE);
 
-					String outputJavaType =
-						TypeUtil.getOutputJavaType(outputType, true);
+					String outputJavaType = TypeUtil.getOutputJavaType(
+						outputType, true);
 
 					String defaultValue =
 						DefaultValueUtil.getDefaultValue(outputJavaType,
@@ -331,8 +331,8 @@ public class XMLBuilder {
 			e.printStackTrace();
 		}
 
-		ArrayList<Attribute> sortedAttributes =
-			new ArrayList<Attribute>(attributes);
+		ArrayList<Attribute> sortedAttributes = new ArrayList<Attribute>(
+			attributes);
 
 		Collections.sort(sortedAttributes);
 
@@ -342,7 +342,7 @@ public class XMLBuilder {
 	private ArrayList<String> _getComponentHierarchy(
 		String className, ArrayList<String> hierarchy) {
 
-		try{
+		try {
 			JSONObject componentJSON = JSONUtil.getJSONObject(
 				_classMapJSON, className);
 
@@ -366,14 +366,22 @@ public class XMLBuilder {
 		return hierarchy;
 	}
 
-	private static final String AUI_PREFIX = "aui-";
 	private static final String _DEFAULT_NAMESPACE = "alloy";
+
 	private static final String _DEFAULT_TAGLIB_SHORT_NAME = "alloy";
-	private static final String _DEFAULT_TAGLIB_URI = "http://alloy.liferay.com/tld/alloy";
+
+	private static final String _DEFAULT_TAGLIB_URI =
+		"http://alloy.liferay.com/tld/alloy";
+
 	private static final String _DEFAULT_TAGLIB_VERSION = "1.0";
+
 	private static final String _DEFAULT_TYPE = Object.class.getName();
+
 	private static final String _HTML_COMMENT_END = "-->";
+
 	private static final String _HTML_COMMENT_START = "<!--";
+
+	private static final String AUI_PREFIX = "aui-";
 
 	private JSONObject _classMapJSON;
 	private List<String> _componentExcluded;

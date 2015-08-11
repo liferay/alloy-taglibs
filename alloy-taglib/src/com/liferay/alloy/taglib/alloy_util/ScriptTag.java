@@ -1,14 +1,14 @@
 package com.liferay.alloy.taglib.alloy_util;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.tagext.BodyTag;
-
 import com.liferay.alloy.taglib.alloy_util.base.BaseScriptTag;
 import com.liferay.portal.kernel.servlet.taglib.aui.ScriptData;
 import com.liferay.portal.kernel.servlet.taglib.aui.ScriptData.ModulesType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.StringPool;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.BodyTag;
 
 /**
  * <a href="ScriptTag.java.html"><b><i>View Source</i></b></a>

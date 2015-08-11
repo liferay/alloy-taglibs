@@ -7,7 +7,6 @@ import com.liferay.portal.kernel.util.StringPool;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-
 public class Attribute extends BaseModel {
 
 	public String getCapitalizedName() {

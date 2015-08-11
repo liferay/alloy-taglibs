@@ -14,11 +14,11 @@
 
 package com.liferay.alloy.util;
 
+import java.util.*;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.*;
 
 /**
  * <a href="JSONUtil.java.html"><b><i>View Source</i></b></a>

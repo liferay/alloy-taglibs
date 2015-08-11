@@ -41,7 +41,7 @@ public class AttributeUtil {
 		return null;
 	}
 
-	public static void setAttribute(Object obj, String key, Object  value) {
+	public static void setAttribute(Object obj, String key, Object value) {
 		try {
 			Method setAttribute = ReflectUtil.findMethod(
 				obj.getClass(), "setAttribute");

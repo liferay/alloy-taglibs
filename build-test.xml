@@ -29,10 +29,10 @@
 			</classpath>
 
 			<batchtest>
-				<formatter type="plain" usefile="false"/>
+				<formatter type="plain" usefile="false" />
 
 				<fileset dir="test-classes/unit">
-					<include name="**/*Test.class"/>
+					<include name="**/*Test.class" />
 				</fileset>
 			</batchtest>
 		</junit>

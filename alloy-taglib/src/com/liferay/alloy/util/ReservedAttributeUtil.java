@@ -14,15 +14,15 @@
 
 package com.liferay.alloy.util;
 
-import java.util.Arrays;
-import java.util.List;
-
-import org.apache.commons.lang.StringUtils;
-
 import com.liferay.alloy.tools.model.Attribute;
 import com.liferay.alloy.tools.model.Component;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 
 /**
  * <a href="ReservedAttributeUtil.java.html"><b><i>View Source</i></b></a>
@@ -68,7 +68,7 @@ public class ReservedAttributeUtil {
 		return RESERVED_ATTRIBUTES.contains(attributeName);
 	}
 
-	public static final List<String> RESERVED_ATTRIBUTES =	Arrays.asList(
+	public static final List<String> RESERVED_ATTRIBUTES = Arrays.asList(
 		new String[] {
 			"values", "value", "servletRequest", "servletResponse",
 			"servletContext", "scopedAttribute", "scopedAttributes",

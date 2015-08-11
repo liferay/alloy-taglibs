@@ -73,7 +73,7 @@ public class ComponentTag extends BaseComponentTag {
 		Map<String, String> afterEventOptionsMap =
 			new HashMap<String, String>();
 
-		Map<String, String> onEventOptionsMap =	new HashMap<String, String>();
+		Map<String, String> onEventOptionsMap = new HashMap<String, String>();
 
 		for (String key : options.keySet()) {
 			if (!_isValidAttribute(key)) {
@@ -82,8 +82,8 @@ public class ComponentTag extends BaseComponentTag {
 
 			Object value = options.get(key);
 
-			String originalKey =
-				ReservedAttributeUtil.getOriginalName(getName(), key);
+			String originalKey = ReservedAttributeUtil.getOriginalName(
+				getName(), key);
 
 			if (value instanceof Map) {
 				Map<String, Object> childOptionsMap =

@@ -49,8 +49,9 @@
 
 		<delete dir="${temp.dir}" />
 	</target>
-	
+
 	<target name="prepare-liferay-war">
+
 		<!-- Delete uneeded files -->
 
 		<delete>

@@ -14,11 +14,9 @@
 
 package com.liferay.alloy.taglib.alloy_util.base;
 
-import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.taglib.util.IncludeTag;
 
 import javax.servlet.http.HttpServletRequest;
-
 
 /**
  * @author Eduardo Lundgren
@@ -29,15 +27,11 @@ public class AlloyIncludeTag extends IncludeTag {
 		return false;
 	}
 
-	protected boolean isWARFile(HttpServletRequest request)
-		throws SystemException {
-
+	protected boolean isWARFile(HttpServletRequest request) {
 		return false;
 	}
 
-	protected boolean themeResourceExists(String page)
-		throws Exception {
-
+	protected boolean themeResourceExists(String page) throws Exception {
 		return false;
 	}
 

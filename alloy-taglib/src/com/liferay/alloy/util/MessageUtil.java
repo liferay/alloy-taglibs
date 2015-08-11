@@ -1,12 +1,11 @@
 package com.liferay.alloy.util;
 
-import java.text.MessageFormat;
-
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 
+import java.text.MessageFormat;
 public class MessageUtil {
 
 	public static String substitute(String pattern, Object[] arguments) {

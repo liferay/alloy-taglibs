@@ -14,17 +14,17 @@
 
 package com.liferay.alloy.util;
 
+import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.kernel.util.StringUtil;
+import com.liferay.portal.kernel.util.Validator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-
-import com.liferay.portal.kernel.util.GetterUtil;
-import com.liferay.portal.kernel.util.StringPool;
-import com.liferay.portal.kernel.util.StringUtil;
-import com.liferay.portal.kernel.util.Validator;
 
 /**
  * <a href="DefaultValueUtil.java.html"><b><i>View Source</i></b></a>
@@ -49,14 +49,14 @@ public class DefaultValueUtil {
 				value = StringPool.BLANK;
 			}
 			else if (className.equals(ArrayList.class.getName()) &&
-					!StringUtil.startsWith(
-						value.trim(), StringPool.OPEN_BRACKET)) {
+					 !StringUtil.startsWith(
+						 value.trim(), StringPool.OPEN_BRACKET)) {
 
 				value = "[]";
 			}
 			else if (className.equals(HashMap.class.getName()) &&
-					!StringUtil.startsWith(
-						value.trim(), StringPool.OPEN_CURLY_BRACE)) {
+					 !StringUtil.startsWith(
+						 value.trim(), StringPool.OPEN_CURLY_BRACE)) {
 
 				value = "{}";
 			}
@@ -133,8 +133,8 @@ public class DefaultValueUtil {
 
 		if (StringUtils.isAlpha(value) ||
 			(!StringUtils.containsIgnoreCase(value, _GENERATED) &&
-			!StringUtils.isAlpha(value.substring(0, 1)) &&
-			!StringUtils.endsWith(value, StringPool.PERIOD))) {
+			 !StringUtils.isAlpha(value.substring(0, 1)) &&
+			 !StringUtils.endsWith(value, StringPool.PERIOD))) {
 
 			return true;
 		}
@@ -148,7 +148,7 @@ public class DefaultValueUtil {
 
 	private static final String _GENERATED = "generated";
 
-	private static final List<String> _INFINITY =
-		Arrays.asList("infinity", "Infinity", "INFINITY");
+	private static final List<String> _INFINITY = Arrays.asList(
+		"infinity", "Infinity", "INFINITY");
 
 }
