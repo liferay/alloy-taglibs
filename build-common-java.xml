@@ -28,7 +28,7 @@
 					includeAntRuntime="false"
 					memoryMaximumSize="${javac.memoryMaximumSize}"
 					nowarn="${javac.nowarn}"
-					source="1.5"
+					source="1.7"
 					srcdir="src"
 				/>
 			</then>
