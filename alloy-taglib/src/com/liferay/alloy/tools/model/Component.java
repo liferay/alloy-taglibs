@@ -130,6 +130,12 @@ public class Component extends BaseModel {
 		_className = className;
 	}
 
+	public void setComponentTaglibOSGIModule(
+		boolean componentTaglibOSGIModule) {
+
+		_componentTaglibOSGIModule = componentTaglibOSGIModule;
+	}
+
 	public void setDescription(String description) {
 		_description = description;
 	}
@@ -144,12 +150,6 @@ public class Component extends BaseModel {
 		for (Attribute event : events) {
 			event.setComponent(this);
 		}
-	}
-
-	public void setComponentTaglibOSGIModule(
-		boolean componentTaglibOSGIModule) {
-
-		_componentTaglibOSGIModule = componentTaglibOSGIModule;
 	}
 
 	public void setModule(String type) {
@@ -175,10 +175,10 @@ public class Component extends BaseModel {
 	private String[] _authors;
 	private boolean _bodyContent;
 	private String _className;
+	private boolean _componentTaglibOSGIModule;
 	private String _description;
 	private boolean _dynamicAttributes;
 	private List<Attribute> _events;
-	private boolean _componentTaglibOSGIModule;
 	private String _module;
 	private String _package;
 	private String _parentClass;
