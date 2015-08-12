@@ -86,8 +86,16 @@ public class Component extends BaseModel {
 		return getUncamelizedName().replaceAll("\\-", delimiter);
 	}
 
+	public boolean getWriteEndJSP() {
+		return _writeEndJSP;
+	}
+
 	public boolean getWriteJSP() {
 		return _writeJSP;
+	}
+
+	public boolean getWriteStartJSP() {
+		return _writeStartJSP;
 	}
 
 	public boolean isAlloyComponent() {
@@ -154,8 +162,16 @@ public class Component extends BaseModel {
 		_parentClass = parentClass;
 	}
 
+	public void setWriteEndJSP(boolean writeEndJSP) {
+		_writeEndJSP = writeEndJSP;
+	}
+
 	public void setWriteJSP(boolean writeJSP) {
 		_writeJSP = writeJSP;
+	}
+
+	public void setWriteStartJSP(boolean writeStartJSP) {
+		_writeStartJSP = writeStartJSP;
 	}
 
 	private static final String _CLASS_NAME_SUFFIX = "Tag";
@@ -171,6 +187,8 @@ public class Component extends BaseModel {
 	private String _module;
 	private String _package;
 	private String _parentClass;
+	private boolean _writeEndJSP;
 	private boolean _writeJSP;
+	private boolean _writeStartJSP;
 
 }
