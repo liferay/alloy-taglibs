@@ -709,17 +709,21 @@ public class TagBuilder {
 		writeFile(initExtFile, StringPool.BLANK, false);
 
 		if (component.isBodyContent()) {
-			String contentStart = processTemplate(_tplStartJsp, context);
+			if (component.getWriteStartJSP()) {
+				String contentStart = processTemplate(_tplStartJsp, context);
 
-			File startFile = new File(path.concat(_START_PAGE));
+				File startFile = new File(path.concat(_START_PAGE));
 
-			writeFile(startFile, contentStart, false);
+				writeFile(startFile, contentStart, false);
+			}
 
-			String contentEnd = processTemplate(_tplEndJsp, context);
+			if (component.getWriteEndJSP()) {
+				String contentEnd = processTemplate(_tplEndJsp, context);
 
-			File endFile = new File(path.concat(_END_PAGE));
+				File endFile = new File(path.concat(_END_PAGE));
 
-			writeFile(endFile, contentEnd, false);
+				writeFile(endFile, contentEnd, false);
+			}
 		}
 		else {
 			File pageFile = new File(path.concat(_PAGE));

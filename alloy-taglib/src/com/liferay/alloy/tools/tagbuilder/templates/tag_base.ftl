@@ -104,6 +104,7 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 	}
 
 	<#if component.isBodyContent() == true>
+	<#if component.getWriteEndJSP() == true>
 	<#if typeUtil.hasMethod(component.getParentClass(), "getEndPage", []) == true>
 	@Override
 	</#if>
@@ -111,12 +112,16 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 		return _END_PAGE;
 	}
 
+	</#if>
+	<#if component.getWriteStartJSP() == true>
 	<#if typeUtil.hasMethod(component.getParentClass(), "getStartPage", []) == true>
 	@Override
 	</#if>
 	protected String getStartPage() {
 		return _START_PAGE;
 	}
+
+	</#if>
 	<#else>
 	<#if typeUtil.hasMethod(component.getParentClass(), "getPage", []) == true>
 	@Override
@@ -124,8 +129,8 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 	protected String getPage() {
 		return _PAGE;
 	}
-	</#if>
 
+	</#if>
 	<#if component.getWriteJSP() == true>
 	<#if typeUtil.hasMethod(component.getParentClass(), "setAttributes", ["javax.servlet.http.HttpServletRequest"]) == true>
 	@Override
@@ -146,16 +151,21 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 
 	</#if>
 	<#if component.isBodyContent() == true>
+	<#if component.getWriteEndJSP() == true>
 	private static final String _END_PAGE =
 		"${jspRelativePath}/end.jsp";
 
+	</#if>
+	<#if component.getWriteStartJSP() == true>
 	private static final String _START_PAGE =
 		"${jspRelativePath}/start.jsp";
+
+	</#if>
 	<#else>
 	private static final String _PAGE =
 		"${jspRelativePath}/page.jsp";
-	</#if>
 
+	</#if>
 	<#list component.getAttributesAndEvents() as attribute>
 	<#compress>
 	<#assign outputSimpleClassName = attribute.getOutputTypeSimpleClassName()>
