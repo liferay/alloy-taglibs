@@ -299,8 +299,14 @@ public class TagBuilder {
 			String parentClass = GetterUtil.getString(
 				node.attributeValue("parentClass"), _DEFAULT_PARENT_CLASS);
 
+			boolean writeEndJSP = GetterUtil.getBoolean(
+				node.attributeValue("writeEndJSP"), true);
+
 			boolean writeJSP = GetterUtil.getBoolean(
 				node.attributeValue("writeJSP"), true);
+
+			boolean writeStartJSP = GetterUtil.getBoolean(
+				node.attributeValue("writeStartJSP"), true);
 
 			String[] authors = getAuthorList(node);
 			List<Attribute> attributes = getAttributes(node);
@@ -321,7 +327,9 @@ public class TagBuilder {
 			component.setName(name);
 			component.setPackage(componentPackage);
 			component.setParentClass(parentClass);
+			component.setWriteEndJSP(writeEndJSP);
 			component.setWriteJSP(writeJSP);
+			component.setWriteStartJSP(writeStartJSP);
 
 			components.add(component);
 		}
