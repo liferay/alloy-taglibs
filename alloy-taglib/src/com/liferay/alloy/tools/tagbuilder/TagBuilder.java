@@ -94,9 +94,13 @@ public class TagBuilder {
 		_tplTag = _templatesDir + "tag.ftl";
 		_tplTagBase = _templatesDir + "tag_base.ftl";
 		_tplCommonInitJsp = _templatesDir + "common_init_jsp.ftl";
-		_tplJsp = _templatesDir + "jsp.ftl";
+		_tplEndJsp = _templatesDir + "end_jsp.ftl";
 		_tplInitJsp = _templatesDir + "init_jsp.ftl";
+		_tplJsp = _templatesDir + "jsp.ftl";
 		_tplStartJsp = _templatesDir + "start_jsp.ftl";
+		_tplTag = _templatesDir + "tag.ftl";
+		_tplTagBase = _templatesDir + "tag_base.ftl";
+		_tplTld = _templatesDir + "tld.ftl";
 
 		_componentsExtDoc = new ArrayList<Document>();
 
@@ -670,6 +674,12 @@ public class TagBuilder {
 			File startFile = new File(path.concat(_START_PAGE));
 
 			writeFile(startFile, contentStart, false);
+
+			String contentEnd = processTemplate(_tplEndJsp, context);
+
+			File endFile = new File(path.concat(_END_PAGE));
+
+			writeFile(endFile, contentEnd, false);
 		}
 		else {
 			File pageFile = new File(path.concat(_PAGE));
@@ -767,6 +777,8 @@ public class TagBuilder {
 
 	private static final String _DEFAULT_TYPE = "java.lang.Object";
 
+	private static final String _END_PAGE = "/end.jsp";
+
 	private static final String _EVENT = "event";
 
 	private static final String _EVENTS = "events";
@@ -800,6 +812,7 @@ public class TagBuilder {
 	private String _templatesDir;
 	private String _tldDir;
 	private String _tplCommonInitJsp;
+	private String _tplEndJsp;
 	private String _tplInitJsp;
 	private String _tplJsp;
 	private String _tplStartJsp;
