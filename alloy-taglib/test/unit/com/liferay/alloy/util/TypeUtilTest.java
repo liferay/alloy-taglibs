@@ -18,6 +18,7 @@ public class TypeUtilTest {
 		}
 	}
 
+	@Test
 	public void testGetGenericsType() {
 		String actualGenericsType = "?";
 		String expectedGenericsType = TypeUtil.getGenericsType(
