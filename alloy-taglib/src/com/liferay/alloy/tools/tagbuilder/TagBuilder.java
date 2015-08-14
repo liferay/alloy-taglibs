@@ -45,7 +45,7 @@ public class TagBuilder {
 	public static void main(String[] args) throws Exception {
 		String componentsXML = System.getProperty("tagbuilder.components.xml");
 		String copyrightYear = System.getProperty("tagbuilder.copyright.year");
-		String docrootDir = System.getProperty("tagbuilder.docroot.dir");
+		String jspParentDir = System.getProperty("tagbuilder.jsp.parent.dir");
 		String javaDir = System.getProperty("tagbuilder.java.dir");
 		String javaPackage = System.getProperty("tagbuilder.java.package");
 		String jspCommonInitPath = System.getProperty(
@@ -65,13 +65,13 @@ public class TagBuilder {
 		}
 
 		new TagBuilder(
-			componentsXML, templatesDir, javaDir, docrootDir, javaPackage,
+			componentsXML, templatesDir, javaDir, jspParentDir, javaPackage,
 			jspDir, jspCommonInitPath, OSGIModuleSymbolicName, tldDir);
 	}
 
 	public TagBuilder(
 			String componentsXML, String templatesDir, String javaDir,
-			String docrootDir, String javaPackage, String jspDir,
+			String jspParentDir, String javaPackage, String jspDir,
 			String jspCommonInitPath, String OSGIModuleSymbolicName,
 			String tldDir)
 		throws Exception {
@@ -87,7 +87,7 @@ public class TagBuilder {
 		_componentsXML = Arrays.asList(StringUtil.split(componentsXML));
 		_templatesDir = templatesDir;
 		_javaDir = javaDir;
-		_docrootDir = docrootDir;
+		_jspParentDir = jspParentDir;
 		_javaPackage = javaPackage;
 		_jspDir = jspDir;
 		_jspCommonInitPath = jspCommonInitPath;
@@ -414,8 +414,8 @@ public class TagBuilder {
 	protected String getJspOutputDir(Component component) {
 		StringBuilder sb = new StringBuilder();
 
-		if (Validator.isNotNull(_docrootDir)) {
-			sb.append(_docrootDir);
+		if (Validator.isNotNull(_jspParentDir)) {
+			sb.append(_jspParentDir);
 			sb.append(StringPool.SLASH);
 		}
 
@@ -681,8 +681,8 @@ public class TagBuilder {
 
 		StringBuilder sb = new StringBuilder();
 
-		if (Validator.isNotNull(_docrootDir)) {
-			sb.append(_docrootDir);
+		if (Validator.isNotNull(_jspParentDir)) {
+			sb.append(_jspParentDir);
 			sb.append(StringPool.SLASH);
 		}
 
@@ -902,7 +902,7 @@ public class TagBuilder {
 
 	private List<Document> _componentsExtDoc;
 	private List<String> _componentsXML;
-	private String _docrootDir;
+	private String _jspParentDir;
 	private String _javaDir;
 	private String _javaPackage;
 	private String _jspCommonInitPath;
