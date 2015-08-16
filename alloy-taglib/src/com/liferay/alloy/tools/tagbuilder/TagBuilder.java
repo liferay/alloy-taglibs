@@ -902,11 +902,11 @@ public class TagBuilder {
 
 	private List<Document> _componentsExtDoc;
 	private List<String> _componentsXML;
-	private String _jspParentDir;
 	private String _javaDir;
 	private String _javaPackage;
 	private String _jspCommonInitPath;
 	private String _jspDir;
+	private String _jspParentDir;
 	private String _OSGIModuleSymbolicName;
 	private String _templatesDir;
 	private String _tldDir;
