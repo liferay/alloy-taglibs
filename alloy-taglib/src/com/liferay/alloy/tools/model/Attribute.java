@@ -53,7 +53,7 @@ public class Attribute extends BaseModel {
 	public String getSafeName() {
 		String safeName = getName();
 
-		if (getComponent() != null && getComponent().isAlloyComponent()) {
+		if ((getComponent() != null) && getComponent().isAlloyComponent()) {
 			safeName = ReservedAttributeUtil.getSafeName(this);
 		}
 

@@ -142,9 +142,9 @@ public class DefaultValueUtil {
 		return false;
 	}
 
-	private static final List<String> _EMPTY_STRINGS =
-		Arrays.asList("", "''", "\"\"", "(empty)", "empty", "EMPTY_STR",
-			"undefined", "WidgetStdMod.BODY", "HTMLTextNode");
+	private static final List<String> _EMPTY_STRINGS = Arrays.asList(
+		"", "''", "\"\"", "(empty)", "empty", "EMPTY_STR", "undefined",
+		"WidgetStdMod.BODY", "HTMLTextNode");
 
 	private static final String _GENERATED = "generated";
 

@@ -505,8 +505,8 @@ public class TagBuilder {
 					String attributeName = sourceAttributeElement.elementText(
 						"name");
 
-					String xpathAttributeValue = "//tld:attribute[tld:name='" +
-						attributeName + "']";
+					String xpathAttributeValue =
+						"//tld:attribute[tld:name='" + attributeName + "']";
 
 					XPath xpathAttribute = SAXReaderUtil.createXPath(
 						xpathTagValue + xpathAttributeValue, _TLD_XPATH_PREFIX,
@@ -629,7 +629,8 @@ public class TagBuilder {
 					FileUtil.write(file, content);
 				}
 			}
-		} catch (IOException e) {
+		}
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

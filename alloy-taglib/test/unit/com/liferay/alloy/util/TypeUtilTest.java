@@ -7,14 +7,14 @@ import org.junit.Test;
 public class TypeUtilTest {
 
 	abstract class ParentClass {
+
 		public void parentMethod(String param) {
-			//
 		}
+
 	}
 
 	class ChildClass extends ParentClass {
 		public void childMethod(String param) {
-			//
 		}
 	}
 
@@ -56,10 +56,10 @@ public class TypeUtilTest {
 	@Test
 	public void testHasMethod() {
 		abstract class ArrayListExt extends ArrayList<String> {
+
 			private static final long serialVersionUID = 1L;
 
 			public void add(int index, Class<?>[] classes) {
-				//
 			}
 		}
 

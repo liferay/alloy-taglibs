@@ -56,7 +56,7 @@ public class ComponentTag extends BaseComponentTag {
 	}
 
 	private boolean _isValidAttribute(String key) {
-		List<String> excludeAttributes = Collections.EMPTY_LIST;
+		List<String> excludeAttributes = Collections.emptyList();
 
 		if (getExcludeAttributes() != null) {
 			excludeAttributes = Arrays.asList(
@@ -67,8 +67,8 @@ public class ComponentTag extends BaseComponentTag {
 			key.equals(_DYNAMIC_ATTRIBUTES));
 	}
 
-	private void _proccessAttributes(Map<String, Object> options,
-		Map<String, Object> newOptions) {
+	private void _proccessAttributes(
+		Map<String, Object> options, Map<String, Object> newOptions) {
 
 		Map<String, String> afterEventOptionsMap =
 			new HashMap<String, String>();
@@ -99,8 +99,9 @@ public class ComponentTag extends BaseComponentTag {
 			if (_isEventAttribute(key)) {
 				_processEventAttribute(
 					key, String.valueOf(value), afterEventOptionsMap,
-						onEventOptionsMap);
-			} else {
+					onEventOptionsMap);
+			}
+			else {
 				newOptions.put(originalKey, value);
 			}
 		}
@@ -114,8 +115,8 @@ public class ComponentTag extends BaseComponentTag {
 		}
 	}
 
-	private void _processEventAttribute(String key, String value,
-		Map<String, String> afterEventOptionsMap,
+	private void _processEventAttribute(
+		String key, String value, Map<String, String> afterEventOptionsMap,
 		Map<String, String> onEventsOptionsMap) {
 
 		if (key.startsWith(_AFTER)) {
@@ -123,7 +124,8 @@ public class ComponentTag extends BaseComponentTag {
 				key.replaceFirst(_AFTER, StringPool.BLANK));
 
 			afterEventOptionsMap.put(event, value);
-		} else {
+		}
+		else {
 			String event = StringUtils.uncapitalize(
 				key.replaceFirst(_ON, StringPool.BLANK));
 
@@ -135,8 +137,8 @@ public class ComponentTag extends BaseComponentTag {
 
 	private static final String _DYNAMIC_ATTRIBUTES = "dynamicAttributes";
 
-	private static final Pattern _EVENT_AFTER_REGEX = Pattern
-		.compile("after[A-Z]");
+	private static final Pattern _EVENT_AFTER_REGEX = Pattern.compile(
+		"after[A-Z]");
 
 	private static final Pattern _EVENT_ON_REGEX = Pattern.compile("on[A-Z]");
 
