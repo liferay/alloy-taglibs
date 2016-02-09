@@ -283,6 +283,9 @@ public class TagBuilder {
 			String parentClass = GetterUtil.getString(
 				node.attributeValue("parentClass"), _DEFAULT_PARENT_CLASS);
 
+			boolean writeBaseClass = GetterUtil.getBoolean(
+				node.attributeValue("writeBaseClass"), true);
+
 			boolean writeEndJSP = GetterUtil.getBoolean(
 				node.attributeValue("writeEndJSP"), true);
 
@@ -310,6 +313,7 @@ public class TagBuilder {
 			component.setName(name);
 			component.setPackage(componentPackage);
 			component.setParentClass(parentClass);
+			component.setWriteBaseClass(writeBaseClass);
 			component.setWriteEndJSP(writeEndJSP);
 			component.setWriteJSP(writeJSP);
 			component.setWriteStartJSP(writeStartJSP);
@@ -612,7 +616,9 @@ public class TagBuilder {
 		for (Component component : components) {
 			Map<String, Object> context = getTemplateContext(component);
 
-			_createBaseTag(component, context);
+			if (component.getWriteBaseClass()) {
+				_createBaseTag(component, context);
+			}
 
 			if (component.getWriteJSP()) {
 				_createPageJSP(component, context);

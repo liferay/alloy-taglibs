@@ -85,6 +85,10 @@ public class Component extends BaseModel {
 	public String getUncamelizedName(String delimiter) {
 		return getUncamelizedName().replaceAll("\\-", delimiter);
 	}
+	
+	public boolean getWriteBaseClass() {
+		return _writeBaseClass;
+	}
 
 	public boolean getWriteEndJSP() {
 		return _writeEndJSP;
@@ -162,6 +166,10 @@ public class Component extends BaseModel {
 		_parentClass = parentClass;
 	}
 
+	public void setWriteBaseClass(boolean writeBaseClass) {
+		_writeBaseClass = writeBaseClass;
+	}
+
 	public void setWriteEndJSP(boolean writeEndJSP) {
 		_writeEndJSP = writeEndJSP;
 	}
@@ -187,6 +195,7 @@ public class Component extends BaseModel {
 	private String _module;
 	private String _package;
 	private String _parentClass;
+	private boolean _writeBaseClass;
 	private boolean _writeEndJSP;
 	private boolean _writeJSP;
 	private boolean _writeStartJSP;
