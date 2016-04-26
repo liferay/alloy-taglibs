@@ -786,6 +786,8 @@ public class TagBuilder {
 	}
 
 	private void _createTld() throws Exception {
+		_removeOldTld();
+
 		Map<String, Object> context = getDefaultTemplateContext();
 
 		for (Document doc : _componentsExtDoc) {
@@ -832,6 +834,24 @@ public class TagBuilder {
 		}
 		else {
 			return tldFileName;
+		}
+	}
+
+	private void _removeOldTld() {
+		for (Document doc : _componentsExtDoc) {
+			Element root = doc.getRootElement();
+
+			String shortName = GetterUtil.getString(
+				root.attributeValue("short-name"), _DEFAULT_TAGLIB_SHORT_NAME);
+
+			String tldFilePath = _tldDir.concat(
+				_getTldFileName(shortName)).concat(_TLD_EXTENSION);
+
+			File tldFile = new File(tldFilePath);
+
+			if (tldFile.exists()) {
+				FileUtil.delete(tldFile);
+			}
 		}
 	}
 

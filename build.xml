@@ -77,7 +77,7 @@
 		</java>
 	</target>
 
-	<target name="build-taglibs" depends="compile, clean-build-taglibs">
+	<target name="build-taglibs" depends="compile">
 		<java
 			classname="com.liferay.alloy.tools.tagbuilder.TagBuilder"
 			classpathref="project.classpath"
@@ -95,12 +95,6 @@
 			<jvmarg value="-Dtagbuilder.templates.dir=${tagbuilder.templates.dir}" />
 			<jvmarg value="-Dtagbuilder.tld.dir=${tagbuilder.tld.dir}" />
 		</java>
-	</target>
-
-	<target name="clean-build-taglibs">
-		<delete>
-			<fileset dir="${project.dir}/alloy-taglib/src/META-INF/" includes="*.tld" />
-		</delete>
 	</target>
 
 	<target name="war">
