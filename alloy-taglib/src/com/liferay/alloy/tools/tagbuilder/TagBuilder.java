@@ -76,6 +76,10 @@ public class TagBuilder {
 			String tldDir)
 		throws Exception {
 
+		if (FileUtil.getFile() == null) {
+			(new FileUtil()).setFile(new FileImpl());
+		}
+
 		if (PropsUtil.getProps() == null) {
 			PropsUtil.setProps(new PropsImpl());
 		}
@@ -611,10 +615,6 @@ public class TagBuilder {
 	}
 
 	protected void writeFile(File file, String content, boolean overwrite) {
-		if (FileUtil.getFile() == null) {
-			(new FileUtil()).setFile(new FileImpl());
-		}
-
 		try {
 			if (overwrite || !file.exists()) {
 				String oldContent = StringPool.BLANK;
@@ -808,7 +808,7 @@ public class TagBuilder {
 			context.put("components", getComponents(doc));
 
 			String tldFilePath = _tldDir.concat(
-				getTldFileName(shortName)).concat(_TLD_EXTENSION);
+				_getTldFileName(shortName)).concat(_TLD_EXTENSION);
 
 			File tldFile = new File(tldFilePath);
 
@@ -826,7 +826,7 @@ public class TagBuilder {
 		}
 	}
 
-	private String getTldFileName(String tldFileName) {
+	private String _getTldFileName(String tldFileName) {
 		if (tldFileName.equals(_AUI)) {
 			return tldFileName = _LIFERAY + StringPool.DASH + tldFileName;
 		}
