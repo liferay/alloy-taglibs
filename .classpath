@@ -42,7 +42,6 @@
 	<classpathentry kind="lib" path="lib/development/portlet.jar"/>
 	<classpathentry kind="lib" path="lib/development/servlet-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/application/portal-service.jar"/>
 	<classpathentry kind="lib" path="lib/application/portal-impl.jar"/>
 	<classpathentry kind="lib" path="lib/application/util-java.jar"/>
 	<classpathentry kind="lib" path="lib/application/util-taglib.jar" sourcepath="/portal-master/util-taglib"/>
@@ -50,5 +49,6 @@
 	<classpathentry kind="lib" path="lib/development/junit.jar"/>
 	<classpathentry kind="lib" path="lib/development/hamcrest-core.jar"/>
 	<classpathentry kind="lib" path="lib/development/hamcrest-library.jar"/>
+	<classpathentry kind="lib" path="lib/application/portal-kernel.jar"/>
 	<classpathentry kind="output" path="alloy-taglib/classes"/>
 </classpath>

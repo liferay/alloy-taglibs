@@ -16,7 +16,7 @@
 
 		<copy todir="${project.dir}/lib/application" overwrite="true">
 			<fileset dir="${lp.source.dir}/portal-impl" includes="portal-impl.jar" />
-			<fileset dir="${lp.source.dir}/portal-service" includes="portal-service.jar" />
+			<fileset dir="${lp.source.dir}/portal-kernel" includes="portal-kernel.jar" />
 			<fileset dir="${lp.source.dir}/util-java" includes="util-java.jar" />
 			<fileset dir="${lp.source.dir}/util-taglib" includes="util-taglib.jar" />
 		</copy>
