@@ -55,7 +55,7 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 	</#if>
 	public void set${attribute.getCapitalizedName()}(${attribute.getRawInputType()} ${attribute.getSafeName()}) {
 		_${attribute.getSafeName()} = ${attribute.getSafeName()};
-		<#if typeUtil.hasMethod(component.getParentClass(), "setScopedAttribute", ["java.lang.String", "java.lang.Object"]) == true>
+		<#if component.isAlloyComponent() && typeUtil.hasMethod(component.getParentClass(), "setScopedAttribute", ["java.lang.String", "java.lang.Object"]) == true>
 
 		setScopedAttribute("${attribute.getSafeName()}", ${attribute.getSafeName()});
 		</#if>
