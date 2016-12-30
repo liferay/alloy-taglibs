@@ -54,32 +54,22 @@ public abstract class BaseTestTag extends com.liferay.taglib.util.IncludeTag {
 
 	public void setTest(java.lang.String test) {
 		_test = test;
-
-		setScopedAttribute("test", test);
 	}
 
 	public void setAttrBooleanPrimitive(boolean attrBooleanPrimitive) {
 		_attrBooleanPrimitive = attrBooleanPrimitive;
-
-		setScopedAttribute("attrBooleanPrimitive", attrBooleanPrimitive);
 	}
 
 	public void setAttrBoolean(java.lang.Boolean attrBoolean) {
 		_attrBoolean = attrBoolean;
-
-		setScopedAttribute("attrBoolean", attrBoolean);
 	}
 
 	public void setAttrIntPrimitive(int attrIntPrimitive) {
 		_attrIntPrimitive = attrIntPrimitive;
-
-		setScopedAttribute("attrIntPrimitive", attrIntPrimitive);
 	}
 
 	public void setAttrInteger(java.lang.Integer attrInteger) {
 		_attrInteger = attrInteger;
-
-		setScopedAttribute("attrInteger", attrInteger);
 	}
 
 	@Override

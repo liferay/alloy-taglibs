@@ -38,8 +38,6 @@ public abstract class BaseTestExtTag extends com.liferay.taglib.util.IncludeTag 
 
 	public void setTest(java.lang.String test) {
 		_test = test;
-
-		setScopedAttribute("test", test);
 	}
 
 	@Override

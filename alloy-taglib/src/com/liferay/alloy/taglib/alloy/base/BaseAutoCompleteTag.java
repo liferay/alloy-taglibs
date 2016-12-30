@@ -38,8 +38,6 @@ public abstract class BaseAutoCompleteTag extends com.liferay.taglib.util.Includ
 
 	public void setTest(java.lang.String test) {
 		_test = test;
-
-		setScopedAttribute("test", test);
 	}
 
 	@Override

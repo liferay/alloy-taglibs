@@ -46,20 +46,14 @@ public abstract class BaseScriptTag extends com.liferay.taglib.util.IncludeTag {
 
 	public void setPosition(java.lang.String position) {
 		_position = position;
-
-		setScopedAttribute("position", position);
 	}
 
 	public void setPrintBuffer(java.lang.Boolean printBuffer) {
 		_printBuffer = printBuffer;
-
-		setScopedAttribute("printBuffer", printBuffer);
 	}
 
 	public void setUse(java.lang.String use) {
 		_use = use;
-
-		setScopedAttribute("use", use);
 	}
 
 	@Override
