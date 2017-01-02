@@ -39,10 +39,11 @@ java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onInputChange = (java.lang.Object)request.getAttribute("alloy:char-counter:onInputChange");
 java.lang.Object onMaxLengthChange = (java.lang.Object)request.getAttribute("alloy:char-counter:onMaxLengthChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:char-counter:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

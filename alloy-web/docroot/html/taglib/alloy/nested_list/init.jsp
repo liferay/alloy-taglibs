@@ -30,10 +30,11 @@ java.lang.Object onDestroyedChange = (java.lang.Object)request.getAttribute("all
 java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:nested-list:onInit");
 java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:nested-list:onInitializedChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:nested-list:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:nested-list:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:nested-list:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

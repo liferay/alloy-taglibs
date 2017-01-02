@@ -87,10 +87,11 @@ java.lang.Object onTransactionChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onUriChange = (java.lang.Object)request.getAttribute("alloy:io-request:onUriChange");
 java.lang.Object onXdrChange = (java.lang.Object)request.getAttribute("alloy:io-request:onXdrChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:io-request:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

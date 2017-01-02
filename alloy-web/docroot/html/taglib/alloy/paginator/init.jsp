@@ -108,10 +108,11 @@ java.lang.Object onTotalElChange = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onTotalLabelChange = (java.lang.Object)request.getAttribute("alloy:paginator:onTotalLabelChange");
 java.lang.Object onTotalPagesChange = (java.lang.Object)request.getAttribute("alloy:paginator:onTotalPagesChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:paginator:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

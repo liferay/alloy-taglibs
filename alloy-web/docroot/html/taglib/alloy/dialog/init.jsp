@@ -163,10 +163,11 @@ java.lang.Object onXyChange = (java.lang.Object)request.getAttribute("alloy:dial
 java.lang.Object onYChange = (java.lang.Object)request.getAttribute("alloy:dialog:onYChange");
 java.lang.Object onZIndexChange = (java.lang.Object)request.getAttribute("alloy:dialog:onZIndexChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:dialog:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:dialog:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:dialog:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

@@ -21,7 +21,6 @@
 <%
 java.lang.String test = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:auto-complete:test"));
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:auto-complete:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:auto-complete:scopedAttributes");
 %>
 
 <%@ include file="/html/taglib/alloy/auto_complete/init-ext.jspf" %>

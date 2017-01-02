@@ -23,7 +23,6 @@ java.lang.String position = GetterUtil.getString((java.lang.String)request.getAt
 java.lang.Boolean printBuffer = GetterUtil.getBoolean((java.lang.Boolean)request.getAttribute("alloy_util:script:printBuffer"));
 java.lang.String use = GetterUtil.getString((java.lang.String)request.getAttribute("alloy_util:script:use"));
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy_util:script:scopedAttributes");
 %>
 
 <%@ include file="/html/taglib/alloy_util/script/init-ext.jspf" %>

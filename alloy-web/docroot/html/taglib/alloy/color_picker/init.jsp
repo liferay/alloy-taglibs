@@ -145,10 +145,11 @@ java.lang.Object onXyChange = (java.lang.Object)request.getAttribute("alloy:colo
 java.lang.Object onYChange = (java.lang.Object)request.getAttribute("alloy:color-picker:onYChange");
 java.lang.Object onZIndexChange = (java.lang.Object)request.getAttribute("alloy:color-picker:onZIndexChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:color-picker:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:color-picker:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:color-picker:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

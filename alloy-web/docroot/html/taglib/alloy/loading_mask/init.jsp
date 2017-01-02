@@ -42,10 +42,11 @@ java.lang.Object onMessageElChange = (java.lang.Object)request.getAttribute("all
 java.lang.Object onStringsChange = (java.lang.Object)request.getAttribute("alloy:loading-mask:onStringsChange");
 java.lang.Object onTargetChange = (java.lang.Object)request.getAttribute("alloy:loading-mask:onTargetChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:loading-mask:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

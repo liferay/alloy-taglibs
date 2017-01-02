@@ -160,10 +160,11 @@ java.lang.Object onXyChange = (java.lang.Object)request.getAttribute("alloy:tool
 java.lang.Object onYChange = (java.lang.Object)request.getAttribute("alloy:tooltip:onYChange");
 java.lang.Object onZIndexChange = (java.lang.Object)request.getAttribute("alloy:tooltip:onZIndexChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tooltip:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

@@ -33,10 +33,11 @@ java.lang.Object onHostChange = (java.lang.Object)request.getAttribute("alloy:pa
 java.lang.Object onInit = (java.lang.Object)request.getAttribute("alloy:parse-content:onInit");
 java.lang.Object onInitializedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:onInitializedChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:parse-content:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:parse-content:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:parse-content:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

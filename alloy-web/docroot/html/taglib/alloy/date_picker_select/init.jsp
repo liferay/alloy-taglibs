@@ -142,10 +142,11 @@ java.lang.Object onYearNodeChange = (java.lang.Object)request.getAttribute("allo
 java.lang.Object onYearNodeNameChange = (java.lang.Object)request.getAttribute("alloy:date-picker-select:onYearNodeNameChange");
 java.lang.Object onYearRangeChange = (java.lang.Object)request.getAttribute("alloy:date-picker-select:onYearRangeChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:date-picker-select:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
