@@ -4,7 +4,7 @@
 <#if component.isComponentTaglibOSGIModule() == true>
 package ${packagePath}.taglib.base;
 
-import ${packagePath}.ServletContextUtil;
+import ${packagePath?keep_before_last(".servlet")}.internal.servlet.ServletContextUtil;
 
 <#else>
 package ${packagePath}.${component.getPackage()}.base;

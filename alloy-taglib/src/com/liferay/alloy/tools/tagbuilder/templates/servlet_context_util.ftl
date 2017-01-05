@@ -1,6 +1,6 @@
 <#include "copyright.ftl">
 
-package ${packagePath};
+import ${packagePath?keep_before_last(".servlet")}.internal.servlet;
 
 import com.liferay.portal.kernel.util.Validator;
 
