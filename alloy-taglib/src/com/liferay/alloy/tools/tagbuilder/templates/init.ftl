@@ -32,17 +32,19 @@
 	<#assign defaultValueSuffix = BLANK>
 
 	<#if (defaultValue?? && (defaultValue != BLANK))>
-		<#if isQuoted(outputSimpleClassName)>
-			<#if ((outputSimpleClassName == "String") && (defaultValue == LIFERAY_BLANK))>
-				<#assign value = defaultValue>
+		<#if ((outputSimpleClassName != "boolean") || (defaultValue != "false"))>
+			<#if isQuoted(outputSimpleClassName)>
+				<#if ((outputSimpleClassName == "String") && (defaultValue == LIFERAY_BLANK))>
+					<#assign value = defaultValue>
+				<#else>
+					<#assign value = QUOTE + defaultValue + QUOTE>
+				</#if>
 			<#else>
-				<#assign value = QUOTE + defaultValue + QUOTE>
+				<#assign value = defaultValue>
 			</#if>
-		<#else>
-			<#assign value = defaultValue>
-		</#if>
 
-		<#assign defaultValueSuffix = COMMA + SPACE + value>
+			<#assign defaultValueSuffix = COMMA + SPACE + value>
+		</#if>
 	</#if>
 
 	<#return defaultValueSuffix />
