@@ -751,7 +751,16 @@ public class TagBuilder {
 
 				StringBuilder sb = new StringBuilder();
 
-				sb.append(_javaDir);
+				int i = _javaDir.lastIndexOf("/servlet");
+
+				if (i == -1) {
+					sb.append(_javaDir);
+				}
+				else {
+					sb.append(_javaDir, 0, i);
+					sb.append("/internal/servlet/");
+				}
+
 				sb.append(_SERVLET_CONTEXT_UTIL);
 				sb.append(_CLASS_SUFFIX);
 
