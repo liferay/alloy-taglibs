@@ -87,6 +87,10 @@ public class Attribute extends BaseModel {
 		return _writeInJSP;
 	}
 
+	public boolean isDefaultInputType() {
+		return _inputType.equals("java.lang.String");
+	}
+
 	public boolean isEvent() {
 		List<Attribute> events = _component.getEvents();
 

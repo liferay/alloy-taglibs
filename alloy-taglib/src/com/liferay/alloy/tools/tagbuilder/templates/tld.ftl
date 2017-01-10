@@ -32,7 +32,9 @@
 			<name>${attribute.getSafeName()}</name>
 			<required>${attribute.isRequired()?string("true", "false")}</required>
 			<rtexprvalue>true</rtexprvalue>
+			<#if !attribute.isDefaultInputType()>
 			<type>${attribute.getInputType()}</type>
+			</#if>
 		</attribute>
 		</#list>
 		<#if component.isDynamicAttributes()>
