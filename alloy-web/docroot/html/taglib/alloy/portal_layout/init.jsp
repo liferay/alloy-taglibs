@@ -19,8 +19,8 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:destroyed")), false);
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:initialized")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:destroyed")));
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:portal-layout:initialized")));
 java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroy");
 java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterDestroyedChange");
 java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:portal-layout:afterInit");

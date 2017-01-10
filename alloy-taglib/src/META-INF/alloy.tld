@@ -45,7 +45,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[To use a button<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -60,14 +59,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The data source that results will be read from. This can either be
@@ -85,7 +82,6 @@ be created.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.
 			<name>dataSourceType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The character used to indicate the beginning or ending of a new value. Most commonly used
@@ -93,7 +89,6 @@ is a ",".<!--{"event":false,"inputType":"java.lang.String","outputType":"java.la
 			<name>delimChar</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -142,14 +137,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>autocompleteId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -164,7 +157,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>input</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The key or numeric index in the schema to match the result against.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"0"}-->]]></description>
@@ -258,14 +250,12 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>schemaType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -316,7 +306,6 @@ always be greater than the <a href="AutoComplete.html#config_queryDelay">queryDe
 			<name>uniqueName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -1297,7 +1286,6 @@ after rendering is complete.
 			<name>test</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
@@ -1319,7 +1307,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[An object map of the CSS class names to use for the different interaction states.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -1334,14 +1321,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether to apply the default interaction state to the button<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -1410,7 +1395,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether to track the hover interaction state of the button.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -1424,7 +1408,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>icon</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the icon of the ButtonItem. If not
@@ -1433,14 +1416,12 @@ boundingBox which matches <code>aui-button-icon</code>.<!--{"event":false,"input
 			<name>iconNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>buttonitemId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number representing the Widget's ordinal position in its
@@ -1463,7 +1444,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>label</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the text of the ButtonItem. If not
@@ -1472,7 +1452,6 @@ boundingBox which matches <code>aui-button-label</code>.<!--{"event":false,"inpu
 			<name>labelNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Retrieves the parent of the Widget in the object hierarchy.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -1524,7 +1503,6 @@ values are:
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -1550,14 +1528,12 @@ null removes the "tabIndex" attribute from the widget's bounding box.<!--{"event
 			<name>title</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Button type.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"button"}-->]]></description>
 			<name>type</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -2198,7 +2174,6 @@ contentBox which matches <code>aui-calendar-day-blank</code>.<!--{"event":false,
 			<name>blankDays</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The outermost DOM node for the Widget, used for sizing and positioning
@@ -2207,7 +2182,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[A DOM node that is a direct descendant of a Widget's bounding box that
@@ -2215,7 +2189,6 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Current day number.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -2264,7 +2237,6 @@ localization support. The format must be valid according to
 			<name>dateFormat</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Dates which the calendar will show as selected by default.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.ArrayList","required":false}-->]]></description>
@@ -2296,7 +2268,6 @@ or neither, but not both.<!--{"event":false,"inputType":"java.lang.String","outp
 			<name>disabledDatesRule</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The name of the rule which all enabled dates should match.
@@ -2305,7 +2276,6 @@ or neither, but not both.<!--{"event":false,"inputType":"java.lang.String","outp
 			<name>enabledDatesRule</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[First day of the week: Sunday is 0, Monday is 1.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -2329,7 +2299,6 @@ contentBox which matches <code>aui-calendar-hd</code>.<!--{"event":false,"inputT
 			<name>headerContentNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Custom header renderer for the calendar.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -2345,7 +2314,6 @@ contentBox which matches <code>aui-calendar-title</code>.<!--{"event":false,"inp
 			<name>headerTitleNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[String with units, or number, representing the height of the Widget. If a number is provided,
@@ -2362,7 +2330,6 @@ contentBox which matches <code>aui-calendar-prev</code>.<!--{"event":false,"inpu
 			<name>iconNextNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[... If not
@@ -2371,14 +2338,12 @@ contentBox which matches <code>aui-calendar-prev</code>.<!--{"event":false,"inpu
 			<name>iconPrevNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>calendarId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -2429,7 +2394,6 @@ contentBox which matches <code>aui-calendar-day</code>.<!--{"event":false,"input
 			<name>monthDays</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[... If not
@@ -2438,7 +2402,6 @@ contentBox which matches <code>aui-calendar-monthdays</code>.<!--{"event":false,
 			<name>monthDaysNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM node reference to be the "none" link of the Calendar. If not
@@ -2509,7 +2472,6 @@ dates, and Shift key for date ranges.<!--{"event":false,"inputType":"java.lang.S
 			<name>selectionMode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true set the selected date with the correct
@@ -2557,7 +2519,6 @@ cells available.<!--{"event":false,"inputType":"boolean","outputType":"boolean",
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Strings and properties derived from the internationalization packages
@@ -2602,7 +2563,6 @@ contentBox which matches <code>aui-calendar-week</code>.<!--{"event":false,"inpu
 			<name>weekDays</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[... If not
@@ -2611,7 +2571,6 @@ contentBox which matches <code>aui-calendar-weekdays</code>.<!--{"event":false,"
 			<name>weekDaysNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[String with units, or number, representing the width of the Widget. If a number is provided,
@@ -3689,7 +3648,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Cancel auto hide delay if the user interact with the Overlay
@@ -3722,14 +3680,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[OverlayContext allow multiple elements to be the
@@ -3804,7 +3760,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number of milliseconds after the hide method is invoked to hide the
@@ -3819,7 +3774,6 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>hideOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true the instance is registered on the
@@ -3835,7 +3789,6 @@ class and will be hide when the user click on document.<!--{"event":false,"input
 			<name>colorpickerId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -3892,14 +3845,12 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>showOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -4683,7 +4634,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the button of the DatePickerSelect. If not
@@ -4692,7 +4642,6 @@ contentBox which matches <code>aui-buttonitem</code>.<!--{"event":false,"inputTy
 			<name>buttonNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<a href="Calendar.html">Calendar</a> configuration Object.</a><!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false,"defaultValue":"{}"}-->]]></description>
@@ -4707,14 +4656,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the day of the DatePickerSelect. If not
@@ -4723,7 +4670,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>dayNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Name attribute used on the
@@ -4731,7 +4677,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>dayNodeName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -4780,14 +4725,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>datepickerselectId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -4804,7 +4747,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>monthNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Name attribute used on the
@@ -4812,7 +4754,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>monthNodeName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true the select element for the day will be nullable<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -4882,7 +4823,6 @@ contentBox which matches <code>aui-datepicker-select-wrapper</code>.<!--{"event"
 			<name>selectWrapperNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true set the selected date with the correct
@@ -4898,7 +4838,6 @@ value of the input field which is hosting the Calendar.<!--{"event":false,"input
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true is able to do stacking with another overlays.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -4964,7 +4903,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>yearNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Name attribute used on the
@@ -4972,7 +4910,6 @@ contentBox which matches <code>aui-datepicker-year</code>.<!--{"event":false,"in
 			<name>yearNodeName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Year range to be displayed on the year select element. By default
@@ -5678,7 +5615,6 @@ By default, this attribute consists of two objects which will cause the widget t
 			<name>dialogBodyContent</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The outermost DOM node for the Widget, used for sizing and positioning
@@ -5687,7 +5623,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<p>Array of object literals, each containing a set of properties
@@ -5763,7 +5698,6 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Invoke the <a href="Dialog.html#method_destroy">destroy</a>
@@ -5870,7 +5804,6 @@ For more information how to use this option see
 			<name>dialogId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -5950,7 +5883,6 @@ boundingBox, to protect it from select box bleedthrough.<!--{"event":false,"inpu
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> give stacking habilities to the Dialog.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -6815,7 +6747,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<a href="ButtonItem.html">ButtonItem</a> constructor Object for the
@@ -6823,7 +6754,6 @@ cancelButton.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>cancelButton</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[A DOM node that is a direct descendant of a Widget's bounding box that
@@ -6831,21 +6761,18 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Content text.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>contentText</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -6868,7 +6795,6 @@ is left to the specific classes extending widget.<!--{"event":false,"inputType":
 			<name>eventType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if the Widget, or one of its descendants,
@@ -6907,7 +6833,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Array with icons for the <a href="Toolbar.html">Toolbar</a>.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.ArrayList","required":false,"defaultValue":"[]"}-->]]></description>
@@ -6921,7 +6846,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>editableId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -6937,7 +6861,6 @@ href="Editable.html#config_node">node</a>.<!--{"event":false,"inputType":"java.l
 			<name>inputType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Node to setup the editable.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -6959,7 +6882,6 @@ preventing the <code>.render()</code> manual call.<!--{"event":false,"inputType"
 			<name>renderTo</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this Widget
@@ -6975,14 +6897,12 @@ saveButton.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.
 			<name>saveButton</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -7639,7 +7559,6 @@ This Object is passed to the <code>A.io</code> internally.<!--{"event":false,"in
 			<name>cfg</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[See <a href="http://developer.yahoo.com/yui/3/io/#configuration">IO
@@ -7662,7 +7581,6 @@ Configuration</a>.<!--{"event":false,"inputType":"java.lang.Object","outputType"
 			<name>dataType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -7708,7 +7626,6 @@ Configuration</a>.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>method</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[This is a normalized attribute for the response data. It's useful
@@ -7726,7 +7643,6 @@ request. Only works if the response is XML or HTML.<!--{"event":false,"inputType
 			<name>selector</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[See <a href="http://developer.yahoo.com/yui/3/io/#configuration">IO
@@ -7756,7 +7672,6 @@ Configuration</a>.<!--{"event":false,"inputType":"java.lang.Object","outputType"
 			<name>uri</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[See <a href="http://developer.yahoo.com/yui/3/io/#configuration">IO
@@ -8195,14 +8110,12 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The caption of the displayed image.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>caption</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The element to be used as caption.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -8249,14 +8162,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Index of the current image.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -8336,14 +8247,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>imagegalleryId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Image node element used to load the images.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -8372,7 +8281,6 @@ class.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.
 			<name>infoTemplate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -8468,7 +8376,6 @@ with the thumbnails.<!--{"event":false,"inputType":"java.lang.Object","outputTyp
 			<name>pausedLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> the slide show is playing.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -8482,7 +8389,6 @@ with the thumbnails.<!--{"event":false,"inputType":"java.lang.Object","outputTyp
 			<name>playingLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Preload all images grabbed from the <a
@@ -8559,7 +8465,6 @@ boundingBox, to protect it from select box bleedthrough.<!--{"event":false,"inpu
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -9831,14 +9736,12 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The caption of the displayed image.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>caption</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The element to be used as caption.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -9885,14 +9788,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Index of the current image.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -9965,14 +9866,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>imageviewerId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Image node element used to load the images.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -10001,7 +9900,6 @@ class.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.
 			<name>infoTemplate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -10123,7 +10021,6 @@ boundingBox, to protect it from select box bleedthrough.<!--{"event":false,"inpu
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -11203,7 +11100,6 @@ results.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lan
 			<name>input</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The input <code>value</code> need to matches with this RegExp to be
@@ -11226,7 +11122,6 @@ could use /\d+/g).<!--{"event":false,"inputType":"java.lang.Object","outputType"
 			<name>searchValue</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Function to be executed to show the node when the data of that node
@@ -11490,7 +11385,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>messageEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Strings used on the LoadingMask. See
@@ -11813,7 +11707,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[A convenience attribute, which can be used as a shortcut for the align attribute.
@@ -11838,14 +11731,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -11911,14 +11802,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>overlaybaseId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -11967,7 +11856,6 @@ boundingBox, to protect it from select box bleedthrough.<!--{"event":false,"inpu
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -12650,7 +12538,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Cancel auto hide delay if the user interact with the Overlay
@@ -12683,14 +12570,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[OverlayContext allow multiple elements to be the
@@ -12765,7 +12650,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number of milliseconds after the hide method is invoked to hide the
@@ -12780,7 +12664,6 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>hideOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true the instance is registered on the
@@ -12796,7 +12679,6 @@ class and will be hide when the user click on document.<!--{"event":false,"input
 			<name>overlaycontextId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -12853,14 +12735,12 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>showOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -13675,7 +13555,6 @@ list of valid arrows 'bc', 'bl', 'br', 'cc', 'lb', 'lc', 'lt', 'rb',
 			<name>arrow</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The content to be added to the body section. This will replace any existing content
@@ -13692,7 +13571,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Cancel auto hide delay if the user interact with the Overlay
@@ -13725,14 +13603,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[OverlayContext allow multiple elements to be the
@@ -13807,7 +13683,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number of milliseconds after the hide method is invoked to hide the
@@ -13822,7 +13697,6 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>hideOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true the instance is registered on the
@@ -13838,7 +13712,6 @@ class and will be hide when the user click on document.<!--{"event":false,"input
 			<name>overlaycontextpanelId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -13903,14 +13776,12 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>showOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Gives stacking habilities to the OverlayContextPanel.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -14774,7 +14645,6 @@ mask.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.A
 			<name>background</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The content to be added to the body section. This will replace any existing content
@@ -14791,7 +14661,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[A convenience attribute, which can be used as a shortcut for the align attribute.
@@ -14816,14 +14685,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -14889,14 +14756,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>overlaymaskId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -14951,7 +14816,6 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -14979,7 +14843,6 @@ takes the full screen.<!--{"event":false,"inputType":"java.lang.String","outputT
 			<name>target</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -15682,7 +15545,6 @@ containers.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.
 			<name>containers</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -15698,7 +15560,6 @@ first link element.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>firstPageLink</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The label used as content of the
@@ -15706,7 +15567,6 @@ first link element.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>firstPageLinkLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -15722,7 +15582,6 @@ last link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>lastPageLink</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The label used as content of the
@@ -15730,7 +15589,6 @@ last link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>lastPageLinkLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The max number of page links to be displayed. If lower than the
@@ -15747,7 +15605,6 @@ next link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>nextPageLink</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The label used as content of the
@@ -15755,7 +15612,6 @@ next link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>nextPageLinkLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Page to display on initial paint.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"1"}-->]]></description>
@@ -15769,7 +15625,6 @@ next link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>pageContainerTemplate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<p>Function which set the content of the each page element. The passed
@@ -15789,14 +15644,12 @@ pageEl.html(pageNumber);
 			<name>pageLinkTemplate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Node element to display the page report (i.e., (1 of 100)).<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>pageReportEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Template for the
@@ -15806,7 +15659,6 @@ Note the placeholders for the page {page} and the total pages
 			<name>pageReportLabelTemplate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The <a href="Node.html">Node</a> or template to be used as the
@@ -15814,7 +15666,6 @@ prev link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>prevPageLink</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The label used as content of the
@@ -15822,7 +15673,6 @@ prev link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>prevPageLinkLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number of records constituting a "page".<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"1"}-->]]></description>
@@ -15837,7 +15687,6 @@ prev link element.<!--{"event":false,"inputType":"java.lang.String","outputType"
 			<name>rowsPerPageEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Array to be displayed on the generated HTML Select element with the
@@ -15865,7 +15714,6 @@ so named ui component.<!--{"event":false,"inputType":"java.lang.String","outputT
 			<name>template</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Total number of records to paginate through.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -15879,14 +15727,12 @@ so named ui component.<!--{"event":false,"inputType":"java.lang.String","outputT
 			<name>totalEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The label markup to the total information.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"(Total {total})"}-->]]></description>
 			<name>totalLabel</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Number of pages. Calculated based on the
@@ -16376,7 +16222,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether the panel is displayed collapsed.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -16398,7 +16243,6 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -16474,7 +16318,6 @@ For more information how to use this option see
 			<name>panelId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -16504,7 +16347,6 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Panel's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -17276,7 +17118,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[A DOM node that is a direct descendant of a Widget's bounding box that
@@ -17284,14 +17125,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -17331,14 +17170,12 @@ has focus.<!--{"event":false,"inputType":"boolean","outputType":"boolean","requi
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>progressbarId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -17356,7 +17193,6 @@ used as label.<!--{"event":false,"inputType":"java.lang.String","outputType":"ja
 			<name>label</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Represents the top value for the bar. The bar will be fully
@@ -17382,7 +17218,6 @@ horizontal).<!--{"event":false,"inputType":"java.lang.String","outputType":"java
 			<name>orientation</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Calculate the ratio based on <code>max</code> and
@@ -17413,7 +17248,6 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the satus bar of the progressbar. If not
@@ -17422,7 +17256,6 @@ contentBox which matches <code>aui-progressbar-status</code>.<!--{"event":false,
 			<name>statusNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Calculate the progressbar step based on <code>ratio</code>
@@ -17458,7 +17291,6 @@ contentBox which matches <code>aui-progressbar-text</code>.<!--{"event":false,"i
 			<name>textNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -18002,7 +17834,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> could be reseted (i.e., have no values
@@ -18018,14 +17849,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The number of selected starts when the Rating render.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -18089,14 +17918,12 @@ replace the radio elements and keep the same name.<!--{"event":false,"inputType"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>ratingId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -18113,14 +17940,12 @@ not specified will use the name of the replaced radio.<!--{"event":false,"inputT
 			<name>inputName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Label to be displayed with the Rating elements.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>label</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the text of the StarRating. If not
@@ -18129,7 +17954,6 @@ boundingBox which matches <code>aui-rating-label-element</code>.<!--{"event":fal
 			<name>labelNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> the render phase will be autimatically invoked
@@ -18175,7 +17999,6 @@ generated Rating elements.<!--{"event":false,"inputType":"boolean","outputType":
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -18202,7 +18025,6 @@ radio elements.<!--{"event":false,"inputType":"java.lang.String","outputType":"j
 			<name>title</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -18217,7 +18039,6 @@ enabled for the Widget.<!--{"event":false,"inputType":"boolean","outputType":"bo
 			<name>ratingValue</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating weather or not the Widget is visible.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -18827,7 +18648,6 @@ after rendering is complete.
 			<name>activeHandle</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Stores the active handle element during the resize.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -18962,7 +18782,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>proxyEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[True when the element is being Resized.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -19009,7 +18828,6 @@ the handles elements.<!--{"event":false,"inputType":"java.lang.String","outputTy
 			<name>wrapper</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Fires when the value for the configuration attribute 'activeHandle' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -19542,7 +19360,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[To use a button<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -19557,14 +19374,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The data source that results will be read from. This can either be
@@ -19582,7 +19397,6 @@ be created.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.
 			<name>dataSourceType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The character used to indicate the beginning or ending of a new value. Most commonly used
@@ -19590,7 +19404,6 @@ is a ",".<!--{"event":false,"inputType":"java.lang.String","outputType":"java.la
 			<name>delimChar</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -19639,14 +19452,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>textboxlistId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -19661,7 +19472,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>input</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The key or numeric index in the schema to match the result against.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"0"}-->]]></description>
@@ -19755,14 +19565,12 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>schemaType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -19813,7 +19621,6 @@ always be greater than the <a href="AutoComplete.html#config_queryDelay">queryDe
 			<name>uniqueName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -20803,7 +20610,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> could be reseted (i.e., have no values
@@ -20819,14 +20625,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The number of selected starts when the Rating render.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"0"}-->]]></description>
@@ -20890,14 +20694,12 @@ replace the radio elements and keep the same name.<!--{"event":false,"inputType"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>thumbratingId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -20914,14 +20716,12 @@ not specified will use the name of the replaced radio.<!--{"event":false,"inputT
 			<name>inputName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Label to be displayed with the Rating elements.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>label</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[DOM Node to display the text of the StarRating. If not
@@ -20930,7 +20730,6 @@ boundingBox which matches <code>aui-rating-label-element</code>.<!--{"event":fal
 			<name>labelNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> the render phase will be autimatically invoked
@@ -20976,7 +20775,6 @@ generated Rating elements.<!--{"event":false,"inputType":"boolean","outputType":
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -21003,7 +20801,6 @@ radio elements.<!--{"event":false,"inputType":"java.lang.String","outputType":"j
 			<name>title</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -21018,7 +20815,6 @@ enabled for the Widget.<!--{"event":false,"inputType":"boolean","outputType":"bo
 			<name>thumbratingValue</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating weather or not the Widget is visible.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -21644,7 +21440,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Receives the toolbar items.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.ArrayList","required":false}-->]]></description>
@@ -21659,14 +21454,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The default type of child widget to render into the Element<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"ButtonItem"}-->]]></description>
@@ -21721,7 +21514,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Receives an interaction state of hover during the
@@ -21736,7 +21528,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>toolbarId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -21762,7 +21553,6 @@ in the object hierarchy.<!--{"event":false,"inputType":"boolean","outputType":"b
 			<name>orientation</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If <code>true</code> the render phase will be autimatically invoked
@@ -21795,7 +21585,6 @@ children.  If no children are selected, will return null.<!--{"event":false,"inp
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -22449,7 +22238,6 @@ list of valid arrows 'bc', 'bl', 'br', 'cc', 'lb', 'lc', 'lt', 'rb',
 			<name>arrow</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The content to be added to the body section. This will replace any existing content
@@ -22466,7 +22254,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Cancel auto hide delay if the user interact with the Overlay
@@ -22499,14 +22286,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[OverlayContext allow multiple elements to be the
@@ -22581,7 +22366,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[See <a href="OverlayContext.html#config_hideDelay">OverlayContext hideDelay</a>.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Number","required":false,"defaultValue":"500"}-->]]></description>
@@ -22595,7 +22379,6 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If true the instance is registered on the
@@ -22611,7 +22394,6 @@ class and will be hide when the user click on document.<!--{"event":false,"input
 			<name>tooltipId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -22676,14 +22458,12 @@ OverlayContext.<!--{"event":false,"inputType":"java.lang.Object","outputType":"j
 			<name>showOn</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Gives stacking habilities to the OverlayContextPanel.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -23556,21 +23336,18 @@ after rendering is complete.
 			<name>checkContainerEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Checkbox element.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>checkEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Name of the checkbox element used on the current TreeNode.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"tree-node-check"}-->]]></description>
 			<name>checkName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether the TreeNode is checked or not.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -23591,7 +23368,6 @@ after rendering is complete.
 			<name>container</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -23620,21 +23396,18 @@ has been through the destroy lifecycle phase.<!--{"event":false,"inputType":"boo
 			<name>hitAreaEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Icon element.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>iconEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Id of the TreeNode.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>treenodetaskId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Index the nodes.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false,"defaultValue":"{}"}-->]]></description>
@@ -23663,14 +23436,12 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>label</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Label element to house the <code>label</code> attribute.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>labelEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether the TreeNode could have children or not (i.e. if any
@@ -24170,7 +23941,6 @@ cannot prevent initialization).
 			<name>container</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -24214,7 +23984,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>type</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Fires when the value for the configuration attribute 'children' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -24405,21 +24174,18 @@ cannot prevent initialization).
 			<name>checkContainerEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Checkbox element.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>checkEl</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Name of the checkbox element used on the current TreeNode.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false,"defaultValue":"tree-node-check"}-->]]></description>
 			<name>checkName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Whether the TreeNode is checked or not.<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"false"}-->]]></description>
@@ -24440,7 +24206,6 @@ cannot prevent initialization).
 			<name>container</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -24455,14 +24220,12 @@ has been through the destroy lifecycle phase.<!--{"event":false,"inputType":"boo
 			<name>dropAction</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Dragdrop helper element.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>helper</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Index the nodes.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false,"defaultValue":"{}"}-->]]></description>
@@ -24519,7 +24282,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>type</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Fires when the value for the configuration attribute 'checkContainerEl' is changed. You can listen for the event using the <a href="Attribute.html#method_on">on</a> method if you wish to be notified before the attribute's value has changed, or using the <a href="Event.Target.html#method_after">after</a> method if you wish to be notified after the attribute's value has changed.<!--{"event":true,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false}-->]]></description>
@@ -24835,7 +24597,6 @@ cannot prevent initialization).
 			<name>test</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>

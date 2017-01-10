@@ -19,14 +19,14 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean activeState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:activeState")), false);
+boolean activeState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:activeState")));
 java.util.HashMap classNames = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:button-item:classNames")));
 java.lang.String cssClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:cssClass"));
 boolean defaultState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:defaultState")), true);
 java.lang.Number depth = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:button-item:depth")), -1);
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:destroyed")), false);
-boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:disabled")), false);
-boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:focused")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:destroyed")));
+boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:disabled")));
+boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:focused")));
 java.lang.Object handler = (java.lang.Object)request.getAttribute("alloy:button-item:handler");
 java.lang.Object height = (java.lang.Object)request.getAttribute("alloy:button-item:height");
 java.lang.String hideClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:hideClass"), "aui-helper-hidden");
@@ -35,12 +35,12 @@ java.lang.String icon = GetterUtil.getString((java.lang.String)request.getAttrib
 java.lang.String iconNode = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:iconNode"));
 java.lang.String buttonitemId = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:buttonitemId"));
 java.lang.Number index = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:button-item:index")), 0);
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:initialized")));
 java.lang.String label = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:label"));
 java.lang.String labelNode = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:button-item:labelNode"));
 java.lang.Object buttonitemParent = (java.lang.Object)request.getAttribute("alloy:button-item:buttonitemParent");
 java.lang.Object render = (java.lang.Object)request.getAttribute("alloy:button-item:render");
-boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:rendered")), false);
+boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:button-item:rendered")));
 java.lang.Object root = (java.lang.Object)request.getAttribute("alloy:button-item:root");
 java.lang.Number selected = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:button-item:selected")), 0);
 java.util.HashMap strings = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:button-item:strings")));

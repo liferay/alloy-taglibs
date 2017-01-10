@@ -12,7 +12,6 @@
 			<name>test</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<name>attrBooleanPrimitive</name>
@@ -48,13 +47,11 @@
 			<name>alwaysShowContainer</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<name>test</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[If set to true, the <a href="AutoComplete.html#method_filterResults">filterResults</a>
@@ -79,7 +76,6 @@ for skinning.<!--{"event":false,"inputType":"java.lang.String","outputType":"jav
 			<name>boundingBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[To use a button<!--{"event":false,"inputType":"boolean","outputType":"boolean","required":false,"defaultValue":"true"}-->]]></description>
@@ -94,14 +90,12 @@ houses its content.<!--{"event":false,"inputType":"java.lang.String","outputType
 			<name>contentBox</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[CSS class to be automatically added to the <code>boundingBox</code>.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>cssClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The data source that results will be read from. This can either be
@@ -119,7 +113,6 @@ be created.<!--{"event":false,"inputType":"java.lang.String","outputType":"java.
 			<name>dataSourceType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The character used to indicate the beginning or ending of a new value. Most commonly used
@@ -127,7 +120,6 @@ is a ",".<!--{"event":false,"inputType":"java.lang.String","outputType":"java.la
 			<name>delimChar</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -176,14 +168,12 @@ the default unit, defined by the Widgets DEF_UNIT, property is used.<!--{"event"
 			<name>hideClass</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>autocompleteId</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Flag indicating whether or not this object
@@ -198,7 +188,6 @@ has been through the init lifecycle phase.<!--{"event":false,"inputType":"boolea
 			<name>input</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The key or numeric index in the schema to match the result against.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.lang.Object","required":false,"defaultValue":"0"}-->]]></description>
@@ -292,14 +281,12 @@ has been through the render lifecycle phase.<!--{"event":false,"inputType":"bool
 			<name>schemaType</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[The DOM node to parse for configuration values, passed to the Widget's HTML_PARSER definition<!--{"event":false,"inputType":"java.lang.String","outputType":"java.lang.String","required":false}-->]]></description>
 			<name>srcNode</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Collection of strings used to label elements of the Widget's UI.<!--{"event":false,"inputType":"java.lang.Object","outputType":"java.util.HashMap","required":false}-->]]></description>
@@ -350,7 +337,6 @@ always be greater than the <a href="AutoComplete.html#config_queryDelay">queryDe
 			<name>uniqueName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<description><![CDATA[Boolean indicating if use of the WAI-ARIA Roles and States should be
@@ -1337,7 +1323,6 @@ after rendering is complete.
 			<name>test</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
 		</attribute>
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>

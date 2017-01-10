@@ -20,23 +20,23 @@
 
 <%
 java.lang.Object activeDescendant = (java.lang.Object)request.getAttribute("alloy:toolbar:activeDescendant");
-boolean activeState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:activeState")), false);
+boolean activeState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:activeState")));
 java.util.ArrayList children = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:toolbar:children")));
 java.lang.String cssClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:toolbar:cssClass"));
 java.lang.Object defaultChildType = (java.lang.Object)request.getAttribute("alloy:toolbar:defaultChildType");
-boolean defaultState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:defaultState")), false);
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:destroyed")), false);
-boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:disabled")), false);
-boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:focused")), false);
+boolean defaultState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:defaultState")));
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:destroyed")));
+boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:disabled")));
+boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:focused")));
 java.lang.Object height = (java.lang.Object)request.getAttribute("alloy:toolbar:height");
 java.lang.String hideClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:toolbar:hideClass"), "aui-helper-hidden");
-boolean hoverState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:hoverState")), false);
+boolean hoverState = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:hoverState")));
 java.lang.String toolbarId = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:toolbar:toolbarId"));
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:initialized")), false);
-boolean multiple = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:multiple")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:initialized")));
+boolean multiple = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:multiple")));
 java.lang.String orientation = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:toolbar:orientation"), "horizontal");
 java.lang.Object render = (java.lang.Object)request.getAttribute("alloy:toolbar:render");
-boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:rendered")), false);
+boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:toolbar:rendered")));
 java.lang.Object selection = (java.lang.Object)request.getAttribute("alloy:toolbar:selection");
 java.util.HashMap strings = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:toolbar:strings")));
 java.lang.Number tabIndex = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:toolbar:tabIndex")), 0);
