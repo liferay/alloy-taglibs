@@ -155,16 +155,16 @@ public abstract class BaseNestedListTag extends com.liferay.taglib.util.IncludeT
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:nested-list:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:nested-list:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:nested-list:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:nested-list:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:nested-list:afterInit", _afterInit);
+		request.setAttribute("alloy:nested-list:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:nested-list:onDestroy", _onDestroy);
+		request.setAttribute("alloy:nested-list:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:nested-list:onInit", _onInit);
+		request.setAttribute("alloy:nested-list:onInitializedChange", _onInitializedChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:nested-list:";

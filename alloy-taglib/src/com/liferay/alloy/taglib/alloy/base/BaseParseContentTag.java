@@ -188,19 +188,19 @@ public abstract class BaseParseContentTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "host", _host);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterHostChange", _afterHostChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onHostChange", _onHostChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:parse-content:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:parse-content:host", _host);
+		request.setAttribute("alloy:parse-content:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:parse-content:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:parse-content:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:parse-content:afterHostChange", _afterHostChange);
+		request.setAttribute("alloy:parse-content:afterInit", _afterInit);
+		request.setAttribute("alloy:parse-content:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:parse-content:onDestroy", _onDestroy);
+		request.setAttribute("alloy:parse-content:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:parse-content:onHostChange", _onHostChange);
+		request.setAttribute("alloy:parse-content:onInit", _onInit);
+		request.setAttribute("alloy:parse-content:onInitializedChange", _onInitializedChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:parse-content:";

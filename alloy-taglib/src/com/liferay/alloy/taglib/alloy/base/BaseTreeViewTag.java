@@ -353,34 +353,34 @@ public abstract class BaseTreeViewTag extends com.liferay.taglib.util.IncludeTag
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "children", _children);
-		setNamespacedAttribute(request, "container", _container);
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "index", _index);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "io", _io);
-		setNamespacedAttribute(request, "lastSelected", _lastSelected);
-		setNamespacedAttribute(request, "type", _type);
-		setNamespacedAttribute(request, "afterChildrenChange", _afterChildrenChange);
-		setNamespacedAttribute(request, "afterContainerChange", _afterContainerChange);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterIndexChange", _afterIndexChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "afterIoChange", _afterIoChange);
-		setNamespacedAttribute(request, "afterLastSelectedChange", _afterLastSelectedChange);
-		setNamespacedAttribute(request, "afterTypeChange", _afterTypeChange);
-		setNamespacedAttribute(request, "onChildrenChange", _onChildrenChange);
-		setNamespacedAttribute(request, "onContainerChange", _onContainerChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onIndexChange", _onIndexChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
-		setNamespacedAttribute(request, "onIoChange", _onIoChange);
-		setNamespacedAttribute(request, "onLastSelectedChange", _onLastSelectedChange);
-		setNamespacedAttribute(request, "onTypeChange", _onTypeChange);
+		request.setAttribute("alloy:tree-view:children", _children);
+		request.setAttribute("alloy:tree-view:container", _container);
+		request.setAttribute("alloy:tree-view:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:tree-view:index", _index);
+		request.setAttribute("alloy:tree-view:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:tree-view:io", _io);
+		request.setAttribute("alloy:tree-view:lastSelected", _lastSelected);
+		request.setAttribute("alloy:tree-view:type", _type);
+		request.setAttribute("alloy:tree-view:afterChildrenChange", _afterChildrenChange);
+		request.setAttribute("alloy:tree-view:afterContainerChange", _afterContainerChange);
+		request.setAttribute("alloy:tree-view:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:tree-view:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:tree-view:afterIndexChange", _afterIndexChange);
+		request.setAttribute("alloy:tree-view:afterInit", _afterInit);
+		request.setAttribute("alloy:tree-view:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:tree-view:afterIoChange", _afterIoChange);
+		request.setAttribute("alloy:tree-view:afterLastSelectedChange", _afterLastSelectedChange);
+		request.setAttribute("alloy:tree-view:afterTypeChange", _afterTypeChange);
+		request.setAttribute("alloy:tree-view:onChildrenChange", _onChildrenChange);
+		request.setAttribute("alloy:tree-view:onContainerChange", _onContainerChange);
+		request.setAttribute("alloy:tree-view:onDestroy", _onDestroy);
+		request.setAttribute("alloy:tree-view:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:tree-view:onIndexChange", _onIndexChange);
+		request.setAttribute("alloy:tree-view:onInit", _onInit);
+		request.setAttribute("alloy:tree-view:onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:tree-view:onIoChange", _onIoChange);
+		request.setAttribute("alloy:tree-view:onLastSelectedChange", _onLastSelectedChange);
+		request.setAttribute("alloy:tree-view:onTypeChange", _onTypeChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:tree-view:";
