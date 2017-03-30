@@ -138,7 +138,12 @@ public abstract class Base${component.getClassName()} extends ${component.getPar
 	protected void setAttributes(HttpServletRequest request) {
 		<#list component.getAttributesAndEvents() as attribute>
 		<#if typeUtil.hasMethod(component.getParentClass(), "setNamespacedAttribute", ["javax.servlet.http.HttpServletRequest", "java.lang.String", "java.lang.Object"]) == true>
-		setNamespacedAttribute(request, "${attribute.getSafeName()}", _${attribute.getSafeName()});
+			<#assign outputSimpleClassName = attribute.getOutputTypeSimpleClassName()>
+			<#if outputSimpleClassName == "boolean" || isNumericPrimitiveType(outputSimpleClassName)>
+		request.setAttribute("${namespace}${attribute.getName()}", String.valueOf(_${attribute.getSafeName()}));
+			<#else>
+		request.setAttribute("${namespace}${attribute.getName()}", _${attribute.getSafeName()});
+			</#if>
 		<#else>
 		request.setAttribute("${attribute.getName()}", _${attribute.getSafeName()});
 		</#if>
