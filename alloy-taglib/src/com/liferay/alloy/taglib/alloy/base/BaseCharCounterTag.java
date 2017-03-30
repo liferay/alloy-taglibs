@@ -254,25 +254,25 @@ public abstract class BaseCharCounterTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "counter", _counter);
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "input", _input);
-		setNamespacedAttribute(request, "maxLength", _maxLength);
-		setNamespacedAttribute(request, "afterCounterChange", _afterCounterChange);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "afterInputChange", _afterInputChange);
-		setNamespacedAttribute(request, "afterMaxLengthChange", _afterMaxLengthChange);
-		setNamespacedAttribute(request, "onCounterChange", _onCounterChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
-		setNamespacedAttribute(request, "onInputChange", _onInputChange);
-		setNamespacedAttribute(request, "onMaxLengthChange", _onMaxLengthChange);
+		request.setAttribute("alloy:char-counter:counter", _counter);
+		request.setAttribute("alloy:char-counter:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:char-counter:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:char-counter:input", _input);
+		request.setAttribute("alloy:char-counter:maxLength", _maxLength);
+		request.setAttribute("alloy:char-counter:afterCounterChange", _afterCounterChange);
+		request.setAttribute("alloy:char-counter:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:char-counter:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:char-counter:afterInit", _afterInit);
+		request.setAttribute("alloy:char-counter:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:char-counter:afterInputChange", _afterInputChange);
+		request.setAttribute("alloy:char-counter:afterMaxLengthChange", _afterMaxLengthChange);
+		request.setAttribute("alloy:char-counter:onCounterChange", _onCounterChange);
+		request.setAttribute("alloy:char-counter:onDestroy", _onDestroy);
+		request.setAttribute("alloy:char-counter:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:char-counter:onInit", _onInit);
+		request.setAttribute("alloy:char-counter:onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:char-counter:onInputChange", _onInputChange);
+		request.setAttribute("alloy:char-counter:onMaxLengthChange", _onMaxLengthChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:char-counter:";

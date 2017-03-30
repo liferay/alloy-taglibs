@@ -90,11 +90,11 @@ public abstract class BaseTestTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "test", _test);
-		setNamespacedAttribute(request, "attrBooleanPrimitive", _attrBooleanPrimitive);
-		setNamespacedAttribute(request, "attrBoolean", _attrBoolean);
-		setNamespacedAttribute(request, "attrIntPrimitive", _attrIntPrimitive);
-		setNamespacedAttribute(request, "attrInteger", _attrInteger);
+		request.setAttribute("liferay:test:test", _test);
+		request.setAttribute("liferay:test:attrBooleanPrimitive", String.valueOf(_attrBooleanPrimitive));
+		request.setAttribute("liferay:test:attrBoolean", _attrBoolean);
+		request.setAttribute("liferay:test:attrIntPrimitive", String.valueOf(_attrIntPrimitive));
+		request.setAttribute("liferay:test:attrInteger", _attrInteger);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "liferay:test:";

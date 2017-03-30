@@ -72,9 +72,9 @@ public abstract class BaseScriptTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "position", _position);
-		setNamespacedAttribute(request, "printBuffer", _printBuffer);
-		setNamespacedAttribute(request, "use", _use);
+		request.setAttribute("alloy_util:script:position", _position);
+		request.setAttribute("alloy_util:script:printBuffer", _printBuffer);
+		request.setAttribute("alloy_util:script:use", _use);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy_util:script:";

@@ -287,28 +287,28 @@ public abstract class BaseLoadingMaskTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "host", _host);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "messageEl", _messageEl);
-		setNamespacedAttribute(request, "strings", _strings);
-		setNamespacedAttribute(request, "target", _target);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterHostChange", _afterHostChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "afterMessageElChange", _afterMessageElChange);
-		setNamespacedAttribute(request, "afterStringsChange", _afterStringsChange);
-		setNamespacedAttribute(request, "afterTargetChange", _afterTargetChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onHostChange", _onHostChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
-		setNamespacedAttribute(request, "onMessageElChange", _onMessageElChange);
-		setNamespacedAttribute(request, "onStringsChange", _onStringsChange);
-		setNamespacedAttribute(request, "onTargetChange", _onTargetChange);
+		request.setAttribute("alloy:loading-mask:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:loading-mask:host", _host);
+		request.setAttribute("alloy:loading-mask:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:loading-mask:messageEl", _messageEl);
+		request.setAttribute("alloy:loading-mask:strings", _strings);
+		request.setAttribute("alloy:loading-mask:target", _target);
+		request.setAttribute("alloy:loading-mask:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:loading-mask:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:loading-mask:afterHostChange", _afterHostChange);
+		request.setAttribute("alloy:loading-mask:afterInit", _afterInit);
+		request.setAttribute("alloy:loading-mask:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:loading-mask:afterMessageElChange", _afterMessageElChange);
+		request.setAttribute("alloy:loading-mask:afterStringsChange", _afterStringsChange);
+		request.setAttribute("alloy:loading-mask:afterTargetChange", _afterTargetChange);
+		request.setAttribute("alloy:loading-mask:onDestroy", _onDestroy);
+		request.setAttribute("alloy:loading-mask:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:loading-mask:onHostChange", _onHostChange);
+		request.setAttribute("alloy:loading-mask:onInit", _onInit);
+		request.setAttribute("alloy:loading-mask:onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:loading-mask:onMessageElChange", _onMessageElChange);
+		request.setAttribute("alloy:loading-mask:onStringsChange", _onStringsChange);
+		request.setAttribute("alloy:loading-mask:onTargetChange", _onTargetChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:loading-mask:";

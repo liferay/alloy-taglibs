@@ -155,16 +155,16 @@ public abstract class BasePortalLayoutTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "destroyed", _destroyed);
-		setNamespacedAttribute(request, "initialized", _initialized);
-		setNamespacedAttribute(request, "afterDestroy", _afterDestroy);
-		setNamespacedAttribute(request, "afterDestroyedChange", _afterDestroyedChange);
-		setNamespacedAttribute(request, "afterInit", _afterInit);
-		setNamespacedAttribute(request, "afterInitializedChange", _afterInitializedChange);
-		setNamespacedAttribute(request, "onDestroy", _onDestroy);
-		setNamespacedAttribute(request, "onDestroyedChange", _onDestroyedChange);
-		setNamespacedAttribute(request, "onInit", _onInit);
-		setNamespacedAttribute(request, "onInitializedChange", _onInitializedChange);
+		request.setAttribute("alloy:portal-layout:destroyed", String.valueOf(_destroyed));
+		request.setAttribute("alloy:portal-layout:initialized", String.valueOf(_initialized));
+		request.setAttribute("alloy:portal-layout:afterDestroy", _afterDestroy);
+		request.setAttribute("alloy:portal-layout:afterDestroyedChange", _afterDestroyedChange);
+		request.setAttribute("alloy:portal-layout:afterInit", _afterInit);
+		request.setAttribute("alloy:portal-layout:afterInitializedChange", _afterInitializedChange);
+		request.setAttribute("alloy:portal-layout:onDestroy", _onDestroy);
+		request.setAttribute("alloy:portal-layout:onDestroyedChange", _onDestroyedChange);
+		request.setAttribute("alloy:portal-layout:onInit", _onInit);
+		request.setAttribute("alloy:portal-layout:onInitializedChange", _onInitializedChange);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:portal-layout:";

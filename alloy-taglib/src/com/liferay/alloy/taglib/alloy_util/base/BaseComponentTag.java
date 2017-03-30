@@ -117,14 +117,14 @@ public abstract class BaseComponentTag extends com.liferay.taglib.util.IncludeTa
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "defineVar", _defineVar);
-		setNamespacedAttribute(request, "excludeAttributes", _excludeAttributes);
-		setNamespacedAttribute(request, "javaScriptAttributes", _javaScriptAttributes);
-		setNamespacedAttribute(request, "tagPageContext", _tagPageContext);
-		setNamespacedAttribute(request, "var", _var);
-		setNamespacedAttribute(request, "module", _module);
-		setNamespacedAttribute(request, "name", _name);
-		setNamespacedAttribute(request, "options", _options);
+		request.setAttribute("alloy_util:component:defineVar", String.valueOf(_defineVar));
+		request.setAttribute("alloy_util:component:excludeAttributes", _excludeAttributes);
+		request.setAttribute("alloy_util:component:javaScriptAttributes", _javaScriptAttributes);
+		request.setAttribute("alloy_util:component:tagPageContext", _tagPageContext);
+		request.setAttribute("alloy_util:component:var", _var);
+		request.setAttribute("alloy_util:component:module", _module);
+		request.setAttribute("alloy_util:component:name", _name);
+		request.setAttribute("alloy_util:component:options", _options);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy_util:component:";

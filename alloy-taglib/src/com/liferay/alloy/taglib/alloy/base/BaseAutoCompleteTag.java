@@ -54,7 +54,7 @@ public abstract class BaseAutoCompleteTag extends com.liferay.taglib.util.Includ
 
 	@Override
 	protected void setAttributes(HttpServletRequest request) {
-		setNamespacedAttribute(request, "test", _test);
+		request.setAttribute("alloy:auto-complete:test", _test);
 	}
 
 	protected static final String _ATTRIBUTE_NAMESPACE = "alloy:auto-complete:";
