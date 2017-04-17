@@ -19,9 +19,9 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:destroyed")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:destroyed")));
 java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:loading-mask:host");
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:loading-mask:initialized")));
 java.lang.String messageEl = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:loading-mask:messageEl"));
 java.util.HashMap strings = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:loading-mask:strings"), "{ loading: 'Loading&hellip;' }"));
 java.lang.Object target = (java.lang.Object)request.getAttribute("alloy:loading-mask:target");

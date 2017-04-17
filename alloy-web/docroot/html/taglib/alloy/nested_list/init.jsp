@@ -19,8 +19,8 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:nested-list:destroyed")), false);
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:nested-list:initialized")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:nested-list:destroyed")));
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:nested-list:initialized")));
 java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:nested-list:afterDestroy");
 java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:nested-list:afterDestroyedChange");
 java.lang.Object afterInit = (java.lang.Object)request.getAttribute("alloy:nested-list:afterInit");

@@ -19,7 +19,7 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean active = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:active")), false);
+boolean active = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:active")));
 java.util.HashMap arguments = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:arguments")));
 boolean autoLoad = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:autoLoad")), true);
 boolean cache = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:cache")), true);
@@ -27,15 +27,15 @@ java.lang.String cfg = GetterUtil.getString((java.lang.String)request.getAttribu
 java.util.HashMap context = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:context")));
 java.util.HashMap data = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:data")));
 java.lang.String dataType = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:io-request:dataType"));
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:destroyed")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:destroyed")));
 java.util.HashMap form = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:form")));
 java.util.HashMap headers = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:headers"), "{}"));
 java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:io-request:host");
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:initialized")));
 java.lang.String method = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:io-request:method"));
 java.lang.Object responseData = (java.lang.Object)request.getAttribute("alloy:io-request:responseData");
 java.lang.String selector = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:io-request:selector"));
-boolean sync = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:sync")), false);
+boolean sync = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:io-request:sync")));
 java.lang.Number timeout = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:io-request:timeout")), 0);
 java.util.HashMap transaction = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:io-request:transaction")));
 java.lang.String uri = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:io-request:uri"));

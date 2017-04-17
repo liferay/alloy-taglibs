@@ -19,9 +19,9 @@
 <%@ include file="/html/taglib/taglib-init.jsp" %>
 
 <%
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:destroyed")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:destroyed")));
 java.lang.Object host = (java.lang.Object)request.getAttribute("alloy:parse-content:host");
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:parse-content:initialized")));
 java.lang.Object afterDestroy = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroy");
 java.lang.Object afterDestroyedChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterDestroyedChange");
 java.lang.Object afterHostChange = (java.lang.Object)request.getAttribute("alloy:parse-content:afterHostChange");

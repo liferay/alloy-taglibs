@@ -20,20 +20,20 @@
 
 <%
 java.lang.String cssClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:cssClass"));
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:destroyed")), false);
-boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:disabled")), false);
-boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:focused")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:destroyed")));
+boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:disabled")));
+boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:focused")));
 int height = GetterUtil.getInteger(String.valueOf(request.getAttribute("alloy:progress-bar:height")), 25);
 java.lang.String hideClass = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:hideClass"), "aui-helper-hidden");
 java.lang.String progressbarId = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:progressbarId"));
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:initialized")));
 java.lang.String label = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:label"));
 int max = GetterUtil.getInteger(String.valueOf(request.getAttribute("alloy:progress-bar:max")), 100);
 int min = GetterUtil.getInteger(String.valueOf(request.getAttribute("alloy:progress-bar:min")), 0);
 java.lang.String orientation = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:orientation"), "horizontal");
 java.lang.Number ratio = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:progress-bar:ratio")), 0);
 java.lang.Object render = (java.lang.Object)request.getAttribute("alloy:progress-bar:render");
-boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:rendered")), false);
+boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:progress-bar:rendered")));
 java.lang.String statusNode = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:progress-bar:statusNode"));
 java.lang.Number step = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:progress-bar:step")), 0);
 java.util.HashMap strings = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:progress-bar:strings")));

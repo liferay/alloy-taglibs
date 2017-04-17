@@ -21,10 +21,10 @@
 <%
 java.lang.Object data = (java.lang.Object)request.getAttribute("alloy:live-search:data");
 java.lang.Number delay = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:live-search:delay")), 250);
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:live-search:destroyed")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:live-search:destroyed")));
 java.lang.Object hide = (java.lang.Object)request.getAttribute("alloy:live-search:hide");
 java.util.ArrayList index = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:live-search:index"), "[]"));
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:live-search:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:live-search:initialized")));
 java.lang.String input = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:live-search:input"));
 java.lang.Object matchRegex = (java.lang.Object)request.getAttribute("alloy:live-search:matchRegex");
 java.lang.Object nodes = (java.lang.Object)request.getAttribute("alloy:live-search:nodes");

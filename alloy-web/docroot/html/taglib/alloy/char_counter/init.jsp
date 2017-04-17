@@ -20,8 +20,8 @@
 
 <%
 java.lang.Object counter = (java.lang.Object)request.getAttribute("alloy:char-counter:counter");
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:destroyed")), false);
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:initialized")), false);
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:destroyed")));
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:char-counter:initialized")));
 java.lang.Object input = (java.lang.Object)request.getAttribute("alloy:char-counter:input");
 java.lang.Number maxLength = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:char-counter:maxLength")), 2147483647);
 java.lang.Object afterCounterChange = (java.lang.Object)request.getAttribute("alloy:char-counter:afterCounterChange");

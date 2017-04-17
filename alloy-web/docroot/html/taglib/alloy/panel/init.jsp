@@ -20,20 +20,20 @@
 
 <%
 java.lang.Object panelBodyContent = (java.lang.Object)request.getAttribute("alloy:panel:panelBodyContent");
-boolean collapsed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:collapsed")), false);
-boolean collapsible = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:collapsible")), false);
-boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:destroyed")), false);
-boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:disabled")), false);
+boolean collapsed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:collapsed")));
+boolean collapsible = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:collapsible")));
+boolean destroyed = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:destroyed")));
+boolean disabled = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:disabled")));
 java.lang.Object fillHeight = (java.lang.Object)request.getAttribute("alloy:panel:fillHeight");
-boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:focused")), false);
+boolean focused = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:focused")));
 java.lang.Object footerContent = (java.lang.Object)request.getAttribute("alloy:panel:footerContent");
 java.lang.Object headerContent = (java.lang.Object)request.getAttribute("alloy:panel:headerContent");
 java.lang.Object height = (java.lang.Object)request.getAttribute("alloy:panel:height");
 java.util.ArrayList icons = _toArrayList(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:panel:icons"), "[]"));
 java.lang.String panelId = GetterUtil.getString((java.lang.String)request.getAttribute("alloy:panel:panelId"));
-boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:initialized")), false);
+boolean initialized = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:initialized")));
 java.lang.Object render = (java.lang.Object)request.getAttribute("alloy:panel:render");
-boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:rendered")), false);
+boolean rendered = GetterUtil.getBoolean(String.valueOf(request.getAttribute("alloy:panel:rendered")));
 java.util.HashMap strings = _toHashMap(GetterUtil.getObject((java.lang.Object)request.getAttribute("alloy:panel:strings")));
 java.lang.Number tabIndex = GetterUtil.getNumber(String.valueOf(request.getAttribute("alloy:panel:tabIndex")), 0);
 java.lang.Object title = (java.lang.Object)request.getAttribute("alloy:panel:title");
