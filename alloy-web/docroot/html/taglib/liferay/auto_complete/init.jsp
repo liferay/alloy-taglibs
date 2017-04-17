@@ -185,10 +185,11 @@ java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("lifer
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("liferay:auto-complete:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("liferay:auto-complete:onWidthChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:auto-complete:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

@@ -145,10 +145,11 @@ java.lang.Object onXyChange = (java.lang.Object)request.getAttribute("alloy:over
 java.lang.Object onYChange = (java.lang.Object)request.getAttribute("alloy:overlay-context:onYChange");
 java.lang.Object onZIndexChange = (java.lang.Object)request.getAttribute("alloy:overlay-context:onZIndexChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:overlay-context:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:overlay-context:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:overlay-context:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

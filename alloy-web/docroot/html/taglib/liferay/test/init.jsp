@@ -25,7 +25,6 @@ java.lang.Boolean attrBoolean = GetterUtil.getBoolean((java.lang.Boolean)request
 int attrIntPrimitive = GetterUtil.getInteger(String.valueOf(request.getAttribute("liferay:test:attrIntPrimitive")));
 java.lang.Integer attrInteger = GetterUtil.getInteger(String.valueOf(request.getAttribute("liferay:test:attrInteger")));
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("liferay:test:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("liferay:test:scopedAttributes");
 %>
 
 <%@ include file="/html/taglib/liferay/test/init-ext.jspf" %>

@@ -75,10 +75,11 @@ java.lang.Object onNodeContentChange = (java.lang.Object)request.getAttribute("a
 java.lang.Object onScrollDelayChange = (java.lang.Object)request.getAttribute("alloy:tree-view-dd:onScrollDelayChange");
 java.lang.Object onTypeChange = (java.lang.Object)request.getAttribute("alloy:tree-view-dd:onTypeChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view-dd:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view-dd:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-view-dd:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

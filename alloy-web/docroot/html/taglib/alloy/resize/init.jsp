@@ -109,10 +109,11 @@ java.lang.Object onWrapChange = (java.lang.Object)request.getAttribute("alloy:re
 java.lang.Object onWrapTypesChange = (java.lang.Object)request.getAttribute("alloy:resize:onWrapTypesChange");
 java.lang.Object onWrapperChange = (java.lang.Object)request.getAttribute("alloy:resize:onWrapperChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:resize:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

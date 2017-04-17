@@ -181,10 +181,11 @@ java.lang.Object onContentUpdate = (java.lang.Object)request.getAttribute("alloy
 java.lang.Object onRender = (java.lang.Object)request.getAttribute("alloy:calendar:onRender");
 java.lang.Object onWidthChange = (java.lang.Object)request.getAttribute("alloy:calendar:onWidthChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:calendar:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

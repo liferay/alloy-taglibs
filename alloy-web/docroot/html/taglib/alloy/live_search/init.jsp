@@ -57,10 +57,11 @@ java.lang.Object onNodesChange = (java.lang.Object)request.getAttribute("alloy:l
 java.lang.Object onSearchValueChange = (java.lang.Object)request.getAttribute("alloy:live-search:onSearchValueChange");
 java.lang.Object onShowChange = (java.lang.Object)request.getAttribute("alloy:live-search:onShowChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:live-search:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {

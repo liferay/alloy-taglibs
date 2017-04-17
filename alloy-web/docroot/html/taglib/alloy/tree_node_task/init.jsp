@@ -102,10 +102,11 @@ java.lang.Object onOwnerTreeChange = (java.lang.Object)request.getAttribute("all
 java.lang.Object onParentNodeChange = (java.lang.Object)request.getAttribute("alloy:tree-node-task:onParentNodeChange");
 java.lang.Object onPrevSiblingChange = (java.lang.Object)request.getAttribute("alloy:tree-node-task:onPrevSiblingChange");
 Map<String, Object> dynamicAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:dynamicAttributes");
-Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:scopedAttributes");
 %>
 
 <%
+Map<String, Object> scopedAttributes = (Map<String, Object>)request.getAttribute("alloy:tree-node-task:scopedAttributes");
+
 Map<String, Object> _options = new HashMap<String, Object>();
 
 if ((scopedAttributes != null) && !scopedAttributes.isEmpty()) {
