@@ -1,5 +1,5 @@
 <#assign BLANK = "">
-<#assign LIFERAY_BLANK = "com.liferay.portal.kernel.util.StringPool.BLANK">
+<#assign LIFERAY_BLANK = "com.liferay.petra.string.StringPool.BLANK">
 <#assign SPACE = " ">
 <#assign COMMA = ",">
 <#assign QUOTE = "\"">
