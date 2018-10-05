@@ -1,5 +1,6 @@
 <#assign BLANK = "">
-<#assign LIFERAY_BLANK = "com.liferay.portal.kernel.util.StringPool.BLANK">
+<#assign LIFERAY_KERNEL_BLANK = "com.liferay.portal.kernel.util.StringPool.BLANK">
+<#assign LIFERAY_PETRA_BLANK = "com.liferay.petra.string.StringPool.BLANK">
 <#assign SPACE = " ">
 <#assign COMMA = ",">
 <#assign QUOTE = "\"">
@@ -15,7 +16,7 @@
 
 	<#if (defaultValue?? && (defaultValue != BLANK) && useDefaultValue(simpleClassName))>
 		<#if isQuoted(simpleClassName)>
-			<#if ((simpleClassName == "String") && (defaultValue == LIFERAY_BLANK))>
+			<#if ((simpleClassName == "String") && ((defaultValue == LIFERAY_KERNEL_BLANK) || (defaultValue == LIFERAY_PETRA_BLANK)))>
 				<#assign defaultValueOutput = defaultValue>
 			<#else>
 				<#assign defaultValueOutput = QUOTE + defaultValue + QUOTE>
@@ -34,7 +35,7 @@
 	<#if (defaultValue?? && (defaultValue != BLANK))>
 		<#if ((outputSimpleClassName != "boolean") || (defaultValue != "false"))>
 			<#if isQuoted(outputSimpleClassName)>
-				<#if ((outputSimpleClassName == "String") && (defaultValue == LIFERAY_BLANK))>
+				<#if ((outputSimpleClassName == "String") && ((defaultValue == LIFERAY_KERNEL_BLANK) || (defaultValue == LIFERAY_PETRA_BLANK)))>
 					<#assign value = defaultValue>
 				<#else>
 					<#assign value = QUOTE + defaultValue + QUOTE>
