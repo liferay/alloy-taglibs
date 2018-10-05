@@ -1,5 +1,8 @@
 package com.liferay.alloy.util;
 
+import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.util.PropsImpl;
+
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -54,7 +57,7 @@ public class TypeUtilTest {
 	}
 
 	@Test
-	public void testHasMethod() {
+	public void testHasMethod1() {
 		abstract class ArrayListExt extends ArrayList<String> {
 
 			private static final long serialVersionUID = 1L;
@@ -86,6 +89,19 @@ public class TypeUtilTest {
 			new String[] { "foo", "bar" });
 
 		Assert.assertFalse(actual);
+	}
+	
+	@Test
+	public void testHasMethod2() {
+		PropsUtil.setProps(new PropsImpl());
+
+		Assert.assertTrue(TypeUtil.hasMethod(
+			"com.liferay.taglib.util.IncludeTag",
+			"setNamespacedAttribute",
+			new String[] {
+				"javax.servlet.http.HttpServletRequest",
+				"java.lang.String", "java.lang.Object"}
+		));
 	}
 
 	@Test
