@@ -1,5 +1,9 @@
 package com.liferay.alloy.util;
 
+import com.liferay.alloy.tools.model.Attribute;
+import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.util.PropsImpl;
+
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -54,7 +58,7 @@ public class TypeUtilTest {
 	}
 
 	@Test
-	public void testHasMethod() {
+	public void testHasMethod1() {
 		abstract class ArrayListExt extends ArrayList<String> {
 
 			private static final long serialVersionUID = 1L;
@@ -87,6 +91,19 @@ public class TypeUtilTest {
 
 		Assert.assertFalse(actual);
 	}
+	
+	@Test
+	public void testHasMethod2() {
+		PropsUtil.setProps(new PropsImpl());
+
+		Assert.assertTrue(TypeUtil.hasMethod(
+			"com.liferay.taglib.util.IncludeTag",
+			"setNamespacedAttribute",
+			new String[] {
+				"javax.servlet.http.HttpServletRequest",
+				"java.lang.String", "java.lang.Object"}
+		));
+	}
 
 	@Test
 	public void testIsJavaClass() {
@@ -99,6 +116,18 @@ public class TypeUtilTest {
 		Assert.assertTrue(TypeUtil.isJavaClass("java.lang.Class<?>[]"));
 
 		Assert.assertFalse(TypeUtil.isJavaClass("foobar"));
+	}
+
+	@Test
+	public void testGetOutputJavaType() {
+		Attribute attribute = new Attribute();
+
+		attribute.setName("test");
+		attribute.setOutputType("java.lang.String");
+		attribute.setInputType("java.lang.String");
+		attribute.setDefaultValue("com.liferay.petra.string.StringPool.BLANK");
+
+		Assert.assertEquals("String", attribute.getOutputTypeSimpleClassName());
 	}
 
 	@Test

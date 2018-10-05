@@ -165,6 +165,9 @@ public class TypeUtil {
 				_log.debug(cnfe);
 			}
 		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return clazz;
 	}
