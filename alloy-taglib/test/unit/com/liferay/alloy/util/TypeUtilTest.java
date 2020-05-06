@@ -35,6 +35,14 @@ public class TypeUtilTest {
 
 		Assert.assertEquals(actualGenericsType, expectedGenericsType);
 
+		actualGenericsType =
+			"java.util.Map<java.lang.String, java.lang.Object>";
+		expectedGenericsType = TypeUtil.getGenericsType(
+			"java.util.List<java.util.Map<java.lang.String, " +
+				"java.lang.Object>>");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+
 		actualGenericsType = null;
 		expectedGenericsType = TypeUtil.getGenericsType("long");
 
@@ -114,6 +122,15 @@ public class TypeUtilTest {
 
 		Assert.assertTrue(TypeUtil.isJavaClass("java.lang.Class<?>[]"));
 
+		Assert.assertTrue(
+			TypeUtil.isJavaClass(
+				"java.util.Map<java.lang.String, java.lang.Object>"));
+
+		Assert.assertTrue(
+			TypeUtil.isJavaClass(
+				"java.util.List<java.util.Map<java.lang.String, " +
+					"java.lang.Object>>"));
+
 		Assert.assertFalse(TypeUtil.isJavaClass("foobar"));
 	}
 
@@ -131,7 +148,6 @@ public class TypeUtilTest {
 	@Test
 	public void testRemoveGenericsType() {
 		String actualTypeWithoutGenerics = "java.util.List";
-
 		String expectedTypeWithoutGenerics = TypeUtil.removeGenericsType(
 			"java.util.List<String>");
 
@@ -139,9 +155,16 @@ public class TypeUtilTest {
 			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
 
 		actualTypeWithoutGenerics = "java.util.Map";
-
 		expectedTypeWithoutGenerics = TypeUtil.removeGenericsType(
 			"java.util.Map<String, Integer>");
+
+		Assert.assertEquals(
+			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
+
+		actualTypeWithoutGenerics = "java.util.List";
+		expectedTypeWithoutGenerics = TypeUtil.removeGenericsType(
+			"java.util.List<java.util.Map<java.lang.String, " +
+				"java.lang.Object>>");
 
 		Assert.assertEquals(
 			actualTypeWithoutGenerics, expectedTypeWithoutGenerics);
