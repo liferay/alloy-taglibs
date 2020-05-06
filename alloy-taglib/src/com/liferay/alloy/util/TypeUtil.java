@@ -25,6 +25,7 @@ import java.lang.reflect.Method;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.commons.lang.ClassUtils;
 
@@ -171,7 +172,7 @@ public class TypeUtil {
 
 	private String _getGenericsType(String type) {
 		int begin = type.indexOf(CharPool.LESS_THAN);
-		int end = type.indexOf(CharPool.GREATER_THAN);
+		int end = type.lastIndexOf(CharPool.GREATER_THAN);
 		String genericsType = null;
 
 		if ((begin > -1) && (end > -1)) {
@@ -179,6 +180,33 @@ public class TypeUtil {
 		}
 
 		return genericsType;
+	}
+
+	private List<String> _getGenericsTypes(String genericsType) {
+		List<String> genericsTypes = new ArrayList<>();
+
+		int x = -1;
+		int y = 0;
+
+		while (true) {
+			x = genericsType.indexOf(CharPool.COMMA, x + 1);
+
+			if (x == -1) {
+				genericsTypes.add(StringUtil.trim(genericsType.substring(y)));
+
+				return genericsTypes;
+			}
+
+			String s = genericsType.substring(y, x);
+
+			if (StringUtil.count(s, CharPool.LESS_THAN) ==
+					StringUtil.count(s, CharPool.GREATER_THAN)) {
+
+				genericsTypes.add(StringUtil.trim(s));
+
+				y = x + 1;
+			}
+		}
 	}
 
 	private String _getInputJavaType(String type, boolean removeGenericsType) {
@@ -277,13 +305,13 @@ public class TypeUtil {
 			String genericsType = _getGenericsType(type);
 
 			if (Validator.isNotNull(genericsType)) {
-				String[] genericsTypes = StringUtil.split(genericsType);
+				List<String> genericsTypes = _getGenericsTypes(genericsType);
 
-				for (int i = 0; i < genericsTypes.length; i++) {
-					String curType = genericsTypes[i].trim();
+				for (String curType : genericsTypes) {
+					if (!curType.equals(StringPool.QUESTION) &&
+						!_isJavaType(curType)) {
 
-					if (!curType.equals(StringPool.QUESTION)) {
-						Class.forName(_removeArrayNotation(curType));
+						return false;
 					}
 				}
 
